@@ -126,6 +126,9 @@
 <v t="leo.20220922100533.1"><vh>@clean cp2022_w3.md</vh>
 <v t="leo.20220922100555.1"><vh>cp2022 第三週課程</vh></v>
 </v>
+<v t="leo.20220922175552.1"><vh>@clean cad2022_w3.md</vh>
+<v t="leo.20220922175605.1"><vh>cad2022 第三週課程</vh></v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -2934,6 +2937,38 @@ ethercalc 登錄與 RDT
 [課程網誌製作與先前課程內容回顧]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/2%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E7%B6%B2%E8%AA%8C%E8%A3%BD%E4%BD%9C%E8%88%87%E5%85%88%E5%89%8D%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9%E5%9B%9E%E9%A1%A7.mp4?csf=1&amp;web=1&amp;e=jHsQ7E
 [ethercalc  登錄 Github 帳號-遠端桌面與虛擬主機介紹]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/3%E3%80%8Cw3%E3%80%8Dethercalc%20%20%E7%99%BB%E9%8C%84%20Github%20%E5%B8%B3%E8%99%9F-%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E8%88%87%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E4%BB%8B%E7%B4%B9.mp4?csf=1&amp;web=1&amp;e=JD4Qwo
 [課程倉儲與 Github Pages 網頁設定教學]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/4%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E7%B6%B2%E9%A0%81%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.mp4?csf=1&amp;web=1&amp;e=5brhmf</t>
+<t tx="leo.20220922175552.1">@language md
+---
+Title: cad2022 第三週課程
+Date: 2022-09-22 12:00
+Category: cad2022
+Tags: w3
+Slug: 2022_fall_cad2022_w3
+Author: mdecycu
+---
+
+電腦輔助設計第三週課程內容.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20220922175605.1">個人課程網頁設定
+====
+
+教學影片: [課程倉儲與 Github Pages 設定說明]
+
+Replit and Github
+====
+
+教學影片: [課程倉儲與 Github Pages 設定說明]
+
+
+教學影片: [Replit 動態網站與 Github 倉儲同步]
+
+[課程倉儲與 Github Pages 設定說明]: https://nfuedu.sharepoint.com/:v:/r/sites/cad2022/Shared%20Documents/w3/Recordings/1%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E8%A8%AD%E5%AE%9A%E8%AA%AA%E6%98%8E.mp4?csf=1&amp;web=1&amp;e=lfYKhG
+[建立 Replit 帳號, 並將課程倉儲 import 至 Repl 專案]: https://nfuedu.sharepoint.com/:v:/r/sites/cad2022/Shared%20Documents/w3/Recordings/2%E3%80%8Cw3%E3%80%8D%E5%BB%BA%E7%AB%8B%20Replit%20%E5%B8%B3%E8%99%9F,%20%E4%B8%A6%E5%B0%87%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%20import%20%E8%87%B3%20Repl%20%E5%B0%88%E6%A1%88.mp4?csf=1&amp;web=1&amp;e=kjtcxl
+[Replit 動態網站與 Github 倉儲同步]: https://nfuedu.sharepoint.com/:v:/r/sites/cad2022/Shared%20Documents/w3/Recordings/3%E3%80%8Cw3%E3%80%8D%E5%A6%82%E4%BD%95%E5%9C%A8%20Replit%20%E5%95%9F%E7%94%A8%E5%8B%95%E6%85%8B%E7%B6%B2%E7%AB%99%E5%BE%8C%E8%BD%89%E9%9D%9C%E6%85%8B%E4%B8%A6%E5%90%8C%E6%AD%A5%E8%87%B3%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%20(%E5%BB%BA%E8%80%83%E8%A9%A6%E5%B8%B3%E8%99%9F).mp4?csf=1&amp;web=1&amp;e=VTSc2h
+</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
