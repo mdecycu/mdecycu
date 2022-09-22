@@ -2908,7 +2908,7 @@ Slug: 2022_fall_cp2022_w3
 Author: mdecycu
 ---
 
-計算機程式第三週課程內容.
+計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.
 
 &lt;!-- PELICAN_END_SUMMARY --&gt;
 
@@ -2947,7 +2947,7 @@ Slug: 2022_fall_cad2022_w3
 Author: mdecycu
 ---
 
-電腦輔助設計第三週課程內容.
+電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.
 
 &lt;!-- PELICAN_END_SUMMARY --&gt;
 
@@ -2960,7 +2960,7 @@ Author: mdecycu
 Replit and Github
 ====
 
-教學影片: [課程倉儲與 Github Pages 設定說明]
+教學影片: [建立 Replit 帳號, 並將課程倉儲 import 至 Repl 專案]
 
 
 教學影片: [Replit 動態網站與 Github 倉儲同步]
