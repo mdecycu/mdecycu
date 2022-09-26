@@ -16,6 +16,10 @@ Ubuntu
 
 目前使用 Ubuntu 20.04 與 22.04, 20.04 生命週期可以到 2025, 而 22.04 則可以到 2027, 其中主要安裝配置 Squid, Bind, Nginx, uwsgi 以及 Fossil SCM. 管理的網域有 mde.nfu 與 eng.nfu.
 
+下載 [Ubuntu 22.04 vdi] Virtualbox 虛擬主機檔案.
+
+[Ubuntu 22.04 vdi]: https://nfuedu.sharepoint.com/:u:/s/cad2022/EfWBQcgCF1FKhNNlKWkfvcEBFDXS76R4GPTZaWtH2PIdjA?e=pOuKVD
+
 基本指令
 ====
 
@@ -158,4 +162,13 @@ Ubuntu 安裝 Desktop 版本之後, 可以加裝 xrdp, 並且允許遠端主機�
 sudo apt install xrdp
 
 在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.
+
+Add super user account
+====
+
+新增 username 帳號, 並授予管理者權限.
+
+sudo adduser username
+
+sudo usermod -aG sudo username
 

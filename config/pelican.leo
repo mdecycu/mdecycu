@@ -1189,7 +1189,27 @@ Author: mdecycu
 Windows 10 [密碼最長使用期限] 內定為 42 天, 假如此一設定對使用者造成困擾, 可以從系統管理者執行的 cmd 中, 輸入 secpol.msc 開啟 [本機安全性設定], 開啟"帳戶原則"中的"密碼原則", 然後將"密碼最長使用期限"從內定的  42 天改為 0, 表示密碼永不過期.
 
 [密碼最長使用期限]: https://docs.microsoft.com/zh-tw/windows/security/threat-protection/security-policy-settings/maximum-password-age
-[本機安全性設定]: https://mitblog.pixnet.net/blog/post/40807765-%5Bwindows%5D-%E6%9C%AC%E6%A9%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%8E%9F%E5%89%87%28secpol.msc%29%E3%80%81%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87</t>
+[本機安全性設定]: https://mitblog.pixnet.net/blog/post/40807765-%5Bwindows%5D-%E6%9C%AC%E6%A9%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%8E%9F%E5%89%87%28secpol.msc%29%E3%80%81%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87
+
+以 net user 建立帳號
+====
+
+在 Windows 建立新帳號, 例如: 帳號名稱為 username:
+
+開啟管理者權限的 cmd, 輸入:
+
+net user username /add
+
+帳號建立後, 進入控制台 - 使用者帳戶區, 變更帳號屬性並新增密碼.
+
+Windows 10 教育版認證
+====
+
+校內網段: 利用 [win10_kms.bat], 以管理者權限執行, 即可完成認證.
+
+校外網段: 利用 VPN 上網, 之後利用 [win10_kms.bat], 以管理者權限執行, 即可完成認證.
+
+[win10_kms.bat]: https://software.nfu.edu.tw/KMS/windows_kms.bat</t>
 <t tx="leo.20220901021551.1">@language md
 ---
 Title: 有關 TCExam
@@ -2491,6 +2511,10 @@ Author: mdecycu
 
 目前使用 Ubuntu 20.04 與 22.04, 20.04 生命週期可以到 2025, 而 22.04 則可以到 2027, 其中主要安裝配置 Squid, Bind, Nginx, uwsgi 以及 Fossil SCM. 管理的網域有 mde.nfu 與 eng.nfu.
 
+下載 [Ubuntu 22.04 vdi] Virtualbox 虛擬主機檔案.
+
+[Ubuntu 22.04 vdi]: https://nfuedu.sharepoint.com/:u:/s/cad2022/EfWBQcgCF1FKhNNlKWkfvcEBFDXS76R4GPTZaWtH2PIdjA?e=pOuKVD
+
 基本指令
 ====
 
@@ -2633,6 +2657,15 @@ Ubuntu 安裝 Desktop 版本之後, 可以加裝 xrdp, 並且允許遠端主機�
 sudo apt install xrdp
 
 在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.
+
+Add super user account
+====
+
+新增 username 帳號, 並授予管理者權限.
+
+sudo adduser username
+
+sudo usermod -aG sudo username
 
 </t>
 <t tx="leo.20220918115308.1">@language md
@@ -2918,6 +2951,10 @@ Author: mdecycu
 
 有關電腦輔助設計室中, 代理主機設定無法存檔的問題, 可以參考[cp2022 w3 cadlab 網路設定影片] (必須登入 @nfu Teams 帳號) 中的說明, 主要設定流程為直接進入 Windows Registry 進行設定後, 將設定內容匯出為 .reg 檔案後, 放入隨身碟, 下一次重新開機後, 可以利用滑鼠左鍵雙點擊 .reg 檔案, 就可以完成自動設定.
 
+下載 [cadlab_network_setup.zip]
+
+ [cadlab_network_setup.zip]: ./../downloads/cadlab_network_setup.zip
+
 網誌與課程內容回顧
 ====
 
@@ -2926,7 +2963,9 @@ Author: mdecycu
 ethercalc 登錄與 RDT
 ====
 
-教學影片: [ethercalc  登錄 Github 帳號-遠端桌面與虛擬主機介紹]
+教學影片: [ethercalc登錄 Github 帳號] - 遠端桌面與虛擬主機介紹
+
+&lt;https://ethercalc.net/&gt;
 
 倉儲與 Github Pages
 ====
@@ -2935,8 +2974,113 @@ ethercalc 登錄與 RDT
 
 [cp2022 w3 cadlab 網路設定影片]: https://nfuedu.sharepoint.com/sites/cp20222/_layouts/15/stream.aspx?id=%2Fsites%2Fcp20222%2FShared%20Documents%2Fw3%2FRecordings%2F%E3%80%8Cw3%E3%80%8D%E4%B8%AD%E7%9A%84%E6%9C%83%E8%AD%B0%2D20220922%5F094632%2D%E6%9C%83%E8%AD%B0%E9%8C%84%E8%A3%BD%2Emp4
 [課程網誌製作與先前課程內容回顧]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/2%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E7%B6%B2%E8%AA%8C%E8%A3%BD%E4%BD%9C%E8%88%87%E5%85%88%E5%89%8D%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9%E5%9B%9E%E9%A1%A7.mp4?csf=1&amp;web=1&amp;e=jHsQ7E
-[ethercalc  登錄 Github 帳號-遠端桌面與虛擬主機介紹]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/3%E3%80%8Cw3%E3%80%8Dethercalc%20%20%E7%99%BB%E9%8C%84%20Github%20%E5%B8%B3%E8%99%9F-%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E8%88%87%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E4%BB%8B%E7%B4%B9.mp4?csf=1&amp;web=1&amp;e=JD4Qwo
-[課程倉儲與 Github Pages 網頁設定教學]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/4%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E7%B6%B2%E9%A0%81%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.mp4?csf=1&amp;web=1&amp;e=5brhmf</t>
+[ethercalc登錄 Github 帳號]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/3%E3%80%8Cw3%E3%80%8Dethercalc%20%20%E7%99%BB%E9%8C%84%20Github%20%E5%B8%B3%E8%99%9F-%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E8%88%87%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E4%BB%8B%E7%B4%B9.mp4?csf=1&amp;web=1&amp;e=JD4Qwo
+[課程倉儲與 Github Pages 網頁設定教學]: https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/4%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E7%B6%B2%E9%A0%81%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.mp4?csf=1&amp;web=1&amp;e=5brhmf
+[nfulit]: https://github.com/mdecourse/nfulist
+[waitress]: https://github.com/Pylons/waitress
+[nssm]: https://nssm.cc/
+
+從教務主機擷取學員名單
+====
+
+原先配置在 Heroku 的 [nfulist] 網際程式, 由於校務主機已經排除台灣境外網段連接, 且 Heroku 也即將終止免費帳號使用. 因此只能將程式配置在系工作站室中的電腦. 程式如下, 目前以 Ubuntu 22.04 實體主機下的 Virtualbox Win10 虛擬主機運行. 採 [waitress] 模式配置, 以 [nssm] 安排成為系統服務.
+
+&lt;pre class="brush: python"&gt;
+# 以 Flask 作為網際框架, 
+from flask import Flask, request
+# 允許跨網站擷取資料
+from flask_cors import CORS
+
+# 利用 requests 取回網站中的頁面資料
+import requests
+# 利用 beautifulsoup 解讀超文件網頁內容
+import bs4
+# 若在近端啟動也要採用 SSL 時導入
+#import ssl
+  
+'''
+2022 Fall 各班課程代號
+1a - 2b
+?semester=1111&amp;amp;courseno=0747&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0761&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0773&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0786&amp;amp;column=True 
+
+'''
+proxies ={
+'http': 'http://account:password@[2001:288:6004:17::4]:3128',
+'https': 'http://account:password@[2001:288:6004:17::4]:3128'
+}
+
+app = Flask(__name__)
+CORS(app)
+  
+@app.route('/studlist')
+@app.route('/')
+def studlist():
+    semester = request.args.get('semester')
+    courseno = request.args.get('courseno')
+    column = request.args.get('column')
+
+    if semester == None:
+        semester = '1091'
+    if courseno == None:
+        courseno = '0762'
+    
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+
+    url = 'https://qry.nfu.edu.tw/studlist_ajax.php'
+    post_var = {'pselyr': semester, 'pseqno': courseno}
+    
+    # 可透過 Proxy server 執行程式
+    #result = requests.post(url, data = post_var, headers = headers, proxies = proxies)
+    result = requests.post(url, data = post_var, headers = headers)
+    soup = bs4.BeautifulSoup(result.content, 'lxml')
+    table = soup.find('table', {'class': 'tbcls'})
+    data = []
+    rows = table.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
+    output = ""
+    for i in data[2:]:
+        #print(i[0])
+        if column == "True":
+            output +=i[0] + "&lt;/br&gt;"
+        else:
+            output +=i[0] + "\n"
+        
+    return output
+    #return  str(pselyr) + " + " +str(pseqno)
+  
+# 即使在近端仍希望以 https 模式下執行
+#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+#context.load_cert_chain('localhost.crt', 'localhost.key')
+  
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
+&lt;/pre&gt;
+
+2022 Fall 學員名單:
+
+1. [1a 計算機程式修課學員名單] (取自教務主機)
+2. [1b 計算機程式修課學員名單] (取自教務主機)
+3. [2a 電腦輔助設計與實習修課學員名單] (取自教務主機)
+4. [2b 電腦輔助設計與實習修課學員名單] (取自教務主機)
+
+[1a 計算機程式修課學員名單]: https://nfu.cycu.org/?semester=1111&amp;courseno=0747&amp;column=True
+[1b 計算機程式修課學員名單]: https://nfu.cycu.org/?semester=1111&amp;courseno=0761&amp;column=True
+[2a 電腦輔助設計與實習修課學員名單]: https://nfu.cycu.org/?semester=1111&amp;courseno=0773&amp;column=True
+[2b 電腦輔助設計與實習修課學員名單]: https://nfu.cycu.org/?semester=1111&amp;courseno=0786&amp;column=True
+
+
+
+
+</t>
 <t tx="leo.20220922175552.1">@language md
 ---
 Title: cad2022 第三週課程

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-23T05:22:05+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-09-23T05:22:05+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-26T11:25:31+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-09-23T05:22:05+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
@@ -31,18 +31,109 @@
 &lt;p&gt;必須進入 Shell, 在倉儲根目錄執行下列兩則指令 (取下子模組內容, 並安裝執行所需模組).&lt;/p&gt;
 &lt;p&gt;git submodule update --init --recursive&lt;/p&gt;
 &lt;p&gt;pip install   flask flask_cors bs4 lxml pelican markdown &lt;/p&gt;
-&lt;p&gt;2b 開始在  &lt;a href="https://exam.cycu.org"&gt;https://exam.cycu.org&lt;/a&gt; 建立考試帳號.&lt;/p&gt;</content><category term="cad2022"></category><category term="w3"></category></entry><entry><title>cp2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cp2022_w3.html" rel="alternate"></link><published>2022-09-22T11:00:00+08:00</published><updated>2022-09-22T23:49:45+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cp2022_w3.html</id><summary type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+&lt;p&gt;2b 開始在  &lt;a href="https://exam.cycu.org"&gt;https://exam.cycu.org&lt;/a&gt; 建立考試帳號.&lt;/p&gt;</content><category term="cad2022"></category><category term="w3"></category></entry><entry><title>cp2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cp2022_w3.html" rel="alternate"></link><published>2022-09-22T11:00:00+08:00</published><updated>2022-09-26T11:25:31+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cp2022_w3.html</id><summary type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
 &lt;h1&gt;針對 Proxy 設定無法存檔&lt;/h1&gt;
 &lt;p&gt;有關電腦輔助設計室中, 代理主機設定無法存檔的問題, 可以參考&lt;a href="https://nfuedu.sharepoint.com/sites/cp20222/_layouts/15/stream.aspx?id=%2Fsites%2Fcp20222%2FShared%20Documents%2Fw3%2FRecordings%2F%E3%80%8Cw3%E3%80%8D%E4%B8%AD%E7%9A%84%E6%9C%83%E8%AD%B0%2D20220922%5F094632%2D%E6%9C%83%E8%AD%B0%E9%8C%84%E8%A3%BD%2Emp4"&gt;cp2022 w3 cadlab 網路設定影片&lt;/a&gt; (必須登入 @nfu Teams 帳號) 中的說明, 主要設定流程為直接進入 Windows Registry 進行設定後, 將設定內容匯出為 .reg 檔案後, 放入隨身碟, 下一次重新開機後, 可以利用滑鼠左鍵雙點擊 .reg 檔案, 就可以完成自動設定.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="./../downloads/cadlab_network_setup.zip"&gt;cadlab_network_setup.zip&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;網誌與課程內容回顧&lt;/h1&gt;
 &lt;p&gt;教學影片: &lt;a href="https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/2%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E7%B6%B2%E8%AA%8C%E8%A3%BD%E4%BD%9C%E8%88%87%E5%85%88%E5%89%8D%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9%E5%9B%9E%E9%A1%A7.mp4?csf=1&amp;amp;web=1&amp;amp;e=jHsQ7E"&gt;課程網誌製作與先前課程內容回顧&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;ethercalc 登錄與 RDT&lt;/h1&gt;
-&lt;p&gt;教學影片: [ethercalc  登錄 Github 帳號-遠端桌面與虛擬主機介紹]&lt;/p&gt;
+&lt;p&gt;教學影片: &lt;a href="https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/3%E3%80%8Cw3%E3%80%8Dethercalc%20%20%E7%99%BB%E9%8C%84%20Github%20%E5%B8%B3%E8%99%9F-%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E8%88%87%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E4%BB%8B%E7%B4%B9.mp4?csf=1&amp;amp;web=1&amp;amp;e=JD4Qwo"&gt;ethercalc登錄 Github 帳號&lt;/a&gt; - 遠端桌面與虛擬主機介紹&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ethercalc.net/"&gt;https://ethercalc.net/&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;倉儲與 Github Pages&lt;/h1&gt;
-&lt;p&gt;教學影片: &lt;a href="https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/4%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E7%B6%B2%E9%A0%81%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.mp4?csf=1&amp;amp;web=1&amp;amp;e=5brhmf"&gt;課程倉儲與 Github Pages 網頁設定教學&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="w3"></category></entry><entry><title>有關 CAD</title><link href="https://mde.tw/blog/2022_fall_about_cad.html" rel="alternate"></link><published>2022-09-21T11:00:00+08:00</published><updated>2022-09-21T05:50:40+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-21:/blog/2022_fall_about_cad.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
+&lt;p&gt;教學影片: &lt;a href="https://nfuedu.sharepoint.com/:v:/r/sites/cp20222/Shared%20Documents/w3/Recordings/4%E3%80%8Cw3%E3%80%8D%E8%AA%B2%E7%A8%8B%E5%80%89%E5%84%B2%E8%88%87%20Github%20Pages%20%E7%B6%B2%E9%A0%81%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.mp4?csf=1&amp;amp;web=1&amp;amp;e=5brhmf"&gt;課程倉儲與 Github Pages 網頁設定教學&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;從教務主機擷取學員名單&lt;/h1&gt;
+&lt;p&gt;原先配置在 Heroku 的 [nfulist] 網際程式, 由於校務主機已經排除台灣境外網段連接, 且 Heroku 也即將終止免費帳號使用. 因此只能將程式配置在系工作站室中的電腦. 程式如下, 目前以 Ubuntu 22.04 實體主機下的 Virtualbox Win10 虛擬主機運行. 採 &lt;a href="https://github.com/Pylons/waitress"&gt;waitress&lt;/a&gt; 模式配置, 以 &lt;a href="https://nssm.cc/"&gt;nssm&lt;/a&gt; 安排成為系統服務.&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# 以 Flask 作為網際框架, 
+from flask import Flask, request
+# 允許跨網站擷取資料
+from flask_cors import CORS
+
+# 利用 requests 取回網站中的頁面資料
+import requests
+# 利用 beautifulsoup 解讀超文件網頁內容
+import bs4
+# 若在近端啟動也要採用 SSL 時導入
+#import ssl
+
+'''
+2022 Fall 各班課程代號
+1a - 2b
+?semester=1111&amp;amp;courseno=0747&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0761&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0773&amp;amp;column=True 
+
+?semester=1111&amp;amp;courseno=0786&amp;amp;column=True 
+
+'''
+proxies ={
+'http': 'http://account:password@[2001:288:6004:17::4]:3128',
+'https': 'http://account:password@[2001:288:6004:17::4]:3128'
+}
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/studlist')
+@app.route('/')
+def studlist():
+    semester = request.args.get('semester')
+    courseno = request.args.get('courseno')
+    column = request.args.get('column')
+
+    if semester == None:
+        semester = '1091'
+    if courseno == None:
+        courseno = '0762'
+
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+
+    url = 'https://qry.nfu.edu.tw/studlist_ajax.php'
+    post_var = {'pselyr': semester, 'pseqno': courseno}
+
+    # 可透過 Proxy server 執行程式
+    #result = requests.post(url, data = post_var, headers = headers, proxies = proxies)
+    result = requests.post(url, data = post_var, headers = headers)
+    soup = bs4.BeautifulSoup(result.content, 'lxml')
+    table = soup.find('table', {'class': 'tbcls'})
+    data = []
+    rows = table.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
+    output = ""
+    for i in data[2:]:
+        #print(i[0])
+        if column == "True":
+            output +=i[0] + "&lt;/br&gt;"
+        else:
+            output +=i[0] + "\n"
+
+    return output
+    #return  str(pselyr) + " + " +str(pseqno)
+
+# 即使在近端仍希望以 https 模式下執行
+#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+#context.load_cert_chain('localhost.crt', 'localhost.key')
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
+&lt;/pre&gt;
+
+&lt;p&gt;2022 Fall 學員名單:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0747&amp;amp;column=True"&gt;1a 計算機程式修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0761&amp;amp;column=True"&gt;1b 計算機程式修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0773&amp;amp;column=True"&gt;2a 電腦輔助設計與實習修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0786&amp;amp;column=True"&gt;2b 電腦輔助設計與實習修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
+&lt;/ol&gt;</content><category term="cp2022"></category><category term="w3"></category></entry><entry><title>有關 CAD</title><link href="https://mde.tw/blog/2022_fall_about_cad.html" rel="alternate"></link><published>2022-09-21T11:00:00+08:00</published><updated>2022-09-21T05:50:40+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-21:/blog/2022_fall_about_cad.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
 
 
@@ -156,12 +247,13 @@ Estimated Total Devices From Mfg    48,768,750
 &lt;/pre&gt;
 
 &lt;p&gt;根據判斷, 這應該是一台 Wifi Router, 誤將應該連接內部網路的接頭聯外.&lt;/p&gt;
-&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-18T11:44:13+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
+&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-25T12:10:07+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 
 
 &lt;h1&gt;Ubuntu&lt;/h1&gt;
 &lt;p&gt;目前使用 Ubuntu 20.04 與 22.04, 20.04 生命週期可以到 2025, 而 22.04 則可以到 2027, 其中主要安裝配置 Squid, Bind, Nginx, uwsgi 以及 Fossil SCM. 管理的網域有 mde.nfu 與 eng.nfu.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EfWBQcgCF1FKhNNlKWkfvcEBFDXS76R4GPTZaWtH2PIdjA?e=pOuKVD"&gt;Ubuntu 22.04 vdi&lt;/a&gt; Virtualbox 虛擬主機檔案.&lt;/p&gt;
 &lt;h1&gt;基本指令&lt;/h1&gt;
 &lt;p&gt;查 Ubuntu 操作系統的版本:&lt;/p&gt;
 &lt;p&gt;lsb_release -a &lt;/p&gt;
@@ -257,7 +349,11 @@ ufw enable
 &lt;h1&gt;Ubuntu 的遠端桌面&lt;/h1&gt;
 &lt;p&gt;Ubuntu 安裝 Desktop 版本之後, 可以加裝 xrdp, 並且允許遠端主機對 port 3389 連線, 就可以從其他操作系統電腦上, 以 Remote Desktop client 進行遠端連線:&lt;/p&gt;
 &lt;p&gt;sudo apt install xrdp&lt;/p&gt;
-&lt;p&gt;在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-20T16:55:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
+&lt;p&gt;在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.&lt;/p&gt;
+&lt;h1&gt;Add super user account&lt;/h1&gt;
+&lt;p&gt;新增 username 帳號, 並授予管理者權限.&lt;/p&gt;
+&lt;p&gt;sudo adduser username&lt;/p&gt;
+&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-20T16:55:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 
 
@@ -1082,12 +1178,20 @@ class MyUser (Model):
 
 db.connect()
 db.create_tables([MyUser])
-&lt;/pre&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-01T02:10:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
+&lt;/pre&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-25T11:57:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 
 
 &lt;h1&gt;密碼最長使用期限&lt;/h1&gt;
-&lt;p&gt;Windows 10 &lt;a href="https://docs.microsoft.com/zh-tw/windows/security/threat-protection/security-policy-settings/maximum-password-age"&gt;密碼最長使用期限&lt;/a&gt; 內定為 42 天, 假如此一設定對使用者造成困擾, 可以從系統管理者執行的 cmd 中, 輸入 secpol.msc 開啟 &lt;a href="https://mitblog.pixnet.net/blog/post/40807765-%5Bwindows%5D-%E6%9C%AC%E6%A9%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%8E%9F%E5%89%87%28secpol.msc%29%E3%80%81%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87"&gt;本機安全性設定&lt;/a&gt;, 開啟"帳戶原則"中的"密碼原則", 然後將"密碼最長使用期限"從內定的  42 天改為 0, 表示密碼永不過期.&lt;/p&gt;</content><category term="windows"></category><category term="batch"></category><category term="commands"></category></entry><entry><title>Git 常用指令</title><link href="https://mde.tw/blog/useful-git-commands.html" rel="alternate"></link><published>2022-08-28T11:00:00+08:00</published><updated>2022-09-08T19:35:32+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-28:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
+&lt;p&gt;Windows 10 &lt;a href="https://docs.microsoft.com/zh-tw/windows/security/threat-protection/security-policy-settings/maximum-password-age"&gt;密碼最長使用期限&lt;/a&gt; 內定為 42 天, 假如此一設定對使用者造成困擾, 可以從系統管理者執行的 cmd 中, 輸入 secpol.msc 開啟 &lt;a href="https://mitblog.pixnet.net/blog/post/40807765-%5Bwindows%5D-%E6%9C%AC%E6%A9%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%8E%9F%E5%89%87%28secpol.msc%29%E3%80%81%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87"&gt;本機安全性設定&lt;/a&gt;, 開啟"帳戶原則"中的"密碼原則", 然後將"密碼最長使用期限"從內定的  42 天改為 0, 表示密碼永不過期.&lt;/p&gt;
+&lt;h1&gt;以 net user 建立帳號&lt;/h1&gt;
+&lt;p&gt;在 Windows 建立新帳號, 例如: 帳號名稱為 username:&lt;/p&gt;
+&lt;p&gt;開啟管理者權限的 cmd, 輸入:&lt;/p&gt;
+&lt;p&gt;net user username /add&lt;/p&gt;
+&lt;p&gt;帳號建立後, 進入控制台 - 使用者帳戶區, 變更帳號屬性並新增密碼.&lt;/p&gt;
+&lt;h1&gt;Windows 10 教育版認證&lt;/h1&gt;
+&lt;p&gt;校內網段: 利用 &lt;a href="https://software.nfu.edu.tw/KMS/windows_kms.bat"&gt;win10_kms.bat&lt;/a&gt;, 以管理者權限執行, 即可完成認證.&lt;/p&gt;
+&lt;p&gt;校外網段: 利用 VPN 上網, 之後利用 &lt;a href="https://software.nfu.edu.tw/KMS/windows_kms.bat"&gt;win10_kms.bat&lt;/a&gt;, 以管理者權限執行, 即可完成認證.&lt;/p&gt;</content><category term="windows"></category><category term="batch"></category><category term="commands"></category></entry><entry><title>Git 常用指令</title><link href="https://mde.tw/blog/useful-git-commands.html" rel="alternate"></link><published>2022-08-28T11:00:00+08:00</published><updated>2022-09-08T19:35:32+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-28:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
 
 

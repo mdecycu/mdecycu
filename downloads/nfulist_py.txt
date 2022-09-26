@@ -1,0 +1,37 @@
+import requests
+import bs4
+ 
+proxies = {
+        'http': 'http://kmolab:kmolab@[2001:288:6004:17::4]:3128',
+        'https': 'http://kmolab:kmolab@[2001:288:6004:17::4]:3128'
+        }
+ 
+semester = '1091'
+courseno = '0762'
+column = True
+ 
+headers = {'X-Requested-With': 'XMLHttpRequest'}
+ 
+url = 'https://qry.nfu.edu.tw/studlist_ajax.php'
+post_var = {'pselyr': semester, 'pseqno': courseno}
+ 
+# need to executed through proxy server
+result = requests.post(url, data = post_var, headers = headers, proxies=proxies)
+ 
+soup = bs4.BeautifulSoup(result.content, 'lxml')
+table = soup.find('table', {'class': 'tbcls'})
+data = []
+rows = table.find_all('tr')
+for row in rows:
+    cols = row.find_all('td')
+    cols = [ele.text.strip() for ele in cols]
+    data.append([ele for ele in cols if ele]) # Get rid of empty values
+output = ""
+for i in data[2:]:
+    #print(i[0])
+    if column == "True":
+        output +=i[0] + "</br>"
+    else:
+        output +=i[0] + "\n"
+ 
+print(output)

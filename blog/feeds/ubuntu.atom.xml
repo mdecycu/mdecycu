@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - Ubuntu</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/ubuntu.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-18T11:44:13+08:00</updated><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-18T11:44:13+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - Ubuntu</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/ubuntu.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-25T12:10:07+08:00</updated><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-25T12:10:07+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 
 
 &lt;h1&gt;Ubuntu&lt;/h1&gt;
 &lt;p&gt;目前使用 Ubuntu 20.04 與 22.04, 20.04 生命週期可以到 2025, 而 22.04 則可以到 2027, 其中主要安裝配置 Squid, Bind, Nginx, uwsgi 以及 Fossil SCM. 管理的網域有 mde.nfu 與 eng.nfu.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EfWBQcgCF1FKhNNlKWkfvcEBFDXS76R4GPTZaWtH2PIdjA?e=pOuKVD"&gt;Ubuntu 22.04 vdi&lt;/a&gt; Virtualbox 虛擬主機檔案.&lt;/p&gt;
 &lt;h1&gt;基本指令&lt;/h1&gt;
 &lt;p&gt;查 Ubuntu 操作系統的版本:&lt;/p&gt;
 &lt;p&gt;lsb_release -a &lt;/p&gt;
@@ -100,4 +101,8 @@ ufw enable
 &lt;h1&gt;Ubuntu 的遠端桌面&lt;/h1&gt;
 &lt;p&gt;Ubuntu 安裝 Desktop 版本之後, 可以加裝 xrdp, 並且允許遠端主機對 port 3389 連線, 就可以從其他操作系統電腦上, 以 Remote Desktop client 進行遠端連線:&lt;/p&gt;
 &lt;p&gt;sudo apt install xrdp&lt;/p&gt;
-&lt;p&gt;在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry></feed>
+&lt;p&gt;在 Mac 操作系統上, 可以安裝 Microsoft Remote Desktop 套件對遠端的 Ubuntu 進行連線操控. 在 Ubuntu 則可以使用 Remmina 作為 Remote Desktop client.&lt;/p&gt;
+&lt;h1&gt;Add super user account&lt;/h1&gt;
+&lt;p&gt;新增 username 帳號, 並授予管理者權限.&lt;/p&gt;
+&lt;p&gt;sudo adduser username&lt;/p&gt;
+&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry></feed>
