@@ -1326,6 +1326,82 @@ db.connect()
 db.create_tables([MyUser])
 &lt;/pre&gt;
 
+Windows TCExam
+====
+
+nginx 只允許特定 IPv6 網段連線, 且將 http 用戶跳轉至 https 設定:
+
+&lt;pre class="brush: jscript"&gt;
+server {
+    listen       [::]:80 default ipv6only=on;
+    server_name  domain.cycu.org;
+    #return       301 https://$server_name$request_uri;
+     
+    allow 2001:288:6004:xx::0/32;
+    deny all;
+ 
+return 302 https://domain.cycu.org;
+     
+    #location /{
+        #root C:/tcexam_dir/downloads;
+        #auth_basic "For Authorized Users Only!";
+        #auth_basic_user_file C:/tcexam_dir/nginx-1.20.1/.htpasswd;
+    #}
+}
+&lt;/pre&gt;
+
+nginx 執行 php 解譯設定:
+
+&lt;pre class="brush: jscript"&gt;
+server { 
+    listen    [::]:443 default ssl ipv6only=on;
+     
+    root C:/tcexam_dir/tcexam;
+ 
+    server_name    domain.cycu.org;
+    ssl_certificate    C:/tcexam_dir/fullchain.pem;
+    ssl_certificate_key    C:/tcexam_dir/privkey.pem;
+    ssl_protocols    TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers    HIGH:!aNULL:!MD5;
+     
+    allow 2001:288:6004:xx::0/32;
+    deny all;
+     
+    location /{ 
+        index index.html index.php;
+    }
+     
+    location ~ \.php$ {
+        fastcgi_pass   127.0.0.1:9123;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+&lt;/pre&gt;
+
+fastcgi 在 port 9123 啟動的 batch file:
+
+&lt;pre class="brush: jscript"&gt;
+@ECHO OFF
+ECHO Starting PHP FastCGI...
+set PATH=C:\PHP8.1.7;%PATH%
+c:\PHP8.1.7\RunHiddenConsole.exe C:\PHP8.1.7\php-cgi.exe -b 127.0.0.1:9123
+&lt;/pre&gt;
+
+若採用 nssm 建立服務, 則透過下列設定建立:
+
+nssm install php 建立 php 服務.
+
+nssm edit php 則用來編輯服務.
+
+&lt;pre class="brush: jscript"&gt;
+Path: C:\tcexam_dir\php8.1.7\php-cgi.exe
+ 
+Startup Directory: C:\tcexam_dir\php8.1.7
+ 
+Arguments: -b 127.0.0.1:9123
+&lt;/pre&gt;
 </t>
 <t tx="leo.20220901223644.1">@language md
 ---
@@ -2666,6 +2742,7 @@ Add super user account
 sudo adduser username
 
 sudo usermod -aG sudo username
+
 
 </t>
 <t tx="leo.20220918115308.1">@language md
