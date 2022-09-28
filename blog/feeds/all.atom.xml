@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-27T10:26:32+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-09-23T05:22:05+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-28T21:53:03+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-09-23T05:22:05+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
@@ -1096,7 +1096,7 @@ total: 28.29 GB
 &lt;p&gt;Learn Python the right way: &lt;a href="https://learnpythontherightway.com/#read"&gt;https://learnpythontherightway.com/#read&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.freecodecamp.org/news/how-to-use-replit/"&gt;https://www.freecodecamp.org/news/how-to-use-replit/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Python curriculum: &lt;a href="https://hackpacific.gitbooks.io/pythonium/content/"&gt;https://hackpacific.gitbooks.io/pythonium/content/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc"&gt;https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable python"></category><category term="cp2022"></category></entry><entry><title>有關 TCExam</title><link href="https://mde.tw/blog/about-tcexam.html" rel="alternate"></link><published>2022-09-01T12:00:00+08:00</published><updated>2022-09-27T10:26:32+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/about-tcexam.html</id><summary type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc"&gt;https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable python"></category><category term="cp2022"></category></entry><entry><title>有關 TCExam</title><link href="https://mde.tw/blog/about-tcexam.html" rel="alternate"></link><published>2022-09-01T12:00:00+08:00</published><updated>2022-09-28T21:53:03+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/about-tcexam.html</id><summary type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
 
 
@@ -1247,7 +1247,22 @@ Path: C:\tcexam_dir\php8.1.7\php-cgi.exe
 Startup Directory: C:\tcexam_dir\php8.1.7
 
 Arguments: -b 127.0.0.1:9123
-&lt;/pre&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-25T11:57:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
+&lt;/pre&gt;
+
+&lt;h1&gt;在 TCExam 準備線上試卷&lt;/h1&gt;
+&lt;p&gt;使用說明: &lt;a href="https://tcexam.org/docs/first_test/"&gt;https://tcexam.org/docs/first_test/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以管理者帳號登入, 進入 admin 頁面. Group 代表開課班級, 在此分別建立 cp2022_四設一甲, cp2022_四設一乙, cad2022_四設二甲與 cad2022_四設二乙 等四個開課班級 Group. 當使用者自行建立考試帳號時, 必須選擇所屬班級 Group, 若同時選修兩個班級的課程, 必須同時選擇多個 Group.&lt;/p&gt;
+&lt;p&gt;建立題庫時, 以 Module 來區分測驗試題的模組類別, 例如: 可以針對開設課程"計算機程式"名稱建立試題模組, 也可以針對主題建立 Module. 目前建立 cp2022, cad2022 與 network_setting 等三個試題模組.&lt;/p&gt;
+&lt;p&gt;進入試題模組 (考試題目的類別與範圍) 後, 可以再將試題細分 Topic, 例如 network_setting 模組就包含與 cadlab 有關的 Topic, 而 cp2022 試題模組則依照週次加以界定 Topic, 目前的主題訂為 w1-w3, 希望根據上課各週的進度與內容命題.&lt;/p&gt;
+&lt;p&gt;管理者登入後, 選擇 public 即進入一般用戶介面.&lt;/p&gt;
+&lt;p&gt;以下題庫範例:&lt;/p&gt;
+&lt;p&gt;Group (代表開課班級) - Module (試題的最大分類) - Topic (試題的次主題分類)&lt;/p&gt;
+&lt;p&gt;cp2022_四設一甲 - cp2022 - w1-w3&lt;/p&gt;
+&lt;p&gt;只允許系上網段可以考試, 外部電腦必須設定代理主機後才可參與考試:&lt;/p&gt;
+&lt;p&gt;authorized IP's: 2001:288:6004:17::&lt;/p&gt;
+&lt;p&gt;basic points: 每一個題目得分, 若總題數為 10 題, 則 basic points 為 10 分, 總分為 100 分.&lt;/p&gt;
+&lt;p&gt;partial score for MCMA: 打勾, 表示針對 Multiple Choice Multiple Answer 允許部分給分.&lt;/p&gt;
+&lt;p&gt;Let'sEncrypt renew: 開啟管理者模式下的 cmd, 然後執行 "C:\Program Files (x86)\Certbot\bin\certbot" renew&lt;/p&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-25T11:57:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 
 
@@ -1837,7 +1852,7 @@ for i in elemList:
     leo_print(i)
 &lt;/pre&gt;
 
-&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ESXbxhDmlUhBmPTUqAdTrLEBjvaqzZupKcgviAmxWGQdjQ"&gt;CoppeliaSimEdu_4.3.0_rev12.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/ESXjJcIX4m9Jm-gX990RwIQBWelBgw8zf0NdKb8qAIxKtQ?e=VlYiHu"&gt;CoppeliaSimEdu_4.3.0_rev12.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cad2022"></category><category term="Coppeliasim"></category><category term="cad2022"></category></entry><entry><title>2022 Fall CP 課程</title><link href="https://mde.tw/blog/2022-Fall-Intro-to-computer-programming.html" rel="alternate"></link><published>2022-08-19T11:00:00+08:00</published><updated>2022-09-22T23:19:38+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-19:/blog/2022-Fall-Intro-to-computer-programming.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ESXbxhDmlUhBmPTUqAdTrLEBjvaqzZupKcgviAmxWGQdjQ"&gt;CoppeliaSimEdu_4.3.0_rev12.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/ESXjJcIX4m9Jm-gX990RwIQBWelBgw8zf0NdKb8qAIxKtQ?e=VlYiHu"&gt;CoppeliaSimEdu_4.3.0_rev12.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cad2022"></category><category term="Coppeliasim"></category><category term="cad2022"></category></entry><entry><title>2022 Fall CP 課程</title><link href="https://mde.tw/blog/2022-Fall-Intro-to-computer-programming.html" rel="alternate"></link><published>2022-08-19T11:00:00+08:00</published><updated>2022-09-28T13:36:17+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-19:/blog/2022-Fall-Intro-to-computer-programming.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
 
 
@@ -1906,7 +1921,7 @@ var winkVideoData_w1_1 = {
 &lt;/div&gt;
 
 &lt;h1&gt;建立 Github 帳號&lt;/h1&gt;
-&lt;p&gt;請尚未建立 Github 帳號的學員, 至 &lt;a href="https://github.com/join"&gt;https://github.com/join&lt;/a&gt; 申請帳號. 課程評分項目將包含利用 &lt;a href="https://classroom.github.com"&gt;Github Classroom&lt;/a&gt; 建立的倉儲與網站內容 (透過 invite link). 2022fall Github 帳號與學號對照的倉儲位於 &lt;a href="https://github.com/mdecycu/studlist/tree/main/2022fall"&gt;https://github.com/mdecycu/studlist/tree/main/2022fall&lt;/a&gt;, w2 起將利用 &lt;a href="https://ethercalc.net/"&gt;https://ethercalc.net/&lt;/a&gt; 在線由各學員自行輸入, 之後若 Github 更動, 則可以透過 [Pull Requests] 提出修改請求.&lt;/p&gt;
+&lt;p&gt;請尚未建立 Github 帳號的學員, 至 &lt;a href="https://github.com/join"&gt;https://github.com/join&lt;/a&gt; 申請帳號. 課程評分項目將包含利用 &lt;a href="https://classroom.github.com"&gt;Github Classroom&lt;/a&gt; 建立的倉儲與網站內容 (透過 invite link). 2022fall Github 帳號與學號對照的倉儲位於 &lt;a href="https://github.com/mdecycu/studlist/tree/main/2022fall"&gt;https://github.com/mdecycu/studlist/tree/main/2022fall&lt;/a&gt;, w2 起將利用 &lt;a href="https://ethercalc.net/"&gt;https://ethercalc.net/&lt;/a&gt; 在線由各學員自行輸入, 之後若 Github 更動, 則可以透過 &lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"&gt;Pull Requests&lt;/a&gt; 提出修改請求.&lt;/p&gt;
 &lt;h1&gt;建立 Onedrive 帳號&lt;/h1&gt;
 &lt;p&gt;請尚未建立 Onedrive 帳號的學員登入 @nfu 帳號後, 至 &lt;a href="https://www.microsoft.com/zh-tw/education/products/office"&gt;https://www.microsoft.com/zh-tw/education/products/office&lt;/a&gt;, 以 @nfu 帳號申請 Onedrive 5TB 儲存權限. 課程中所提供的檔案, 需要登入以 @nfu 註冊的 Onedrive 帳號後, 才能下載.&lt;/p&gt;
 &lt;h1&gt;利用 &lt;a href="https://github.com"&gt;Github&lt;/a&gt; 建立網頁&lt;/h1&gt;

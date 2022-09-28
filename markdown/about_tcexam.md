@@ -188,3 +188,38 @@ Startup Directory: C:\tcexam_dir\php8.1.7
  
 Arguments: -b 127.0.0.1:9123
 </pre>
+
+在 TCExam 準備線上試卷
+====
+
+使用說明: <https://tcexam.org/docs/first_test/>
+
+以管理者帳號登入, 進入 admin 頁面. Group 代表開課班級, 在此分別建立 cp2022_四設一甲, cp2022_四設一乙, cad2022_四設二甲與 cad2022_四設二乙 等四個開課班級 Group. 當使用者自行建立考試帳號時, 必須選擇所屬班級 Group, 若同時選修兩個班級的課程, 必須同時選擇多個 Group.
+
+建立題庫時, 以 Module 來區分測驗試題的模組類別, 例如: 可以針對開設課程"計算機程式"名稱建立試題模組, 也可以針對主題建立 Module. 目前建立 cp2022, cad2022 與 network_setting 等三個試題模組.
+
+進入試題模組 (考試題目的類別與範圍) 後, 可以再將試題細分 Topic, 例如 network_setting 模組就包含與 cadlab 有關的 Topic, 而 cp2022 試題模組則依照週次加以界定 Topic, 目前的主題訂為 w1-w3, 希望根據上課各週的進度與內容命題.
+
+管理者登入後, 選擇 public 即進入一般用戶介面.
+
+以下題庫範例:
+
+Group (代表開課班級) - Module (試題的最大分類) - Topic (試題的次主題分類)
+
+cp2022_四設一甲 - cp2022 - w1-w3
+
+只允許系上網段可以考試, 外部電腦必須設定代理主機後才可參與考試:
+
+authorized IP's: 2001:288:6004:17::
+
+basic points: 每一個題目得分, 若總題數為 10 題, 則 basic points 為 10 分, 總分為 100 分.
+
+partial score for MCMA: 打勾, 表示針對 Multiple Choice Multiple Answer 允許部分給分.
+
+Let'sEncrypt renew: 開啟管理者模式下的 cmd, 然後執行 "C:\Program Files (x86)\Certbot\bin\certbot" renew
+
+
+
+
+
+
