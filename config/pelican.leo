@@ -3257,7 +3257,7 @@ Replit and Github
 
 git submodule update --init --recursive
 
-pip install   flask flask_cors bs4 lxml pelican markdown 
+pip install   flask flask_cors bs4 lxml pelican markdown gevent
 
 2b 開始在  &lt;https://exam.cycu.org&gt; 建立考試帳號.
 </t>
