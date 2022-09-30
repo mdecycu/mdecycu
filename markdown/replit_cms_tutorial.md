@@ -23,7 +23,7 @@ Author: mdecycu
 3. 利用 import repository, 以 [cmsite] 倉儲內容, 建立 repl
 4. 進入 .replit 檔案設定頁面, 將 main.py 設定為啟動程式
 5. 在 shell 介面執行 git submodule update --init --recursive, 取下 [cmsite] 倉儲中 cmsimde 子模組檔案
-6. 在 shell 介面執行 pip install flask flask_cors bs4 lxml pelican markdown, 安裝 cmsimde 所需要的模組
+6. 在 shell 介面執行 pip install flask flask_cors bs4 lxml pelican markdown gevent, 安裝 cmsimde 所需要的模組
 7. 按下 Run, 啟動 main.py
 8. 登入 [cmsite] 動態網站, 修改管理者密碼, 修改標題與內容後, 以 generate_pages 將動態網頁內容轉為靜態格式
 9. 利用 [Replit] 中的 Version Control 功能, 將改版資料推向遠端倉儲

@@ -2318,7 +2318,7 @@ Author: mdecycu
 3. 利用 import repository, 以 [cmsite] 倉儲內容, 建立 repl
 4. 進入 .replit 檔案設定頁面, 將 main.py 設定為啟動程式
 5. 在 shell 介面執行 git submodule update --init --recursive, 取下 [cmsite] 倉儲中 cmsimde 子模組檔案
-6. 在 shell 介面執行 pip install flask flask_cors bs4 lxml pelican markdown, 安裝 cmsimde 所需要的模組
+6. 在 shell 介面執行 pip install flask flask_cors bs4 lxml pelican markdown gevent, 安裝 cmsimde 所需要的模組
 7. 按下 Run, 啟動 main.py
 8. 登入 [cmsite] 動態網站, 修改管理者密碼, 修改標題與內容後, 以 generate_pages 將動態網頁內容轉為靜態格式
 9. 利用 [Replit] 中的 Version Control 功能, 將改版資料推向遠端倉儲
@@ -2464,7 +2464,7 @@ git submodule update --init --recursive
 
 目的是取下子模組資料, 因為 [Replit] 與 Github 的連結, 似乎只使用 git clone, 並沒有加上 --recurse-submodules, 使用者必須手動執行.
 
-另外則是利用 pip install flask flask_cors bs4 lxml pelican markdown 安裝 cmsimde 所需模組, 與上述近端改版的差異是: 無需安裝 [leo] 與 pyopenssl, 因為系統是在雲端 Replit 的主機上執行,  目前還無法在 [Replit] 系統上使用 [leo], 也無需自行配置近端伺服器的 SSL.
+另外則是利用 pip install flask flask_cors bs4 lxml pelican markdown gevent 安裝 cmsimde 所需模組, 與上述近端改版的差異是: 無需安裝 [leo] 與 pyopenssl, 因為系統是在雲端 Replit 的主機上執行,  目前還無法在 [Replit] 系統上使用 [leo], 也無需自行配置近端伺服器的 SSL.
 
 一旦將動態網站配置到 [Replit] 之後, 可以將動態網頁改版內容, 同步到對應的 Github 倉儲, 主要利用倉儲的 [Github Pages] 伺服靜態網頁.
 
