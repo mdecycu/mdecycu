@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-09-30T15:29:46+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-09-29T14:13:56+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-02T23:22:26+08:00</updated><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-02T23:22:26+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
+
+
+&lt;h1&gt;廠商提供的伺服器&lt;/h1&gt;
+&lt;p&gt;github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器中, 只有 mail2000 由學校購買, 其餘都使用免費帳號, 之所以免費, 是以使用歷程換來的. 可想而知, 各廠商所提供的免費帳號都有許多限制, 其中 replit 雖然使用方便, 但所能取得的免費資源有限, 當使用頻率較高時, 經常會無法連線.&lt;/p&gt;
+&lt;p&gt;至於自架的 Flask server, 因為硬體在校內工作站室, 偶爾會有斷電與主機故障的問題, 但正常運作下, 仍然比雲端許多免費帳號下的伺服器好用許多.&lt;/p&gt;
+&lt;h2&gt;自架 Server&lt;/h2&gt;
+&lt;p&gt;假如要以自己架設的伺服器來取代 Replit, 第一步是如何在 Ubuntu 22.04 Server 上建立每位學員的帳號. 使用 &lt;a href="https://manpages.ubuntu.com/manpages/xenial/man8/newusers.8.html"&gt;newusers&lt;/a&gt; 指令, 配合建立一個包含帳號、密碼、uid、gid、comment、home dir 以及 shell (/bin/bash) 資料的 users.txt, 然後使用 sudo newusers users.txt 就可以完成所有學員帳號的建立. 但必須要先取得初始 uid, 也就是列出現有帳號的所屬 uid, 然後才能設定後續代號的 user id.&lt;/p&gt;
+&lt;p&gt;列出現有帳號 uid 的指令為: cut -d: -f1,3 /etc/passwd&lt;/p&gt;
+&lt;p&gt;表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料. 假如傳回:&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+root:0
+daemon:1
+bin:2
+sys:3
+sync:4
+games:5
+man:6
+lp:7
+mail:8
+news:9
+uucp:10
+proxy:13
+www-data:33
+backup:34
+list:38
+irc:39
+gnats:41
+nobody:65534
+_apt:100
+systemd-network:101
+systemd-resolve:102
+messagebus:103
+systemd-timesync:104
+pollinate:105
+sshd:106
+syslog:107
+uuidd:108
+tcpdump:109
+tss:110
+landscape:111
+usbmux:112
+tcexam:1000
+lxd:999
+postgres:113
+tcexamdb:1001
+cad2022:1002
+stunnel4:998
+cd1:1002
+cd3:1003
+&lt;/pre&gt;
+
+&lt;p&gt;表示新建帳號的 uid 與 gid 就可以從 1004 開始, 然後連續增量後配給新的用戶.&lt;/p&gt;
+&lt;h1&gt;IP 位址或埠號分配&lt;/h1&gt;
+&lt;p&gt;當各學員在一台 Ubuntu 22.04 Server 上擁有帳號 (最理想的情況是用 Email 通知其主機資訊與帳號密碼) 之後, 隨即可以利用 ssh 進行遠端登入.&lt;/p&gt;
+&lt;p&gt;進入 Ubuntu 操作系統後, 就能夠利用 git clone 取下課程倉儲, 然後利用 python3 cmsimde/wsgi.py 執行動態網頁, 若各學員能夠從 port 8000 - 9000 之間進行分配區隔, 只要各學員配合修改 init.py 中的 IP 與 port 設定後, 就可以分別以自架主機取代 Replit.&lt;/p&gt;
+&lt;h2&gt;waitress&lt;/h2&gt;
+&lt;p&gt;直接利用 Python3 執行 wsgi.py 儘管可以讓使用者登入編輯動態網站, 但效率並沒有 wsgi 模式高, 因此若能採用 &lt;a href="https://docs.pylonsproject.org/projects/waitress/en/stable/index.html"&gt;waitress&lt;/a&gt; 的方式啟用動態網頁, 應該是較好的做法. 但 https 對外連線仍需透過 Stunnel 或 Nginx 銜接完成.&lt;/p&gt;
+&lt;p&gt;這時, 只要在倉儲根目錄建立 waitress_server.py&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from waitress import serve
+from cmsimde import flaskapp
+
+serve(flaskapp.app, listen="127.0.0.1:9443")
+&lt;/pre&gt;
+
+&lt;p&gt;然後 stunnel.conf 搭配設定:&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+[https]
+accept = stud.cycu.org:443
+connect = 127.0.0.1:9443
+cert = fullchain.pem
+key = privkey.pem
+TIMEOUTclose = 0
+&lt;/pre&gt;
+
+&lt;p&gt;就可以在 python3 waitress_server.py 執行下, 讓外部以 https://stud.cycu.org 連結到對應的動態網頁.&lt;/p&gt;
+&lt;p&gt;在此的問題是, waitress_server.py 如何以 service 啟動, stunnel 如何搭配執行. 最簡單的情況是 Stunnel 先以 service 執行, 但事先納入所有學員的規劃 port, 其中包括內容 port 以及外部 port, 並且讓學員在需要編輯動態網頁的時候, 自行啟動各自的 waitress_server.py&lt;/p&gt;</content><category term="Server"></category><category term="w4"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
@@ -31,7 +109,7 @@
 &lt;p&gt;必須進入 Shell, 在倉儲根目錄執行下列兩則指令 (取下子模組內容, 並安裝執行所需模組).&lt;/p&gt;
 &lt;p&gt;git submodule update --init --recursive&lt;/p&gt;
 &lt;p&gt;pip install   flask flask_cors bs4 lxml pelican markdown gevent&lt;/p&gt;
-&lt;p&gt;2b 開始在  &lt;a href="https://exam.cycu.org"&gt;https://exam.cycu.org&lt;/a&gt; 建立考試帳號.&lt;/p&gt;</content><category term="cad2022"></category><category term="w3"></category></entry><entry><title>cp2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cp2022_w3.html" rel="alternate"></link><published>2022-09-22T11:00:00+08:00</published><updated>2022-09-29T14:11:58+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cp2022_w3.html</id><summary type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+&lt;p&gt;2b 開始在  &lt;a href="https://exam.cycu.org"&gt;https://exam.cycu.org&lt;/a&gt; 建立考試帳號.&lt;/p&gt;</content><category term="cad2022"></category><category term="w3"></category></entry><entry><title>cp2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cp2022_w3.html" rel="alternate"></link><published>2022-09-22T11:00:00+08:00</published><updated>2022-09-26T11:25:31+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cp2022_w3.html</id><summary type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;計算機程式第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
@@ -133,7 +211,7 @@ if __name__ == '__main__':
 &lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0761&amp;amp;column=True"&gt;1b 計算機程式修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0773&amp;amp;column=True"&gt;2a 電腦輔助設計與實習修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nfu.cycu.org/?semester=1111&amp;amp;courseno=0786&amp;amp;column=True"&gt;2b 電腦輔助設計與實習修課學員名單&lt;/a&gt; (取自教務主機)&lt;/li&gt;
-&lt;/ol&gt;</content><category term="cp2022"></category><category term="w3"></category></entry><entry><title>有關 CAD</title><link href="https://mde.tw/blog/2022_fall_about_cad.html" rel="alternate"></link><published>2022-09-21T11:00:00+08:00</published><updated>2022-09-22T10:04:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-21:/blog/2022_fall_about_cad.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="cp2022"></category><category term="w3"></category></entry><entry><title>有關 CAD</title><link href="https://mde.tw/blog/2022_fall_about_cad.html" rel="alternate"></link><published>2022-09-21T11:00:00+08:00</published><updated>2022-09-21T05:50:40+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-21:/blog/2022_fall_about_cad.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與 CAD 有關的應用議題.&lt;/p&gt;
 
 
@@ -145,7 +223,7 @@ if __name__ == '__main__':
 &lt;p&gt;PTC Creo&lt;/p&gt;
 &lt;p&gt;Dassalut Catia&lt;/p&gt;
 &lt;p&gt;Onshape&lt;/p&gt;
-&lt;p&gt;AutoDesk Fusion 360&lt;/p&gt;</content><category term="CAD"></category><category term="cad2022"></category></entry><entry><title>有關 PostgreSQL</title><link href="https://mde.tw/blog/2022_fall_about_postgresql.html" rel="alternate"></link><published>2022-09-20T11:00:00+08:00</published><updated>2022-09-22T10:04:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-20:/blog/2022_fall_about_postgresql.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 PostgreSQL 有關的設定與應用議題.&lt;/p&gt;
+&lt;p&gt;AutoDesk Fusion 360&lt;/p&gt;</content><category term="CAD"></category><category term="cad2022"></category></entry><entry><title>有關 PostgreSQL</title><link href="https://mde.tw/blog/2022_fall_about_postgresql.html" rel="alternate"></link><published>2022-09-20T11:00:00+08:00</published><updated>2022-09-21T08:50:46+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-20:/blog/2022_fall_about_postgresql.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與 PostgreSQL 有關的設定與應用議題.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與 PostgreSQL 有關的設定與應用議題.&lt;/p&gt;
 
 
@@ -164,7 +242,7 @@ if __name__ == '__main__':
 &lt;p&gt;database service: postgresql-x64-14&lt;/p&gt;
 &lt;p&gt;disable Stack Builder download function&lt;/p&gt;
 &lt;p&gt;安裝結束後, postgresql-x64-14 服務將會自動執行.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://docs.postgresql.tw/reference/server-applications/pg_ctl"&gt;pg_ctl&lt;/a&gt; - initialize, start, stop, or control a PostgreSQL server&lt;/p&gt;</content><category term="PostgreSQL"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關網路</title><link href="https://mde.tw/blog/2022_fall_about_network.html" rel="alternate"></link><published>2022-09-18T11:00:00+08:00</published><updated>2022-09-22T10:04:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-18:/blog/2022_fall_about_network.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 在綜一館八樓的電腦網路使用與觀察.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.postgresql.tw/reference/server-applications/pg_ctl"&gt;pg_ctl&lt;/a&gt; - initialize, start, stop, or control a PostgreSQL server&lt;/p&gt;</content><category term="PostgreSQL"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關網路</title><link href="https://mde.tw/blog/2022_fall_about_network.html" rel="alternate"></link><published>2022-09-18T11:00:00+08:00</published><updated>2022-09-20T16:19:23+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-18:/blog/2022_fall_about_network.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 在綜一館八樓的電腦網路使用與觀察.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 在綜一館八樓的電腦網路使用與觀察.&lt;/p&gt;
 
 
@@ -247,7 +325,7 @@ Estimated Total Devices From Mfg    48,768,750
 &lt;/pre&gt;
 
 &lt;p&gt;根據判斷, 這應該是一台 Wifi Router, 誤將應該連接內部網路的接頭聯外.&lt;/p&gt;
-&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-29T14:11:58+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
+&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-26T22:46:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 
 
@@ -353,7 +431,7 @@ ufw enable
 &lt;h1&gt;Add super user account&lt;/h1&gt;
 &lt;p&gt;新增 username 帳號, 並授予管理者權限.&lt;/p&gt;
 &lt;p&gt;sudo adduser username&lt;/p&gt;
-&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-22T10:04:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
+&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-20T16:55:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 
 
@@ -369,7 +447,7 @@ ufw enable
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vzivLVgeJ48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1&gt;有夠好先生&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.ece.utexas.edu/people/faculty/john-goodenough"&gt;John Goodenough&lt;/a&gt; 先生今年正好滿一百歲, 在 1986 年轉到 UT Austin 機械系任教, 他不僅是至今獲頒諾貝爾獎最高齡紀錄保持人, 也是目前德州大學唯二之一的諾貝爾獎者鎮校之寶. 他的教研生涯堪稱有夠好!!&lt;/p&gt;</content><category term="Video"></category><category term="Inspiring"></category></entry><entry><title>2022 秋季學期第二週</title><link href="https://mde.tw/blog/2022_fall_semester_week2.html" rel="alternate"></link><published>2022-09-13T12:00:00+08:00</published><updated>2022-09-30T15:29:46+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/2022_fall_semester_week2.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程的相關規劃與期程安排.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.ece.utexas.edu/people/faculty/john-goodenough"&gt;John Goodenough&lt;/a&gt; 先生今年正好滿一百歲, 在 1986 年轉到 UT Austin 機械系任教, 他不僅是至今獲頒諾貝爾獎最高齡紀錄保持人, 也是目前德州大學唯二之一的諾貝爾獎者鎮校之寶. 他的教研生涯堪稱有夠好!!&lt;/p&gt;</content><category term="Video"></category><category term="Inspiring"></category></entry><entry><title>2022 秋季學期第二週</title><link href="https://mde.tw/blog/2022_fall_semester_week2.html" rel="alternate"></link><published>2022-09-13T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/2022_fall_semester_week2.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程的相關規劃與期程安排.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程的相關規劃與期程安排.&lt;/p&gt;
 
 
@@ -466,7 +544,7 @@ ufw enable
 &lt;p&gt;線上 &lt;a href="https://docs.sw.siemens.com/en-US/release/209349590/NX%202007%20Series"&gt;NX2007 EN Documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.coppeliarobotics.com/"&gt;Coppeliasim&lt;/a&gt; 所使用的版本則為 4.3.0 rev12:&lt;/p&gt;
 &lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ESXbxhDmlUhBmPTUqAdTrLEBjvaqzZupKcgviAmxWGQdjQ"&gt;CoppeliaSim 4.3.0 rev12.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/ESXjJcIX4m9Jm-gX990RwIQBWelBgw8zf0NdKb8qAIxKtQ"&gt;CoppeliaSim 4.3.0 rev12.7z for @nfu&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本學期的電腦輔助與實習課程, 零組件繪圖的部分將從 &lt;a href="https://docs.sw.siemens.com/documentation/external/PL20200605194735749/en-US/static/design_day_one/index.html#"&gt;design day one&lt;/a&gt; (或 &lt;a href="http://c1.cycu.org:88"&gt;http://c1.cycu.org:88&lt;/a&gt;) 的練習開始. 其中包括觀看各英文教學影片.&lt;/p&gt;</content><category term="cad2022"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Replit 建立網站導引</title><link href="https://mde.tw/blog/replit_cmsimde_tutorial.html" rel="alternate"></link><published>2022-09-11T12:00:00+08:00</published><updated>2022-09-30T15:29:46+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-11:/blog/replit_cmsimde_tutorial.html</id><summary type="html">&lt;p&gt;這裡將說明如何利用 &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 與 &lt;a href="https://github.com/mdecycu/cmsite"&gt;cmsite&lt;/a&gt; 建立動態與靜態網頁.&lt;/p&gt;
+&lt;p&gt;本學期的電腦輔助與實習課程, 零組件繪圖的部分將從 &lt;a href="https://docs.sw.siemens.com/documentation/external/PL20200605194735749/en-US/static/design_day_one/index.html#"&gt;design day one&lt;/a&gt; (或 &lt;a href="http://c1.cycu.org:88"&gt;http://c1.cycu.org:88&lt;/a&gt;) 的練習開始. 其中包括觀看各英文教學影片.&lt;/p&gt;</content><category term="cad2022"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Replit 建立網站導引</title><link href="https://mde.tw/blog/replit_cmsimde_tutorial.html" rel="alternate"></link><published>2022-09-11T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-11:/blog/replit_cmsimde_tutorial.html</id><summary type="html">&lt;p&gt;這裡將說明如何利用 &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 與 &lt;a href="https://github.com/mdecycu/cmsite"&gt;cmsite&lt;/a&gt; 建立動態與靜態網頁.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將說明如何利用 &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 與 &lt;a href="https://github.com/mdecycu/cmsite"&gt;cmsite&lt;/a&gt; 建立動態與靜態網頁.&lt;/p&gt;
 
 
@@ -509,7 +587,7 @@ var winkVideoData_replit1 = {
 &lt;li&gt;&lt;a href="https://replit.com/site/teams-for-education"&gt;https://replit.com/site/teams-for-education&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.cs.carleton.edu/faculty/dmusicant/blog/replit-during-spring-2020/"&gt;https://www.cs.carleton.edu/faculty/dmusicant/blog/replit-during-spring-2020/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.cs.carleton.edu/faculty/dmusicant/blog/replit-following-spring-2021/"&gt;https://www.cs.carleton.edu/faculty/dmusicant/blog/replit-following-spring-2021/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Replit"></category><category term="cmsimde"></category><category term="replit"></category></entry><entry><title>免付費完結篇</title><link href="https://mde.tw/blog/the_end_of_free_service.html" rel="alternate"></link><published>2022-09-07T12:00:00+08:00</published><updated>2022-09-15T12:37:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-07:/blog/the_end_of_free_service.html</id><summary type="html">&lt;p&gt;天下沒有白吃的午餐. 2017 年 OpenShift 就曾經終止過免付費雲端應用服務, 2022 年GDrive 也才剛終止教育單位無限空間, &lt;a href="https://blog.heroku.com/next-chapter"&gt;上個月&lt;/a&gt;, 終於輪到 Heroku.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Replit"></category><category term="cmsimde"></category><category term="replit"></category></entry><entry><title>免付費完結篇</title><link href="https://mde.tw/blog/the_end_of_free_service.html" rel="alternate"></link><published>2022-09-07T12:00:00+08:00</published><updated>2022-09-10T22:00:55+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-07:/blog/the_end_of_free_service.html</id><summary type="html">&lt;p&gt;天下沒有白吃的午餐. 2017 年 OpenShift 就曾經終止過免付費雲端應用服務, 2022 年GDrive 也才剛終止教育單位無限空間, &lt;a href="https://blog.heroku.com/next-chapter"&gt;上個月&lt;/a&gt;, 終於輪到 Heroku.&lt;/p&gt;
 &lt;p&gt;不過就在此時, &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 即將在雲端應用程式服務界, 取而代之.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;天下沒有白吃的午餐. 2017 年 OpenShift 就曾經終止過免付費雲端應用服務, 2022 年GDrive 也才剛終止教育單位無限空間, &lt;a href="https://blog.heroku.com/next-chapter"&gt;上個月&lt;/a&gt;, 終於輪到 Heroku.&lt;/p&gt;
 &lt;p&gt;不過就在此時, &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 即將在雲端應用程式服務界, 取而代之.&lt;/p&gt;
@@ -782,7 +860,7 @@ flaskapp.app.run(host='0.0.0.0', port=8080)
 
 &lt;p&gt;&lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 端的動態網站就可以啟動: &lt;a href="https://c.scrum1.repl.co"&gt;https://c.scrum1.repl.co&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;只要再處理 Github Pages 端倉儲的同步, 就可以得到靜態網站: &lt;a href="https://scrum-1.github.io/c"&gt;https://scrum-1.github.io/c&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;若資料直接先從 Github 倉儲進行改版, 則在 &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 端的 Version Control, 可以利用 pull, 將改版內容取回合併.&lt;/p&gt;</content><category term="Free"></category><category term="heroku"></category><category term="replit"></category></entry><entry><title>有關 Wink</title><link href="https://mde.tw/blog/about-wink.html" rel="alternate"></link><published>2022-09-07T11:00:00+08:00</published><updated>2022-09-16T11:08:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-07:/blog/about-wink.html</id><summary type="html">&lt;p&gt;這裡將收集與 Wink 有關的資料內容. Wink 是一套製作電腦操作展示的 freeware. 從 3.0 版之後, 所製作的教學影片以 ffmpeg 存為 mp4 格式, 並透過 Javascript 在網頁上與使用者進行互動.&lt;/p&gt;
+&lt;p&gt;若資料直接先從 Github 倉儲進行改版, 則在 &lt;a href="https://replit.com"&gt;Replit&lt;/a&gt; 端的 Version Control, 可以利用 pull, 將改版內容取回合併.&lt;/p&gt;</content><category term="Free"></category><category term="heroku"></category><category term="replit"></category></entry><entry><title>有關 Wink</title><link href="https://mde.tw/blog/about-wink.html" rel="alternate"></link><published>2022-09-07T11:00:00+08:00</published><updated>2022-09-15T22:23:31+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-07:/blog/about-wink.html</id><summary type="html">&lt;p&gt;這裡將收集與 Wink 有關的資料內容. Wink 是一套製作電腦操作展示的 freeware. 從 3.0 版之後, 所製作的教學影片以 ffmpeg 存為 mp4 格式, 並透過 Javascript 在網頁上與使用者進行互動.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將收集與 Wink 有關的資料內容. Wink 是一套製作電腦操作展示的 freeware. 從 3.0 版之後, 所製作的教學影片以 ffmpeg 存為 mp4 格式, 並透過 Javascript 在網頁上與使用者進行互動.&lt;/p&gt;
 
 
@@ -854,7 +932,7 @@ var winkVideoData_tutorial1 = {
 &amp;lt;source src="./../downloads/wink_tutorial/tutorial1.mp4" type="video/mp4"/&amp;gt;&amp;lt;/video&amp;gt;
 &amp;lt;/div&amp;gt;
 &amp;lt;br \&amp;gt;
-&lt;/pre&gt;</content><category term="Wink"></category><category term="mp4"></category><category term="ffmpeg"></category><category term="javascript"></category></entry><entry><title>有關 Github Classroom</title><link href="https://mde.tw/blog/about-classroom.html" rel="alternate"></link><published>2022-09-03T11:00:00+08:00</published><updated>2022-09-15T12:37:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-03:/blog/about-classroom.html</id><summary type="html">&lt;p&gt;這裡將收集與 Github Classroom 有關的資料內容. &lt;/p&gt;
+&lt;/pre&gt;</content><category term="Wink"></category><category term="mp4"></category><category term="ffmpeg"></category><category term="javascript"></category></entry><entry><title>有關 Github Classroom</title><link href="https://mde.tw/blog/about-classroom.html" rel="alternate"></link><published>2022-09-03T11:00:00+08:00</published><updated>2022-09-14T20:15:39+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-03:/blog/about-classroom.html</id><summary type="html">&lt;p&gt;這裡將收集與 Github Classroom 有關的資料內容. &lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將收集與 Github Classroom 有關的資料內容. &lt;/p&gt;
 
 
@@ -875,7 +953,7 @@ var winkVideoData_tutorial1 = {
 &lt;li&gt;assignment 倉儲的 template 可由管理者指定, 且學員對 assignment 倉儲所具備的管理權限, 可由管理者事前統一設定.&lt;/li&gt;
 &lt;li&gt;管理者可以控制學員所建立的 assignment 倉儲, 令其無法 delete, 因此課堂結束後管理者仍可完整保留學員的課程倉儲.&lt;/li&gt;
 &lt;li&gt;當管理者賦予學員對 assignment 倉儲擁有 admin 權限後, 學員可自行啟用倉儲的 Github Pages 功能, 利用倉儲內容建立課程網站.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Github"></category><category term="Classroom"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>有關 NX</title><link href="https://mde.tw/blog/about-nx.html" rel="alternate"></link><published>2022-09-02T11:00:00+08:00</published><updated>2022-09-16T11:08:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-02:/blog/about-nx.html</id><summary type="html">&lt;p&gt;這裡將收集與 NX 有關的資料內容. Siemens NX 在 2022.09.01 釋出最新版本為 NX2206.4020, 幾乎同步釋出的 NX2027 最新版本則為 build 3401. cd2022 電腦輔助設計與實習將使用 NX2027.3401 可攜版本.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Github"></category><category term="Classroom"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>有關 NX</title><link href="https://mde.tw/blog/about-nx.html" rel="alternate"></link><published>2022-09-02T11:00:00+08:00</published><updated>2022-09-15T22:45:35+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-02:/blog/about-nx.html</id><summary type="html">&lt;p&gt;這裡將收集與 NX 有關的資料內容. Siemens NX 在 2022.09.01 釋出最新版本為 NX2206.4020, 幾乎同步釋出的 NX2027 最新版本則為 build 3401. cd2022 電腦輔助設計與實習將使用 NX2027.3401 可攜版本.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將收集與 NX 有關的資料內容. Siemens NX 在 2022.09.01 釋出最新版本為 NX2206.4020, 幾乎同步釋出的 NX2027 最新版本則為 build 3401. cd2022 電腦輔助設計與實習將使用 NX2027.3401 可攜版本.&lt;/p&gt;
 
 
@@ -1063,7 +1141,7 @@ total: 28.29 GB
 &lt;p&gt;61 - 80 reference elements&lt;/p&gt;
 &lt;p&gt;81 - 100 faces&lt;/p&gt;
 &lt;p&gt;101 - 120 PMI&lt;/p&gt;
-&lt;p&gt;Ctrl + l - Layer Settings&lt;/p&gt;</content><category term="NX"></category><category term="Siemens"></category><category term="cad2022"></category></entry><entry><title>cp2022_w1</title><link href="https://mde.tw/blog/cp2022-w1.html" rel="alternate"></link><published>2022-09-01T13:00:00+08:00</published><updated>2022-09-15T12:37:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/cp2022-w1.html</id><summary type="html">&lt;p&gt;計算機程式課程第一週, 只有 1b 有課, 1a 因為中秋節放假.&lt;/p&gt;
+&lt;p&gt;Ctrl + l - Layer Settings&lt;/p&gt;</content><category term="NX"></category><category term="Siemens"></category><category term="cad2022"></category></entry><entry><title>cp2022_w1</title><link href="https://mde.tw/blog/cp2022-w1.html" rel="alternate"></link><published>2022-09-01T13:00:00+08:00</published><updated>2022-09-14T20:08:21+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/cp2022-w1.html</id><summary type="html">&lt;p&gt;計算機程式課程第一週, 只有 1b 有課, 1a 因為中秋節放假.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;計算機程式課程第一週, 只有 1b 有課, 1a 因為中秋節放假.&lt;/p&gt;
 
 
@@ -1096,7 +1174,7 @@ total: 28.29 GB
 &lt;p&gt;Learn Python the right way: &lt;a href="https://learnpythontherightway.com/#read"&gt;https://learnpythontherightway.com/#read&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.freecodecamp.org/news/how-to-use-replit/"&gt;https://www.freecodecamp.org/news/how-to-use-replit/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Python curriculum: &lt;a href="https://hackpacific.gitbooks.io/pythonium/content/"&gt;https://hackpacific.gitbooks.io/pythonium/content/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc"&gt;https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable python"></category><category term="cp2022"></category></entry><entry><title>有關 TCExam</title><link href="https://mde.tw/blog/about-tcexam.html" rel="alternate"></link><published>2022-09-01T12:00:00+08:00</published><updated>2022-09-29T14:11:58+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/about-tcexam.html</id><summary type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc"&gt;https://www.codementor.io/@garethdwyer/introduction-to-machine-learning-with-python-and-repl-it-rln7ywkhc&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable python"></category><category term="cp2022"></category></entry><entry><title>有關 TCExam</title><link href="https://mde.tw/blog/about-tcexam.html" rel="alternate"></link><published>2022-09-01T12:00:00+08:00</published><updated>2022-09-28T21:53:03+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/about-tcexam.html</id><summary type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將收集與 TCExam 有關的資料內容.&lt;/p&gt;
 
 
@@ -1262,7 +1340,7 @@ Arguments: -b 127.0.0.1:9123
 &lt;p&gt;authorized IP's: 2001:288:6004:17::&lt;/p&gt;
 &lt;p&gt;basic points: 每一個題目得分, 若總題數為 10 題, 則 basic points 為 10 分, 總分為 100 分.&lt;/p&gt;
 &lt;p&gt;partial score for MCMA: 打勾, 表示針對 Multiple Choice Multiple Answer 允許部分給分.&lt;/p&gt;
-&lt;p&gt;Let'sEncrypt renew: 開啟管理者模式下的 cmd, 然後執行 "C:\Program Files (x86)\Certbot\bin\certbot" renew&lt;/p&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-29T14:11:58+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
+&lt;p&gt;Let'sEncrypt renew: 開啟管理者模式下的 cmd, 然後執行 "C:\Program Files (x86)\Certbot\bin\certbot" renew&lt;/p&gt;</content><category term="tcexam"></category><category term="exam"></category><category term="php"></category><category term="pgsql"></category><category term="nginx"></category><category term="cp2022"></category><category term="cad2022"></category></entry><entry><title>Windows 常用指令</title><link href="https://mde.tw/blog/useful-windows-commands.html" rel="alternate"></link><published>2022-09-01T11:00:00+08:00</published><updated>2022-09-25T11:57:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-01:/blog/useful-windows-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;根據使用情境將常用的 Windows 指令加以整理.&lt;/p&gt;
 
 
@@ -1275,7 +1353,7 @@ Arguments: -b 127.0.0.1:9123
 &lt;p&gt;帳號建立後, 進入控制台 - 使用者帳戶區, 變更帳號屬性並新增密碼.&lt;/p&gt;
 &lt;h1&gt;Windows 10 教育版認證&lt;/h1&gt;
 &lt;p&gt;校內網段: 利用 &lt;a href="https://software.nfu.edu.tw/KMS/windows_kms.bat"&gt;win10_kms.bat&lt;/a&gt;, 以管理者權限執行, 即可完成認證.&lt;/p&gt;
-&lt;p&gt;校外網段: 利用 VPN 上網, 之後利用 &lt;a href="https://software.nfu.edu.tw/KMS/windows_kms.bat"&gt;win10_kms.bat&lt;/a&gt;, 以管理者權限執行, 即可完成認證.&lt;/p&gt;</content><category term="windows"></category><category term="batch"></category><category term="commands"></category></entry><entry><title>Git 常用指令</title><link href="https://mde.tw/blog/useful-git-commands.html" rel="alternate"></link><published>2022-08-28T11:00:00+08:00</published><updated>2022-09-08T12:11:02+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-28:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
+&lt;p&gt;校外網段: 利用 VPN 上網, 之後利用 &lt;a href="https://software.nfu.edu.tw/KMS/windows_kms.bat"&gt;win10_kms.bat&lt;/a&gt;, 以管理者權限執行, 即可完成認證.&lt;/p&gt;</content><category term="windows"></category><category term="batch"></category><category term="commands"></category></entry><entry><title>Git 常用指令</title><link href="https://mde.tw/blog/useful-git-commands.html" rel="alternate"></link><published>2022-08-28T11:00:00+08:00</published><updated>2022-09-08T19:35:32+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-28:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;根據使用情境將常用的 git 指令加以整理.&lt;/p&gt;
 
 
@@ -1374,7 +1452,7 @@ Arguments: -b 127.0.0.1:9123
 &lt;li&gt;&lt;a href="https://people.irisa.fr/Anthony.Baire/git/git-for-beginners-handout.pdf"&gt;https://people.irisa.fr/Anthony.Baire/git/git-for-beginners-handout.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://indico.cern.ch/event/724719/contributions/2981043/attachments/1638054/2754736/Git_tutorial.pdf"&gt;https://indico.cern.ch/event/724719/contributions/2981043/attachments/1638054/2754736/Git_tutorial.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hipert.unimore.it/people/paolob/pub/Calcolo_Parallelo/Slides/Git_Tutorial.pdf"&gt;https://hipert.unimore.it/people/paolob/pub/Calcolo_Parallelo/Slides/Git_Tutorial.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="git"></category><category term="remote-add"></category><category term="recurse-submodules"></category></entry><entry><title>有關 Fossil SCM</title><link href="https://mde.tw/blog/about-fossil-scm.html" rel="alternate"></link><published>2022-08-27T13:00:00+08:00</published><updated>2022-09-08T10:42:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/about-fossil-scm.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 是一套 Software Configuration Management 套件, 專門用於 &lt;a href="https://sqlite.org"&gt;SQLite&lt;/a&gt; 的原始碼管理.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="git"></category><category term="remote-add"></category><category term="recurse-submodules"></category></entry><entry><title>有關 Fossil SCM</title><link href="https://mde.tw/blog/about-fossil-scm.html" rel="alternate"></link><published>2022-08-27T13:00:00+08:00</published><updated>2022-09-03T20:51:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/about-fossil-scm.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 是一套 Software Configuration Management 套件, 專門用於 &lt;a href="https://sqlite.org"&gt;SQLite&lt;/a&gt; 的原始碼管理.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 是一套 Software Configuration Management 套件, 專門用於 &lt;a href="https://sqlite.org"&gt;SQLite&lt;/a&gt; 的原始碼管理.&lt;/p&gt;
 
 
@@ -1403,7 +1481,7 @@ Arguments: -b 127.0.0.1:9123
 &lt;p&gt;&lt;a href="https://fossil-scm.org/home/help?cmd=unversioned"&gt;https://fossil-scm.org/home/help?cmd=unversioned&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mdecourse.blogspot.com/2021/02/fossil-scm.html"&gt;Fossil SCM 使用案例&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mdecourse.blogspot.com/2021/02/fossil-scm-github.html"&gt;Fossil SCM 與 Github 整合&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mdecourse.blogspot.com/2021/02/fossil-scm-on-ubuntu.html"&gt;Fossil SCM on Ubuntu&lt;/a&gt;&lt;/p&gt;</content><category term="fossil-scm"></category><category term="repository"></category><category term="scm"></category></entry><entry><title>有關 ethercalc</title><link href="https://mde.tw/blog/about-ethercalc.html" rel="alternate"></link><published>2022-08-27T12:00:00+08:00</published><updated>2022-09-08T10:42:28+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/about-ethercalc.html</id><summary type="html">&lt;p&gt;ethercalc 是一個網頁同步試算表.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mdecourse.blogspot.com/2021/02/fossil-scm-on-ubuntu.html"&gt;Fossil SCM on Ubuntu&lt;/a&gt;&lt;/p&gt;</content><category term="fossil-scm"></category><category term="repository"></category><category term="scm"></category></entry><entry><title>有關 ethercalc</title><link href="https://mde.tw/blog/about-ethercalc.html" rel="alternate"></link><published>2022-08-27T12:00:00+08:00</published><updated>2022-08-27T23:17:33+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/about-ethercalc.html</id><summary type="html">&lt;p&gt;ethercalc 是一個網頁同步試算表.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;ethercalc 是一個網頁同步試算表.&lt;/p&gt;
 
 
@@ -1417,7 +1495,7 @@ Arguments: -b 127.0.0.1:9123
 &lt;p&gt;rm /var/lib/redis/dump.rdb&lt;/p&gt;
 &lt;p&gt;/etc/init.d/redis-server start&lt;/p&gt;
 &lt;p&gt;ethercalc&lt;/p&gt;
-&lt;p&gt;則 /var/lib/redis/dump.rdb 中為空資料.&lt;/p&gt;</content><category term="ethercalc"></category><category term="redis"></category><category term="dump"></category></entry><entry><title>編譯 Solvespace</title><link href="https://mde.tw/blog/compile-solvespace.html" rel="alternate"></link><published>2022-08-27T11:00:00+08:00</published><updated>2022-09-15T12:37:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/compile-solvespace.html</id><summary type="html">&lt;p&gt;這裡將利用 &lt;a href="https://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 編譯 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;則 /var/lib/redis/dump.rdb 中為空資料.&lt;/p&gt;</content><category term="ethercalc"></category><category term="redis"></category><category term="dump"></category></entry><entry><title>編譯 Solvespace</title><link href="https://mde.tw/blog/compile-solvespace.html" rel="alternate"></link><published>2022-08-27T11:00:00+08:00</published><updated>2022-09-14T20:08:21+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-27:/blog/compile-solvespace.html</id><summary type="html">&lt;p&gt;這裡將利用 &lt;a href="https://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 編譯 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt;.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡將利用 &lt;a href="https://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 編譯 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt;.&lt;/p&gt;
 
 
@@ -1454,7 +1532,7 @@ pacman -Sy mingw-w64-x86_64-ffmpeg&lt;/p&gt;
 &lt;p&gt;start Y:\msys64\mingw64.exe&lt;/p&gt;
 &lt;p&gt;cd /y/tmp/range3&lt;/p&gt;
 &lt;p&gt;./scripts/build.sh --clean &amp;amp;&amp;amp; ./scripts/create_package.sh&lt;/p&gt;
-&lt;p&gt;而為了讓 svg 格式的 icons 能夠正確顯示, 必須納入 Qt5Svg.dll&lt;/p&gt;</content><category term="compilation"></category><category term="Solvespace"></category><category term="cad2022"></category></entry><entry><title>編譯 CoppeliaSim 4.3.0 rev12</title><link href="https://mde.tw/blog/compile-coppeliasim-4.3.0-rev12.html" rel="alternate"></link><published>2022-08-26T11:00:00+08:00</published><updated>2022-09-16T11:08:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-26:/blog/compile-coppeliasim-4.3.0-rev12.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 採用 C++ 與 Qt 編寫, 安裝系統則利用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 建立. 這裡希望編譯的是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 原始碼中的 &lt;a href="https://github.com/CoppeliaRobotics/CoppeliaSimLib"&gt;CoppeliaSimLib&lt;/a&gt; 第 4.3.0 rev12 版, 是由 448 個 .cpp 編譯連結而成 coppeliaSim.dll, 檔案大小約為 9538 KB, 是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 套件中最重要的核心程式庫 .&lt;/p&gt;
+&lt;p&gt;而為了讓 svg 格式的 icons 能夠正確顯示, 必須納入 Qt5Svg.dll&lt;/p&gt;</content><category term="compilation"></category><category term="Solvespace"></category><category term="cad2022"></category></entry><entry><title>編譯 CoppeliaSim 4.3.0 rev12</title><link href="https://mde.tw/blog/compile-coppeliasim-4.3.0-rev12.html" rel="alternate"></link><published>2022-08-26T11:00:00+08:00</published><updated>2022-09-15T22:16:56+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-26:/blog/compile-coppeliasim-4.3.0-rev12.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 採用 C++ 與 Qt 編寫, 安裝系統則利用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 建立. 這裡希望編譯的是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 原始碼中的 &lt;a href="https://github.com/CoppeliaRobotics/CoppeliaSimLib"&gt;CoppeliaSimLib&lt;/a&gt; 第 4.3.0 rev12 版, 是由 448 個 .cpp 編譯連結而成 coppeliaSim.dll, 檔案大小約為 9538 KB, 是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 套件中最重要的核心程式庫 .&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 採用 C++ 與 Qt 編寫, 安裝系統則利用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 建立. 這裡希望編譯的是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 原始碼中的 &lt;a href="https://github.com/CoppeliaRobotics/CoppeliaSimLib"&gt;CoppeliaSimLib&lt;/a&gt; 第 4.3.0 rev12 版, 是由 448 個 .cpp 編譯連結而成 coppeliaSim.dll, 檔案大小約為 9538 KB, 是 &lt;a href="https://www.coppeliarobotics.com/"&gt;CoppeliaSim&lt;/a&gt; 套件中最重要的核心程式庫 .&lt;/p&gt;
 
 
@@ -1596,7 +1674,7 @@ VS_VERSION_INFO VERSIONINFO
 &lt;h2&gt;編譯 simExtDynamics&lt;/h2&gt;
 &lt;p&gt;C:\acc_430_12\programming\simExtDynamics\build&amp;gt;cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release&lt;/p&gt;
 &lt;p&gt;再執行:&lt;/p&gt;
-&lt;p&gt;Y:\tmp\cop410\programming\simExtUI\build&amp;gt;mingw32-make&lt;/p&gt;</content><category term="compilation"></category><category term="CoppeliaSim"></category><category term="cad2022"></category></entry><entry><title>電腦輔助設計室系統更新</title><link href="https://mde.tw/blog/renew-cad-lab-software.html" rel="alternate"></link><published>2022-08-24T11:00:00+08:00</published><updated>2022-09-15T12:37:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-24:/blog/renew-cad-lab-software.html</id><summary type="html">&lt;p&gt;今天收到通知, 電腦輔助設計室下週要重新更新套件, 管理員問我說: 內容需要更新嗎? 我的回答是: 不用, 只要 Windows 操作系統能正常運作就行, 所有上課的套件都使用可攜模式.&lt;/p&gt;
+&lt;p&gt;Y:\tmp\cop410\programming\simExtUI\build&amp;gt;mingw32-make&lt;/p&gt;</content><category term="compilation"></category><category term="CoppeliaSim"></category><category term="cad2022"></category></entry><entry><title>電腦輔助設計室系統更新</title><link href="https://mde.tw/blog/renew-cad-lab-software.html" rel="alternate"></link><published>2022-08-24T11:00:00+08:00</published><updated>2022-09-14T20:15:39+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-24:/blog/renew-cad-lab-software.html</id><summary type="html">&lt;p&gt;今天收到通知, 電腦輔助設計室下週要重新更新套件, 管理員問我說: 內容需要更新嗎? 我的回答是: 不用, 只要 Windows 操作系統能正常運作就行, 所有上課的套件都使用可攜模式.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;今天收到通知, 電腦輔助設計室下週要重新更新套件, 管理員問我說: 內容需要更新嗎? 我的回答是: 不用, 只要 Windows 操作系統能正常運作就行, 所有上課的套件都使用可攜模式.&lt;/p&gt;
 
 
@@ -1667,7 +1745,7 @@ EXIT
 &lt;/pre&gt;
 
 &lt;h1&gt;隨身攜帶的 git 倉儲&lt;/h1&gt;
-&lt;p&gt;由於電腦輔助設計室中的電腦安裝了防寫系統, 因此使用者為了利用 Github 維護個人的倉儲, 除了使用個人的筆電, 最方便的還是隨身攜帶一個 USB 硬碟, 除了帶有常用的可攜的套件外, 還可在任何一台 Windwos 電腦中維護自己的 git 倉儲, 當然前提是, 可能要自帶合用的 portablegit 與 Python, 或者就連 NX2206 與 Coppeliasim 加上 MSYS2 都自己隨身帶著.&lt;/p&gt;</content><category term="cadlab"></category><category term="cad2022"></category></entry><entry><title>建立可攜 Python 系統</title><link href="https://mde.tw/blog/Create-a-portable-python-system.html" rel="alternate"></link><published>2022-08-23T11:00:00+08:00</published><updated>2022-09-16T11:08:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-23:/blog/Create-a-portable-python-system.html</id><summary type="html">&lt;p&gt;這裡所謂的可攜 Python 系統, 是指能夠放入 USB 隨身碟中的 Python 解譯器. 整個過程分為三個部分. 包括 Python 核心程式, pip 以及安裝常用模組等過程.&lt;/p&gt;
+&lt;p&gt;由於電腦輔助設計室中的電腦安裝了防寫系統, 因此使用者為了利用 Github 維護個人的倉儲, 除了使用個人的筆電, 最方便的還是隨身攜帶一個 USB 硬碟, 除了帶有常用的可攜的套件外, 還可在任何一台 Windwos 電腦中維護自己的 git 倉儲, 當然前提是, 可能要自帶合用的 portablegit 與 Python, 或者就連 NX2206 與 Coppeliasim 加上 MSYS2 都自己隨身帶著.&lt;/p&gt;</content><category term="cadlab"></category><category term="cad2022"></category></entry><entry><title>建立可攜 Python 系統</title><link href="https://mde.tw/blog/Create-a-portable-python-system.html" rel="alternate"></link><published>2022-08-23T11:00:00+08:00</published><updated>2022-09-15T22:01:40+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-23:/blog/Create-a-portable-python-system.html</id><summary type="html">&lt;p&gt;這裡所謂的可攜 Python 系統, 是指能夠放入 USB 隨身碟中的 Python 解譯器. 整個過程分為三個部分. 包括 Python 核心程式, pip 以及安裝常用模組等過程.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這裡所謂的可攜 Python 系統, 是指能夠放入 USB 隨身碟中的 Python 解譯器. 整個過程分為三個部分. 包括 Python 核心程式, pip 以及安裝常用模組等過程.&lt;/p&gt;
 
 
@@ -1803,7 +1881,7 @@ EXIT
 &lt;h2&gt;安裝模組&lt;/h2&gt;
 &lt;p&gt;pip install flask flask_cors bs4 lxml pelican markdown leo pyopenssl&lt;/p&gt;
 &lt;p&gt;上述配置 pip 與模組&lt;a href="./../downloads/install_get-pip.py_and_cmsimde_modules.txt"&gt;安裝詳細過程紀錄&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ETQ0EKIxNeVJhfs8t2NvsCgBn0NmW_sx4OuM5_YR2CSFFQ?e=fywLSa"&gt;portable_python_3.10.6.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EZnrBE0Jo8tAtaiFN70ZXycBTQkPhU0dPnEiy_4Uuj9ayg?e=eJu5Tg"&gt;portable_python_3.10.6.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable-Python"></category><category term="cp2022"></category></entry><entry><title>可攜 CoppeliaSim 4.3.0 rev12</title><link href="https://mde.tw/blog/portable-CoppeliaSim-4.3.0-rev12.html" rel="alternate"></link><published>2022-08-23T11:00:00+08:00</published><updated>2022-09-16T11:08:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-23:/blog/portable-CoppeliaSim-4.3.0-rev12.html</id><summary type="html">&lt;p&gt;CoppeliaSim 的安裝套件採用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 製作, 即便在安裝過程可從 %temp% 中的暫存目錄 (例如: AppData\Local\Temp\SETUP_2639) 取得其 setup.exe 所解開的檔案, 但仍無法直接 extract 出完整的可攜 CoppeliaSim 目錄.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ETQ0EKIxNeVJhfs8t2NvsCgBn0NmW_sx4OuM5_YR2CSFFQ?e=fywLSa"&gt;portable_python_3.10.6.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EZnrBE0Jo8tAtaiFN70ZXycBTQkPhU0dPnEiy_4Uuj9ayg?e=eJu5Tg"&gt;portable_python_3.10.6.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cp2022"></category><category term="portable-Python"></category><category term="cp2022"></category></entry><entry><title>可攜 CoppeliaSim 4.3.0 rev12</title><link href="https://mde.tw/blog/portable-CoppeliaSim-4.3.0-rev12.html" rel="alternate"></link><published>2022-08-23T11:00:00+08:00</published><updated>2022-09-15T21:50:55+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-23:/blog/portable-CoppeliaSim-4.3.0-rev12.html</id><summary type="html">&lt;p&gt;CoppeliaSim 的安裝套件採用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 製作, 即便在安裝過程可從 %temp% 中的暫存目錄 (例如: AppData\Local\Temp\SETUP_2639) 取得其 setup.exe 所解開的檔案, 但仍無法直接 extract 出完整的可攜 CoppeliaSim 目錄.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;CoppeliaSim 的安裝套件採用 &lt;a href="https://www.pantaray.com/qsetup.html"&gt;QSetup&lt;/a&gt; 製作, 即便在安裝過程可從 %temp% 中的暫存目錄 (例如: AppData\Local\Temp\SETUP_2639) 取得其 setup.exe 所解開的檔案, 但仍無法直接 extract 出完整的可攜 CoppeliaSim 目錄.&lt;/p&gt;
 
 
@@ -1852,7 +1930,7 @@ for i in elemList:
     leo_print(i)
 &lt;/pre&gt;
 
-&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ESXbxhDmlUhBmPTUqAdTrLEBjvaqzZupKcgviAmxWGQdjQ"&gt;CoppeliaSimEdu_4.3.0_rev12.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/ESXjJcIX4m9Jm-gX990RwIQBWelBgw8zf0NdKb8qAIxKtQ?e=VlYiHu"&gt;CoppeliaSimEdu_4.3.0_rev12.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cad2022"></category><category term="Coppeliasim"></category><category term="cad2022"></category></entry><entry><title>2022 Fall CP 課程</title><link href="https://mde.tw/blog/2022-Fall-Intro-to-computer-programming.html" rel="alternate"></link><published>2022-08-19T11:00:00+08:00</published><updated>2022-09-29T14:11:58+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-19:/blog/2022-Fall-Intro-to-computer-programming.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
+&lt;p&gt;下載 &lt;a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/ESXbxhDmlUhBmPTUqAdTrLEBjvaqzZupKcgviAmxWGQdjQ"&gt;CoppeliaSimEdu_4.3.0_rev12.7z&lt;/a&gt; (for @gm users only) / 下載 &lt;a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/ESXjJcIX4m9Jm-gX990RwIQBWelBgw8zf0NdKb8qAIxKtQ?e=VlYiHu"&gt;CoppeliaSimEdu_4.3.0_rev12.7z for @nfu&lt;/a&gt;&lt;/p&gt;</content><category term="cad2022"></category><category term="Coppeliasim"></category><category term="cad2022"></category></entry><entry><title>2022 Fall CP 課程</title><link href="https://mde.tw/blog/2022-Fall-Intro-to-computer-programming.html" rel="alternate"></link><published>2022-08-19T11:00:00+08:00</published><updated>2022-09-28T13:36:17+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-19:/blog/2022-Fall-Intro-to-computer-programming.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 計算機程式的課程進度將放在 Weblog, 並且使用 mdecycu At cycu 登記 disqus. 所有與課程相關的問題, 都希望在各週 Weblog 下方的 disqus 詢答.&lt;/p&gt;
 
 
@@ -1946,7 +2024,7 @@ var winkVideoData_w1_1 = {
 &lt;p&gt;Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.&lt;/p&gt;
 &lt;p&gt;Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library.&lt;/p&gt;
 &lt;p&gt;Guido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language and first released it in 1991 as Python 0.9.0. Python 2.0 was released in 2000 and introduced new features such as list comprehensions, cycle-detecting garbage collection, reference counting, and Unicode support. Python 3.0, released in 2008, was a major revision that is not completely backward-compatible with earlier versions. Python 2 was discontinued with version 2.7.18 in 2020.&lt;/p&gt;
-&lt;p&gt;Python consistently ranks as one of the most popular programming languages.&lt;/p&gt;</content><category term="cp2022"></category><category term="cp2022"></category><category term="syllabus"></category></entry><entry><title>2022 Fall CAD 課程</title><link href="https://mde.tw/blog/2022-Fall-computer-aided-design-and-practices.html" rel="alternate"></link><published>2022-08-14T11:00:00+08:00</published><updated>2022-09-22T14:26:20+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-14:/blog/2022-Fall-computer-aided-design-and-practices.html</id><summary type="html">&lt;p&gt;2022 Fall 電腦輔助設計與實習的教學主要介紹 NX 與 CoppeliaSim 在機械設計流程中的應用.&lt;/p&gt;
+&lt;p&gt;Python consistently ranks as one of the most popular programming languages.&lt;/p&gt;</content><category term="cp2022"></category><category term="cp2022"></category><category term="syllabus"></category></entry><entry><title>2022 Fall CAD 課程</title><link href="https://mde.tw/blog/2022-Fall-computer-aided-design-and-practices.html" rel="alternate"></link><published>2022-08-14T11:00:00+08:00</published><updated>2022-09-22T23:19:38+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-08-14:/blog/2022-Fall-computer-aided-design-and-practices.html</id><summary type="html">&lt;p&gt;2022 Fall 電腦輔助設計與實習的教學主要介紹 NX 與 CoppeliaSim 在機械設計流程中的應用.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 電腦輔助設計與實習的教學主要介紹 NX 與 CoppeliaSim 在機械設計流程中的應用.&lt;/p&gt;
 
 
