@@ -109,3 +109,13 @@ TIMEOUTclose = 0
 就可以在 python3 waitress_server.py 執行下, 讓外部以 https://stud.cycu.org 連結到對應的動態網頁.
 
 在此的問題是, waitress_server.py 如何以 service 啟動, stunnel 如何搭配執行. 最簡單的情況是 Stunnel 先以 service 執行, 但事先納入所有學員的規劃 port, 其中包括內容 port 以及外部 port, 並且讓學員在需要編輯動態網頁的時候, 自行啟動各自的 waitress_server.py
+
+利用 Python 取 IPv6 網路位址:
+
+<pre class="brush: python">
+import socket
+ip = socket.getaddrinfo("stud.cycu.org", 0, socket.AF_INET6)[0][4][0]
+print(ip)
+</pre>
+
+

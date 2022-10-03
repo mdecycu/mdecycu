@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/</loc>
-<lastmod>2022-10-02T23:22:58-00:00</lastmod>
+<lastmod>2022-10-03T20:45:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/archives.html</loc>
-<lastmod>2022-10-02T23:22:58-00:00</lastmod>
+<lastmod>2022-10-03T20:45:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/tags.html</loc>
-<lastmod>2022-10-02T23:22:58-00:00</lastmod>
+<lastmod>2022-10-03T20:45:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/categories.html</loc>
-<lastmod>2022-10-02T23:22:58-00:00</lastmod>
+<lastmod>2022-10-03T20:45:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -40,7 +40,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/2022_fall_cad2022_server _and_version.html</loc>
-<lastmod>2022-10-02T23:22:26+08:00</lastmod>
+<lastmod>2022-10-03T20:41:10+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -327,7 +327,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/category/server.html</loc>
-<lastmod>2022-10-02T23:22:26+08:06</lastmod>
+<lastmod>2022-10-03T20:41:10+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -369,7 +369,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/tag/w4.html</loc>
-<lastmod>2022-10-02T23:22:26+08:06</lastmod>
+<lastmod>2022-10-03T20:41:10+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -572,7 +572,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/author/mdecycu.html</loc>
-<lastmod>2022-10-02T23:22:26+08:06</lastmod>
+<lastmod>2022-10-03T20:41:10+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
