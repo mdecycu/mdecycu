@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-03T20:41:10+08:00</updated><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-03T20:41:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-04T11:09:06+08:00</updated><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-03T21:45:44+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+</content><category term="Leo Editor"></category><category term="leoJS"></category></entry><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-04T11:09:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 
 
@@ -83,6 +84,39 @@ TIMEOUTclose = 0
 import socket
 ip = socket.getaddrinfo("stud.cycu.org", 0, socket.AF_INET6)[0][4][0]
 print(ip)
+&lt;/pre&gt;
+
+&lt;h1&gt;Virtualbox 虛擬主機&lt;/h1&gt;
+&lt;p&gt;利用一台 16 核 80 GB 記憶體的虛擬主機, 建立約 250 個用戶後, 看能否透過 Stunnel 與 wsgi 啟動各自的 cmsimde 動態網站.&lt;/p&gt;
+&lt;p&gt;為了建立多用戶帳號, 可以利用 newusers 指令, 配合 users.txt 檔案:&lt;/p&gt;
+&lt;p&gt;users.txt 檔案格式, 分別是: 使用者帳號, 預計使用 cad 加上學號, 或者是 cp 加上學號, 而密碼可以採用亂數產生, 至於 uid 與 gid 則需先使用&lt;/p&gt;
+&lt;p&gt;cut -d: -f1,3 /etc/passwd &lt;/p&gt;
+&lt;p&gt;查詢現有帳號的對應 id 後, 再逐一利用迴圈增量. 至於 comment 欄位, 可以直接採用 cad 或 cp 加上學號, 而 shell 欄位則選用 /bin/bash&lt;/p&gt;
+&lt;p&gt;user_1:password_2:1002:1002:user_1:/home/user_1:/bin/bash&lt;/p&gt;
+&lt;p&gt;sudo newusers users.txt&lt;/p&gt;
+&lt;p&gt;依照上述流程建立帳號後, 可以保留使用者學號、帳號與對應密碼, 然後利用 Gmail 將此訊息郵寄給各用戶.&lt;/p&gt;
+&lt;p&gt;至於透過程式方法必須完成下列事項:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;建立 users.txt, 然後傳送至虛擬主機&lt;/li&gt;
+&lt;li&gt;利用 sudo newuser users.txt 建立各用戶帳號與 home directory&lt;/li&gt;
+&lt;li&gt;建立 users_account.txt, 包含與 users.txt 各用戶帳號與密碼資訊&lt;/li&gt;
+&lt;li&gt;利用 Gmail 逐一將 users_account.txt 的帳號與密碼資訊寄給用戶&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;password generator&lt;/h2&gt;
+&lt;p&gt;Brython 版 &lt;a href="https://mde.tw/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/2c6323eff49b496d1bafd210f3ec9707/raw/8864b4178c8ec64f60d30014d3ab743499d51be4/password_generator.py"&gt;password generator&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import random
+import string
+
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+
+    """Generate random password
+    """
+    return ''.join(random.choice(chars) for _ in range(size))
+
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+for i in range(10):
+    print(password_generator(4, pass_string))
 &lt;/pre&gt;</content><category term="Server"></category><category term="w4"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
@@ -331,7 +365,7 @@ Estimated Total Devices From Mfg    48,768,750
 &lt;/pre&gt;
 
 &lt;p&gt;根據判斷, 這應該是一台 Wifi Router, 誤將應該連接內部網路的接頭聯外.&lt;/p&gt;
-&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-09-26T22:46:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
+&lt;p&gt;至於 IPv6 的網段, 雖然成功從校方 DHCP 6 取得系上聯外 IPv6 位址, 但是該伺服器並沒有設定 DNS, 因此採 IPv6 網路協定自動擷取 IP 位址的電腦, 必須自行設定 DNS 伺服器.&lt;/p&gt;</content><category term="Network"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Ubuntu</title><link href="https://mde.tw/blog/2022_fall_about_ubuntu.html" rel="alternate"></link><published>2022-09-17T12:00:00+08:00</published><updated>2022-10-04T10:44:43+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-17:/blog/2022_fall_about_ubuntu.html</id><summary type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;簡要說明 2022 Fall 與計算機程式及電腦輔助設計與實習課程相關的 Ubuntu 伺服器安裝與設置.&lt;/p&gt;
 
 
@@ -437,7 +471,12 @@ ufw enable
 &lt;h1&gt;Add super user account&lt;/h1&gt;
 &lt;p&gt;新增 username 帳號, 並授予管理者權限.&lt;/p&gt;
 &lt;p&gt;sudo adduser username&lt;/p&gt;
-&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-20T16:55:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
+&lt;p&gt;sudo usermod -aG sudo username&lt;/p&gt;
+&lt;h1&gt;Delete user account&lt;/h1&gt;
+&lt;p&gt;sudo deluser --remove-home account_name&lt;/p&gt;
+&lt;h1&gt;列出 user id&lt;/h1&gt;
+&lt;p&gt;列出現有帳號 uid 的指令為: cut -d: -f1,3 /etc/passwd&lt;/p&gt;
+&lt;p&gt;表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料.&lt;/p&gt;</content><category term="Ubuntu"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>Enjoy your ride</title><link href="https://mde.tw/blog/enjoy_your_ride.html" rel="alternate"></link><published>2022-09-13T13:00:00+08:00</published><updated>2022-09-20T16:55:52+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-13:/blog/enjoy_your_ride.html</id><summary type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Being an entrepreneur is a bug.&lt;/p&gt;
 
 

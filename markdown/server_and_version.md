@@ -118,4 +118,52 @@ ip = socket.getaddrinfo("stud.cycu.org", 0, socket.AF_INET6)[0][4][0]
 print(ip)
 </pre>
 
+Virtualbox 虛擬主機
+====
+
+利用一台 16 核 80 GB 記憶體的虛擬主機, 建立約 250 個用戶後, 看能否透過 Stunnel 與 wsgi 啟動各自的 cmsimde 動態網站.
+
+為了建立多用戶帳號, 可以利用 newusers 指令, 配合 users.txt 檔案:
+
+users.txt 檔案格式, 分別是: 使用者帳號, 預計使用 cad 加上學號, 或者是 cp 加上學號, 而密碼可以採用亂數產生, 至於 uid 與 gid 則需先使用
+
+cut -d: -f1,3 /etc/passwd 
+
+查詢現有帳號的對應 id 後, 再逐一利用迴圈增量. 至於 comment 欄位, 可以直接採用 cad 或 cp 加上學號, 而 shell 欄位則選用 /bin/bash
+
+user_1:password_2:1002:1002:user_1:/home/user_1:/bin/bash
+
+sudo newusers users.txt
+
+依照上述流程建立帳號後, 可以保留使用者學號、帳號與對應密碼, 然後利用 Gmail 將此訊息郵寄給各用戶.
+
+至於透過程式方法必須完成下列事項:
+
+1. 建立 users.txt, 然後傳送至虛擬主機
+2. 利用 sudo newuser users.txt 建立各用戶帳號與 home directory
+3. 建立 users_account.txt, 包含與 users.txt 各用戶帳號與密碼資訊
+4. 利用 Gmail 逐一將 users_account.txt 的帳號與密碼資訊寄給用戶
+
+password generator
+----
+
+Brython 版 [password generator].
+
+<pre class="brush: python">
+import random
+import string
+
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    
+    """Generate random password
+    """
+    return ''.join(random.choice(chars) for _ in range(size))
+
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+for i in range(10):
+    print(password_generator(4, pass_string))
+</pre>
+
+[password generator]: https://mde.tw/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/2c6323eff49b496d1bafd210f3ec9707/raw/8864b4178c8ec64f60d30014d3ab743499d51be4/password_generator.py
+
 

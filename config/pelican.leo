@@ -132,6 +132,9 @@
 <v t="leo.20221001210004.1"><vh>@clean server_and_version.md</vh>
 <v t="leo.20221001210033.1"><vh>伺服器與版本</vh></v>
 </v>
+<v t="leo.20221003213746.1"><vh>@clean about_leo.md</vh>
+<v t="leo.20221003213806.1"><vh>有關 Leo Editor</vh></v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -2782,6 +2785,22 @@ sudo adduser username
 
 sudo usermod -aG sudo username
 
+Delete user account
+====
+
+sudo deluser --remove-home account_name
+
+列出 user id
+====
+
+列出現有帳號 uid 的指令為: cut -d: -f1,3 /etc/passwd
+
+表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料.
+
+
+
+
+
 
 </t>
 <t tx="leo.20220918115308.1">@language md
@@ -3386,8 +3405,78 @@ ip = socket.getaddrinfo("stud.cycu.org", 0, socket.AF_INET6)[0][4][0]
 print(ip)
 &lt;/pre&gt;
 
+Virtualbox 虛擬主機
+====
+
+利用一台 16 核 80 GB 記憶體的虛擬主機, 建立約 250 個用戶後, 看能否透過 Stunnel 與 wsgi 啟動各自的 cmsimde 動態網站.
+
+為了建立多用戶帳號, 可以利用 newusers 指令, 配合 users.txt 檔案:
+
+users.txt 檔案格式, 分別是: 使用者帳號, 預計使用 cad 加上學號, 或者是 cp 加上學號, 而密碼可以採用亂數產生, 至於 uid 與 gid 則需先使用
+
+cut -d: -f1,3 /etc/passwd 
+
+查詢現有帳號的對應 id 後, 再逐一利用迴圈增量. 至於 comment 欄位, 可以直接採用 cad 或 cp 加上學號, 而 shell 欄位則選用 /bin/bash
+
+user_1:password_2:1002:1002:user_1:/home/user_1:/bin/bash
+
+sudo newusers users.txt
+
+依照上述流程建立帳號後, 可以保留使用者學號、帳號與對應密碼, 然後利用 Gmail 將此訊息郵寄給各用戶.
+
+至於透過程式方法必須完成下列事項:
+
+1. 建立 users.txt, 然後傳送至虛擬主機
+2. 利用 sudo newuser users.txt 建立各用戶帳號與 home directory
+3. 建立 users_account.txt, 包含與 users.txt 各用戶帳號與密碼資訊
+4. 利用 Gmail 逐一將 users_account.txt 的帳號與密碼資訊寄給用戶
+
+password generator
+----
+
+Brython 版 [password generator].
+
+&lt;pre class="brush: python"&gt;
+import random
+import string
+
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    
+    """Generate random password
+    """
+    return ''.join(random.choice(chars) for _ in range(size))
+
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+for i in range(10):
+    print(password_generator(4, pass_string))
+&lt;/pre&gt;
+
+[password generator]: https://mde.tw/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/2c6323eff49b496d1bafd210f3ec9707/raw/8864b4178c8ec64f60d30014d3ab743499d51be4/password_generator.py
+
 
 </t>
+<t tx="leo.20221003213746.1">@language md
+---
+Title: 有關 Leo Editor
+Date: 2022-10-03 11:00
+Category: Leo Editor
+Tags: leoJS
+Slug: 2022_fall_about_leo_editor
+Author: mdecycu
+---
+
+終於 Leo Editor 也到了轉型的關鍵點, [準備]透過 [leojs] 開啟新的一頁.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others
+
+[準備]: https://groups.google.com/g/leo-editor/c/_S4zioVEtHA
+[leojs]: https://github.com/boltex/leojs
+[vscode]: https://code.visualstudio.com
+[protable mode]: https://code.visualstudio.com/docs/editor/portable
+[node.js]: https://nodejs.org/zh-tw/download/</t>
+<t tx="leo.20221003213806.1"></t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

@@ -172,4 +172,20 @@ sudo adduser username
 
 sudo usermod -aG sudo username
 
+Delete user account
+====
+
+sudo deluser --remove-home account_name
+
+列出 user id
+====
+
+列出現有帳號 uid 的指令為: cut -d: -f1,3 /etc/passwd
+
+表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料.
+
+
+
+
+
 
