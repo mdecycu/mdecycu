@@ -135,6 +135,9 @@
 <v t="leo.20221003213746.1"><vh>@clean about_leo.md</vh>
 <v t="leo.20221003213806.1"><vh>有關 Leo Editor</vh></v>
 </v>
+<v t="leo.20221004235236.1"><vh>@clean 2022_fall_w5.md</vh>
+<v t="leo.20221004235303.1"><vh>2022 Fall w5</vh></v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -3581,6 +3584,90 @@ Author: mdecycu
 [protable mode]: https://code.visualstudio.com/docs/editor/portable
 [node.js]: https://nodejs.org/zh-tw/download/</t>
 <t tx="leo.20221003213806.1"></t>
+<t tx="leo.20221004235236.1">@language md
+---
+Title: 2022 Fall w5
+Date: 2022-10-04 11:00
+Category: cad2022
+Tags: w5, cad2022, cp2022
+Slug: 2022_fall_cad2022_w5
+Author: mdecycu
+---
+
+2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others
+</t>
+<t tx="leo.20221004235303.1">帳號派送
+====
+
+從 @nfu 電子郵箱中可以收到各學員在 stud.cycu.org 伺服器中的登入帳號與密碼. 在 Windows cmd 命令提示字元視窗中, 可以利用:
+
+ssh 帳號@stud.cycu.org 登入伺服器. 
+
+進入後, 必須先設定 git 指令的代理主機:
+
+git config --global http.proxy "http://p42.cycu.org:3128"
+
+完成後, 就可以利用 git clone --recurse-submodules https://github.com/mdecad2022/site-Github_帳號.git 取下倉儲內容.
+
+以 cd site-Github_帳號, 可以進入倉儲根目錄, 然後設法利用 vi 建立 server.py 或者在 Windows 環境建立後, 以 sftp 送至倉儲根目錄.
+
+server.py 的內容如下:
+
+&lt;pre class="brush: python"&gt;
+from waitress import serve
+from cmsimde import flaskapp
+
+serve(flaskapp.app, listen='127.0.0.1:您所分配的_127.0.0.1_埠號', threads=4)
+&lt;/pre&gt;
+
+然後在倉儲根目錄, 執行 python3 server.py, 就可以在 https://stud.cycu.org:您所分配的_stud.cycu.org_埠號 擷取到倉儲的動態網站, 以 config 修改管理者密碼後, 即可對此動態網站進行改版, 改版後轉靜態網站資料後, 就可以在 Ubuntu 上先利用 Token 將倉儲改版資料以 acp script 傳至 Github:
+
+source acp "提交字串"
+
+&lt;pre class="brush: jscript"&gt;
+#! /bin/bash
+git add .
+git commit -m "$1"
+git push
+&lt;/pre&gt;
+
+利用 chmod u+x acp 讓 acp 可以執行. 之後要執行 acp: source acp "提交字串"
+
+Ubuntu SSH
+====
+
+以 ssh-keygen 建立 private and public keys, 存放於 .ssh 目錄下, 以 sftp 取下 id_rsa.pub 放入 Github 後, 就可以利用 SSH 對 Github 倉儲改版.
+
+.ssh/config 設定 Proxy:
+
+設定之前管理者必須先安裝 ncat: sudo apt install ncat
+
+&lt;pre class="brush: jscript"&gt;
+Host github.com
+User git
+Hostname github.com
+ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
+&lt;/pre&gt;
+
+參考: 
+1. [Ubuntu ssh]
+2. [ssh proxy]
+
+[Ubuntu ssh]: https://blog.jaycetyle.com/2018/02/github-ssh/
+[ssh proxy]: https://gist.github.com/Kuri-su/3ca9baf53bc648950956f77381558e96
+
+埠號分配
+====
+
+stud.cycu.org 伺服器中, 已經按照 [port table] 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.
+
+stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart
+
+[port table]: https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

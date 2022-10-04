@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-01T20:54:47+08:00</updated><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-05T01:00:51+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-05T01:00:51+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+
+
+&lt;h1&gt;帳號派送&lt;/h1&gt;
+&lt;p&gt;從 @nfu 電子郵箱中可以收到各學員在 stud.cycu.org 伺服器中的登入帳號與密碼. 在 Windows cmd 命令提示字元視窗中, 可以利用:&lt;/p&gt;
+&lt;p&gt;ssh 帳號@stud.cycu.org 登入伺服器. &lt;/p&gt;
+&lt;p&gt;進入後, 必須先設定 git 指令的代理主機:&lt;/p&gt;
+&lt;p&gt;git config --global http.proxy "http://p42.cycu.org:3128"&lt;/p&gt;
+&lt;p&gt;完成後, 就可以利用 git clone --recurse-submodules https://github.com/mdecad2022/site-Github_帳號.git 取下倉儲內容.&lt;/p&gt;
+&lt;p&gt;以 cd site-Github_帳號, 可以進入倉儲根目錄, 然後設法利用 vi 建立 server.py 或者在 Windows 環境建立後, 以 sftp 送至倉儲根目錄.&lt;/p&gt;
+&lt;p&gt;server.py 的內容如下:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from waitress import serve
+from cmsimde import flaskapp
+
+serve(flaskapp.app, listen='127.0.0.1:您所分配的_127.0.0.1_埠號', threads=4)
+&lt;/pre&gt;
+
+&lt;p&gt;然後在倉儲根目錄, 執行 python3 server.py, 就可以在 https://stud.cycu.org:您所分配的_stud.cycu.org_埠號 擷取到倉儲的動態網站, 以 config 修改管理者密碼後, 即可對此動態網站進行改版, 改版後轉靜態網站資料後, 就可以在 Ubuntu 上先利用 Token 將倉儲改版資料以 acp script 傳至 Github:&lt;/p&gt;
+&lt;p&gt;source acp "提交字串"&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+#! /bin/bash
+git add .
+git commit -m "$1"
+git push
+&lt;/pre&gt;
+
+&lt;p&gt;利用 chmod u+x acp 讓 acp 可以執行. 之後要執行 acp: source acp "提交字串"&lt;/p&gt;
+&lt;h1&gt;Ubuntu SSH&lt;/h1&gt;
+&lt;p&gt;以 ssh-keygen 建立 private and public keys, 存放於 .ssh 目錄下, 以 sftp 取下 id_rsa.pub 放入 Github 後, 就可以利用 SSH 對 Github 倉儲改版.&lt;/p&gt;
+&lt;p&gt;.ssh/config 設定 Proxy:&lt;/p&gt;
+&lt;p&gt;設定之前管理者必須先安裝 ncat: sudo apt install ncat&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+Host github.com
+User git
+Hostname github.com
+ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
+&lt;/pre&gt;
+
+&lt;p&gt;參考: 
+1. &lt;a href="https://blog.jaycetyle.com/2018/02/github-ssh/"&gt;Ubuntu ssh&lt;/a&gt;
+2. &lt;a href="https://gist.github.com/Kuri-su/3ca9baf53bc648950956f77381558e96"&gt;ssh proxy&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;埠號分配&lt;/h1&gt;
+&lt;p&gt;stud.cycu.org 伺服器中, 已經按照 &lt;a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ"&gt;port table&lt;/a&gt; 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.&lt;/p&gt;
+&lt;p&gt;stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
