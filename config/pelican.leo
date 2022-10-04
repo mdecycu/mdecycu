@@ -3453,7 +3453,111 @@ for i in range(10):
 
 [password generator]: https://mde.tw/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/2c6323eff49b496d1bafd210f3ec9707/raw/8864b4178c8ec64f60d30014d3ab743499d51be4/password_generator.py
 
+2022 Fall 課程代號
+----
 
+首先要建立各課程對應的 Ubuntu 帳號與密碼檔案:
+
+&lt;pre class="brush: python"&gt;
+# 導入亂數模組
+import random
+# 導入字串模組
+import string
+# 利用 def 關鍵字定義函式
+# 函式的輸入變數可以設定初始值
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    # 函式內以多行註解說明函式功能
+    """Generate random password
+    """
+    # 利用 return 關鍵字將所產生的亂數字串傳回
+    return ''.join(random.choice(chars) for _ in range(size))
+# 建立一個變數與隨後的字串對應
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+cp_num = ["0747", "0761"]
+cad_num = ["0773", "0786"]
+def gen_acc_pass(course, course_num):
+    stud_list =[]
+    for num in course_num:
+        url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + num + "&amp;column=True"
+        class_list = open(url).read().split("\n")[:-1]
+        stud_list += class_list
+        #print(stud_list)
+    for stud_num in stud_list:
+        password = password_generator(4, pass_string)
+        #print(password)
+        account = course + stud_num
+        #print(account)
+        print(stud_num + "\t" + account + "\t" + password)
+gen_acc_pass("cp", cp_num)
+gen_acc_pass("cad", cad_num)
+&lt;/pre&gt;
+
+Windows 與 Ubuntu 格式差異
+====
+
+create_users_txt.py
+
+&lt;pre class="brush: python"&gt;
+with open("2022_fall_ubuntu_account_pass.txt") as f:
+    data = f.readlines()
+# newusers format:  
+# pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
+# uid starts from 1002
+uid_starts = 1001
+users = ""
+send = ""
+
+for i in data:
+    #stud_num \t account \t password \n
+    stud = i.split("\t")
+    stud_num = stud[0]
+    account = stud[1]
+    password = stud[2].rstrip()
+    uid_starts += 1
+    uid = str(uid_starts)
+    gid = uid
+    gecos = account
+    home_dir = "/home/" + account
+    shell = "/bin/bash"
+    #print(stud_num, account, password)
+    users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
+    send += stud_num + ":" + account + ":" + password + "\n"
+
+with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(users)
+
+with open("send.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(send)
+&lt;/pre&gt;
+
+假如沒有採用 newline='\n', 在 Windows 寫檔案所使用的跳行符號, 以 sftp 傳到 Ubuntu 時將會因為 shell 並非 /bin/bash 而是加上 ^M$ 的錯誤 shell 資料, 導入用戶無法 login.
+
+若要修正跳行符號錯誤, 可以採用:
+
+change_shell.py
+
+&lt;pre class="brush: python"&gt;
+import os
+with open("users.txt", "r", encoding="UTF-8") as f:
+    data = f.read().splitlines()
+for i in data:
+    account = i.split(":")[0]
+    print(account)
+    os.system("sudo chsh -s /bin/bash " + account)
+&lt;/pre&gt;
+
+當執行上列程式時, 為避免在程式中列出管理者密碼, 可以編輯 /etc/sudoers 並加入:
+
+&lt;pre class="brush: jscript"&gt;
+# only require a password once every 60 minutes
+Defaults timestamp_timeout=60
+&lt;/pre&gt;
+
+可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.
+
+[next line difference]: https://askubuntu.com/questions/1129965/users-created-using-newusers-command-unable-to-login-in-ubuntu-18-04
+
+[sudoers]: https://askubuntu.com/questions/155791/how-do-i-sudo-a-command-in-a-script-without-being-asked-for-a-password/155827#155827
 </t>
 <t tx="leo.20221003213746.1">@language md
 ---

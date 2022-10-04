@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-04T11:09:06+08:00</updated><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-03T21:45:44+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
-</content><category term="Leo Editor"></category><category term="leoJS"></category></entry><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-04T11:09:06+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-04T22:44:13+08:00</updated><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-03T21:45:44+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+</content><category term="Leo Editor"></category><category term="leoJS"></category></entry><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-04T22:44:13+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 
 
@@ -117,7 +117,99 @@ def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
 pass_string = "abcdefghkmnpqrstuwxyz123456789"
 for i in range(10):
     print(password_generator(4, pass_string))
-&lt;/pre&gt;</content><category term="Server"></category><category term="w4"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+&lt;/pre&gt;
+
+&lt;h2&gt;2022 Fall 課程代號&lt;/h2&gt;
+&lt;p&gt;首先要建立各課程對應的 Ubuntu 帳號與密碼檔案:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# 導入亂數模組
+import random
+# 導入字串模組
+import string
+# 利用 def 關鍵字定義函式
+# 函式的輸入變數可以設定初始值
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    # 函式內以多行註解說明函式功能
+    """Generate random password
+    """
+    # 利用 return 關鍵字將所產生的亂數字串傳回
+    return ''.join(random.choice(chars) for _ in range(size))
+# 建立一個變數與隨後的字串對應
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+cp_num = ["0747", "0761"]
+cad_num = ["0773", "0786"]
+def gen_acc_pass(course, course_num):
+    stud_list =[]
+    for num in course_num:
+        url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + num + "&amp;column=True"
+        class_list = open(url).read().split("\n")[:-1]
+        stud_list += class_list
+        #print(stud_list)
+    for stud_num in stud_list:
+        password = password_generator(4, pass_string)
+        #print(password)
+        account = course + stud_num
+        #print(account)
+        print(stud_num + "\t" + account + "\t" + password)
+gen_acc_pass("cp", cp_num)
+gen_acc_pass("cad", cad_num)
+&lt;/pre&gt;
+
+&lt;h1&gt;Windows 與 Ubuntu 格式差異&lt;/h1&gt;
+&lt;p&gt;create_users_txt.py&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+with open("2022_fall_ubuntu_account_pass.txt") as f:
+    data = f.readlines()
+# newusers format:  
+# pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
+# uid starts from 1002
+uid_starts = 1001
+users = ""
+send = ""
+
+for i in data:
+    #stud_num \t account \t password \n
+    stud = i.split("\t")
+    stud_num = stud[0]
+    account = stud[1]
+    password = stud[2].rstrip()
+    uid_starts += 1
+    uid = str(uid_starts)
+    gid = uid
+    gecos = account
+    home_dir = "/home/" + account
+    shell = "/bin/bash"
+    #print(stud_num, account, password)
+    users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
+    send += stud_num + ":" + account + ":" + password + "\n"
+
+with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(users)
+
+with open("send.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(send)
+&lt;/pre&gt;
+
+&lt;p&gt;假如沒有採用 newline='\n', 在 Windows 寫檔案所使用的跳行符號, 以 sftp 傳到 Ubuntu 時將會因為 shell 並非 /bin/bash 而是加上 ^M$ 的錯誤 shell 資料, 導入用戶無法 login.&lt;/p&gt;
+&lt;p&gt;若要修正跳行符號錯誤, 可以採用:&lt;/p&gt;
+&lt;p&gt;change_shell.py&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import os
+with open("users.txt", "r", encoding="UTF-8") as f:
+    data = f.read().splitlines()
+for i in data:
+    account = i.split(":")[0]
+    print(account)
+    os.system("sudo chsh -s /bin/bash " + account)
+&lt;/pre&gt;
+
+&lt;p&gt;當執行上列程式時, 為避免在程式中列出管理者密碼, 可以編輯 /etc/sudoers 並加入:&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+# only require a password once every 60 minutes
+Defaults timestamp_timeout=60
+&lt;/pre&gt;
+
+&lt;p&gt;可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.&lt;/p&gt;</content><category term="Server"></category><category term="w4"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
