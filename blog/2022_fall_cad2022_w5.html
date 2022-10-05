@@ -61,7 +61,7 @@
 <meta property="og:url" content="https://mde.tw/blog/2022_fall_cad2022_w5.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2022-10-04 11:00:00+08:00"/>
-<meta property="article:modified_time" content="2022-10-05 01:00:51.141410+08:00"/>
+<meta property="article:modified_time" content="2022-10-05 10:29:25.783481+08:00"/>
 <meta property="article:author" content="https://mde.tw/blog/author/mdecycu.html">
 <meta property="article:section" content="cad2022"/>
 <meta property="article:tag" content="w5"/>
@@ -78,7 +78,7 @@
   "name": "2022 Fall w5",
   "headline": "2022 Fall w5",
   "datePublished": "2022-10-04 11:00:00+08:00",
-  "dateModified": "2022-10-05 01:00:51.141410+08:00",
+  "dateModified": "2022-10-05 10:29:25.783481+08:00",
   "author": {
     "@type": "Person",
     "name": "mdecycu",
@@ -273,6 +273,8 @@ ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 <h1>埠號分配</h1>
 <p>stud.cycu.org 伺服器中, 已經按照 <a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ">port table</a> 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.</p>
 <p>stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart</p>
+<p>以系統服務設定 stunnel4:</p>
+<p>sudo systemctl enable stunnel4.service</p>
             </section>
 
             <section class="post-info">

@@ -2800,6 +2800,17 @@ sudo deluser --remove-home account_name
 
 表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料.
 
+increase open file limits
+====
+
+sudo vi /etc/sysctl.conf
+
+add 
+
+fs.file-max = 2097152
+
+[files open limit]: https://linuxhint.com/increase-open-file-limit-ubuntu/
+
 
 
 
@@ -3666,6 +3677,10 @@ ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 stud.cycu.org 伺服器中, 已經按照 [port table] 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.
 
 stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart
+
+以系統服務設定 stunnel4:
+
+sudo systemctl enable stunnel4.service
 
 [port table]: https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ</t>
 <t tx="yen.20170108171605.1"></t>

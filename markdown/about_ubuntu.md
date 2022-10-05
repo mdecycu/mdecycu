@@ -184,6 +184,17 @@ sudo deluser --remove-home account_name
 
 表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料.
 
+increase open file limits
+====
+
+sudo vi /etc/sysctl.conf
+
+add 
+
+fs.file-max = 2097152
+
+[files open limit]: https://linuxhint.com/increase-open-file-limit-ubuntu/
+
 
 
 

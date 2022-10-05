@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-05T01:00:51+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-05T01:00:51+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-05T10:29:25+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-05T10:29:25+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 
 
@@ -44,7 +44,9 @@ ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 2. &lt;a href="https://gist.github.com/Kuri-su/3ca9baf53bc648950956f77381558e96"&gt;ssh proxy&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;埠號分配&lt;/h1&gt;
 &lt;p&gt;stud.cycu.org 伺服器中, 已經按照 &lt;a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ"&gt;port table&lt;/a&gt; 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.&lt;/p&gt;
-&lt;p&gt;stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+&lt;p&gt;stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart&lt;/p&gt;
+&lt;p&gt;以系統服務設定 stunnel4:&lt;/p&gt;
+&lt;p&gt;sudo systemctl enable stunnel4.service&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 
