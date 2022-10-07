@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-05T10:29:25+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-05T10:29:25+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-07T21:46:50+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-07T21:46:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 
 
@@ -14,17 +14,30 @@
 &lt;pre class="brush: python"&gt;
 from waitress import serve
 from cmsimde import flaskapp
-
+# 9xxxx is for localhost internal connect port
+# 8xxxx is for Stunnel accept port
 serve(flaskapp.app, listen='127.0.0.1:您所分配的_127.0.0.1_埠號', threads=4)
 &lt;/pre&gt;
 
 &lt;p&gt;然後在倉儲根目錄, 執行 python3 server.py, 就可以在 https://stud.cycu.org:您所分配的_stud.cycu.org_埠號 擷取到倉儲的動態網站, 以 config 修改管理者密碼後, 即可對此動態網站進行改版, 改版後轉靜態網站資料後, 就可以在 Ubuntu 上先利用 Token 將倉儲改版資料以 acp script 傳至 Github:&lt;/p&gt;
-&lt;p&gt;source acp "提交字串"&lt;/p&gt;
+&lt;p&gt;source acp "提交字串" for linux and Max&lt;/p&gt;
 &lt;pre class="brush: jscript"&gt;
 #! /bin/bash
+# bash script for Linux and Mac
+# chmod u+x acp
+# source acp "commit message"
 git add .
 git commit -m "$1"
 git push
+&lt;/pre&gt;
+
+&lt;p&gt;cms for linux and Mac&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+#! /bin/bash
+# for Linux and Mac
+# chmod u+x cms
+# source cms
+python3 cmsimde/wsgi.py
 &lt;/pre&gt;
 
 &lt;p&gt;利用 chmod u+x acp 讓 acp 可以執行. 之後要執行 acp: source acp "提交字串"&lt;/p&gt;
@@ -32,6 +45,7 @@ git push
 &lt;p&gt;以 ssh-keygen 建立 private and public keys, 存放於 .ssh 目錄下, 以 sftp 取下 id_rsa.pub 放入 Github 後, 就可以利用 SSH 對 Github 倉儲改版.&lt;/p&gt;
 &lt;p&gt;.ssh/config 設定 Proxy:&lt;/p&gt;
 &lt;p&gt;設定之前管理者必須先安裝 ncat: sudo apt install ncat&lt;/p&gt;
+&lt;p&gt;Host 等同為 Putty SSH 設定中的 sesstion 名稱.&lt;/p&gt;
 &lt;pre class="brush: jscript"&gt;
 Host github.com
 User git
@@ -46,8 +60,16 @@ ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 &lt;p&gt;stud.cycu.org 伺服器中, 已經按照 &lt;a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ"&gt;port table&lt;/a&gt; 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.&lt;/p&gt;
 &lt;p&gt;stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart&lt;/p&gt;
 &lt;p&gt;以系統服務設定 stunnel4:&lt;/p&gt;
-&lt;p&gt;sudo systemctl enable stunnel4.service&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-03T21:45:44+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
-</content><category term="Leo Editor"></category><category term="leoJS"></category></entry><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-04T22:44:13+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
+&lt;p&gt;sudo systemctl enable stunnel4.service&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-05T14:21:30+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><summary type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+
+
+&lt;h1&gt;Node.js vscode and leojs&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EfCU9MTeoLBOtDfiCMKrnrkBsb1rWUYouD5isWhPpYn1Rw?e=eUHqyA"&gt;下載&lt;/a&gt; 可攜 Node.js + vscode + leojs&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;Leo is complete&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Leo Editor"></category><category term="leoJS"></category></entry><entry><title>伺服器與版本</title><link href="https://mde.tw/blog/2022_fall_cad2022_server%20_and_version.html" rel="alternate"></link><published>2022-10-01T11:00:00+08:00</published><updated>2022-10-04T22:44:13+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-01:/blog/2022_fall_cad2022_server _and_version.html</id><summary type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 計算機程式及電腦輔助設計與實習等兩門課程, 總共牽涉 github, onedrive, mail2000, replit, onshape, gmail 等廠商提供的伺服器, 另外還有自架的 Flask 伺服器.&lt;/p&gt;
 
 

@@ -3594,7 +3594,18 @@ Author: mdecycu
 [vscode]: https://code.visualstudio.com
 [protable mode]: https://code.visualstudio.com/docs/editor/portable
 [node.js]: https://nodejs.org/zh-tw/download/</t>
-<t tx="leo.20221003213806.1"></t>
+<t tx="leo.20221003213806.1">Node.js vscode and leojs
+====
+
+[下載] 可攜 Node.js + vscode + leojs
+
+References:
+
+1. [Leo is complete]
+
+[下載]: https://nfuedu.sharepoint.com/:u:/s/cad2022/EfCU9MTeoLBOtDfiCMKrnrkBsb1rWUYouD5isWhPpYn1Rw?e=eUHqyA
+[leojs]: https://github.com/boltex/leojs
+[Leo is complete]: https://groups.google.com/g/leo-editor/c/_S4zioVEtHA</t>
 <t tx="leo.20221004235236.1">@language md
 ---
 Title: 2022 Fall w5
@@ -3631,19 +3642,33 @@ server.py 的內容如下:
 &lt;pre class="brush: python"&gt;
 from waitress import serve
 from cmsimde import flaskapp
-
+# 9xxxx is for localhost internal connect port
+# 8xxxx is for Stunnel accept port
 serve(flaskapp.app, listen='127.0.0.1:您所分配的_127.0.0.1_埠號', threads=4)
 &lt;/pre&gt;
 
 然後在倉儲根目錄, 執行 python3 server.py, 就可以在 https://stud.cycu.org:您所分配的_stud.cycu.org_埠號 擷取到倉儲的動態網站, 以 config 修改管理者密碼後, 即可對此動態網站進行改版, 改版後轉靜態網站資料後, 就可以在 Ubuntu 上先利用 Token 將倉儲改版資料以 acp script 傳至 Github:
 
-source acp "提交字串"
+source acp "提交字串" for linux and Max
 
 &lt;pre class="brush: jscript"&gt;
 #! /bin/bash
+# bash script for Linux and Mac
+# chmod u+x acp
+# source acp "commit message"
 git add .
 git commit -m "$1"
 git push
+&lt;/pre&gt;
+
+cms for linux and Mac
+
+&lt;pre class="brush: jscript"&gt;
+#! /bin/bash
+# for Linux and Mac
+# chmod u+x cms
+# source cms
+python3 cmsimde/wsgi.py
 &lt;/pre&gt;
 
 利用 chmod u+x acp 讓 acp 可以執行. 之後要執行 acp: source acp "提交字串"
@@ -3656,6 +3681,8 @@ Ubuntu SSH
 .ssh/config 設定 Proxy:
 
 設定之前管理者必須先安裝 ncat: sudo apt install ncat
+
+Host 等同為 Putty SSH 設定中的 sesstion 名稱.
 
 &lt;pre class="brush: jscript"&gt;
 Host github.com

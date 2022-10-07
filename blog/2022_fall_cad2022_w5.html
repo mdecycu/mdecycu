@@ -61,7 +61,7 @@
 <meta property="og:url" content="https://mde.tw/blog/2022_fall_cad2022_w5.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2022-10-04 11:00:00+08:00"/>
-<meta property="article:modified_time" content="2022-10-05 10:29:25.783481+08:00"/>
+<meta property="article:modified_time" content="2022-10-07 21:46:50.270108+08:00"/>
 <meta property="article:author" content="https://mde.tw/blog/author/mdecycu.html">
 <meta property="article:section" content="cad2022"/>
 <meta property="article:tag" content="w5"/>
@@ -78,7 +78,7 @@
   "name": "2022 Fall w5",
   "headline": "2022 Fall w5",
   "datePublished": "2022-10-04 11:00:00+08:00",
-  "dateModified": "2022-10-05 10:29:25.783481+08:00",
+  "dateModified": "2022-10-07 21:46:50.270108+08:00",
   "author": {
     "@type": "Person",
     "name": "mdecycu",
@@ -208,7 +208,7 @@ init_mathjax();
             | <time datetime="週二 04 十月 2022">週二 04 十月 2022</time>
         </span>
         <!-- TODO : Modified check -->
-            <span class="post-meta"> | Updated on 週三 05 十月 2022</span>
+            <span class="post-meta"> | Updated on 週五 07 十月 2022</span>
             <div class="post-cover cover" style="background-image: url('https://mde.tw/blog/theme/images/post-bg.jpg')">
       </div>
     </header>
@@ -242,17 +242,30 @@ init_mathjax();
 <pre class="brush: python">
 from waitress import serve
 from cmsimde import flaskapp
-
+# 9xxxx is for localhost internal connect port
+# 8xxxx is for Stunnel accept port
 serve(flaskapp.app, listen='127.0.0.1:您所分配的_127.0.0.1_埠號', threads=4)
 </pre>
 
 <p>然後在倉儲根目錄, 執行 python3 server.py, 就可以在 https://stud.cycu.org:您所分配的_stud.cycu.org_埠號 擷取到倉儲的動態網站, 以 config 修改管理者密碼後, 即可對此動態網站進行改版, 改版後轉靜態網站資料後, 就可以在 Ubuntu 上先利用 Token 將倉儲改版資料以 acp script 傳至 Github:</p>
-<p>source acp "提交字串"</p>
+<p>source acp "提交字串" for linux and Max</p>
 <pre class="brush: jscript">
 #! /bin/bash
+# bash script for Linux and Mac
+# chmod u+x acp
+# source acp "commit message"
 git add .
 git commit -m "$1"
 git push
+</pre>
+
+<p>cms for linux and Mac</p>
+<pre class="brush: jscript">
+#! /bin/bash
+# for Linux and Mac
+# chmod u+x cms
+# source cms
+python3 cmsimde/wsgi.py
 </pre>
 
 <p>利用 chmod u+x acp 讓 acp 可以執行. 之後要執行 acp: source acp "提交字串"</p>
@@ -260,6 +273,7 @@ git push
 <p>以 ssh-keygen 建立 private and public keys, 存放於 .ssh 目錄下, 以 sftp 取下 id_rsa.pub 放入 Github 後, 就可以利用 SSH 對 Github 倉儲改版.</p>
 <p>.ssh/config 設定 Proxy:</p>
 <p>設定之前管理者必須先安裝 ncat: sudo apt install ncat</p>
+<p>Host 等同為 Putty SSH 設定中的 sesstion 名稱.</p>
 <pre class="brush: jscript">
 Host github.com
 User git

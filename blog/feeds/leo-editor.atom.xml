@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - Leo Editor</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/leo-editor.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-03T21:45:44+08:00</updated><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-03T21:45:44+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
-</content><category term="Leo Editor"></category><category term="leoJS"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - Leo Editor</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/leo-editor.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-05T14:21:30+08:00</updated><entry><title>有關 Leo Editor</title><link href="https://mde.tw/blog/2022_fall_about_leo_editor.html" rel="alternate"></link><published>2022-10-03T11:00:00+08:00</published><updated>2022-10-05T14:21:30+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-03:/blog/2022_fall_about_leo_editor.html</id><summary type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;終於 Leo Editor 也到了轉型的關鍵點, &lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;準備&lt;/a&gt;透過 &lt;a href="https://github.com/boltex/leojs"&gt;leojs&lt;/a&gt; 開啟新的一頁.&lt;/p&gt;
+
+
+&lt;h1&gt;Node.js vscode and leojs&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EfCU9MTeoLBOtDfiCMKrnrkBsb1rWUYouD5isWhPpYn1Rw?e=eUHqyA"&gt;下載&lt;/a&gt; 可攜 Node.js + vscode + leojs&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://groups.google.com/g/leo-editor/c/_S4zioVEtHA"&gt;Leo is complete&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Leo Editor"></category><category term="leoJS"></category></entry></feed>
