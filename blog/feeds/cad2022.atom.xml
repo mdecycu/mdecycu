@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-07T21:46:50+08:00</updated><entry><title>2022 Fall w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-07T21:46:50+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-12T00:23:04+08:00</updated><entry><title>2022 Fall w4-w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w4_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-12T00:23:04+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w4_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w4 繼續說明網路設定與個人網頁維護. 2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Fall w4 繼續說明網路設定與個人網頁維護. 2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 
+
+&lt;h1&gt;建立帳號指令檔案&lt;/h1&gt;
+&lt;pre class="brush: python"&gt;
+with open("2022_fall_ubuntu_account_pass.txt") as f:
+    data = f.readlines()
+# newusers format:  
+# pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
+# uid starts from 1002
+uid_starts = 1001
+users = ""
+send = ""
+
+for i in data:
+    #stud_num \t account \t password \n
+    stud = i.split("\t")
+    stud_num = stud[0]
+    account = stud[1]
+    password = stud[2].rstrip()
+    uid_starts += 1
+    uid = str(uid_starts)
+    gid = uid
+    gecos = account
+    home_dir = "/home/" + account
+    shell = "/bin/bash"
+    #print(stud_num, account, password)
+    users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
+    send += stud_num + ":" + account + ":" + password + "\n"
+
+with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(users)
+
+with open("send.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(send)
+&lt;/pre&gt;
 
 &lt;h1&gt;帳號派送&lt;/h1&gt;
 &lt;p&gt;從 @nfu 電子郵箱中可以收到各學員在 stud.cycu.org 伺服器中的登入帳號與密碼. 在 Windows cmd 命令提示字元視窗中, 可以利用:&lt;/p&gt;
@@ -53,6 +87,8 @@ Hostname github.com
 ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 &lt;/pre&gt;
 
+&lt;p&gt;若採用上述設定, 則以 scrum-1 github 帳號用戶為例, 使用 SSH 協定 git clone 個人位於 mdecad2022 帳號下的 site-scrum-1 倉儲指令為: git clone --recurse-submodules git@github.com:mdecp2022/site-scrum-1.git, 若將 .ssh/config 檔案, 且 git clone 後倉儲中的 .git/config url 為: git@github.com:mdecp2022/site-scrum-1.git&lt;/p&gt;
+&lt;p&gt;若 .ssh/config 中的 Host 設為 scrum1, 則 git clone 的指令將成為: git clone --recurse-submodules git@scrum1:mdecp2022/site-scrum-1.git, 而 git clone 後倉儲中的 .git/config url 為: git@scrum1:mdecp2022/site-scrum-1.git&lt;/p&gt;
 &lt;p&gt;參考: 
 1. &lt;a href="https://blog.jaycetyle.com/2018/02/github-ssh/"&gt;Ubuntu ssh&lt;/a&gt;
 2. &lt;a href="https://gist.github.com/Kuri-su/3ca9baf53bc648950956f77381558e96"&gt;ssh proxy&lt;/a&gt;&lt;/p&gt;
@@ -60,7 +96,25 @@ ProxyCommand /usr/bin/ncat --proxy p42.cycu.org:3128 --proxy-type http %h %p
 &lt;p&gt;stud.cycu.org 伺服器中, 已經按照 &lt;a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/ET-JZNPkNtZDhFiLt8BGZZ4BFMVV1HE73WQt1V44y6vnCQ"&gt;port table&lt;/a&gt; 對每位學員所能使用的 127.0.0.1 與 stud.cycu.org 埠號進行分配.&lt;/p&gt;
 &lt;p&gt;stunnel 服務重新啟動: sudo /etc/init.d/stunnel4 restart&lt;/p&gt;
 &lt;p&gt;以系統服務設定 stunnel4:&lt;/p&gt;
-&lt;p&gt;sudo systemctl enable stunnel4.service&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
+&lt;p&gt;sudo systemctl enable stunnel4.service&lt;/p&gt;
+&lt;h1&gt;cp2022 w4 教學影片&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/ES1-38kuxkJAljgH5b3emekBh98XhKtfFQg5aV3UMV9Uxg?e=DcMauY"&gt;cadlab 網路設定, 取下個人倉儲, 計算機程式學習順序&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EbYnIyghKsdDsoT3NLhIFCMBPCula56YbNfkIBDZ2LLHWA?e=ENKNcb"&gt;在 Replit 執行動態網頁, 並與 Github 倉儲內容同步&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EUdzT3TnXllEs9n7Q-rfl6EBgHCEOJNPmHhgXI0d2pDkdw?e=5dFVYd"&gt;網路設定與可攜程式系統&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/ESLcVDBVr45ElAG30isotPoBZ7r-FNAyJr4QjUecsoDBKQ?e=RGzxeU"&gt;利用 diagrams.net 繪製流程圖, 說明可攜系統批次檔案內容&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EcawctYxUplOk33qpP3BLEcBeUKitZROvf02V2UFbXi8mA?e=9BygOi"&gt;Github token, SSH 與 Brython 抽點程式說明&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;h1&gt;cp2022 w5 教學影片&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EV7SPic7UeZOpey670S778cBljwSeehcTdci8vcTK4rDLw?e=EVcDsg"&gt;利用 random 模組編寫亂數密碼產生程式教學影片&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EZ3JvNip-MNPo5VmXlyOS70BwK5FD-58nwk6_RKavby6uw?e=Sff67p"&gt;如何在 Windows 以 Putty 利用 SSH 協定對 Github 倉儲改版提交推送&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EQePjhhmlwtJjzQGJYioXvgBmE6-UcPV6tG2vsSpgBPlPg?e=ghSbOp"&gt;如何利用 cms 執行動態網站, 改版後以 acp 將靜態網頁推向 Github Pages&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cp20222/EXduXS-tFpROvaH6zbCA4uQBVin9bP2Ux8vM0g20EWb_vQ?e=3N8abR"&gt;如何設定 SSH 與 https 協定, 對個人倉儲改版&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;h1&gt;cad2022 w4 教學影片&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cad2022/ESZarU_yCRhNmFkSxxAyEpcBOfI2WybqXKArkByi7dHL3Q?e=49SN4D"&gt;下載可攜系統, 建立 exam.cycu.org 考試帳號&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cad2022/EVP7xxy-VnlBidjNehizjwYBi34OgxfYnfDP0hZOuzMBqA?e=bU8Acb"&gt;Replit 執行動態網站, 如何與 Github 倉儲同步&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cad2022/EbA18B6BWZBCuI9KtoxG7tMBaSGQWQ-tgtf9IpukEr1lRA?e=HuFObB"&gt;近端可攜環境準備&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cad2022/Ec29bCcV_XNLk7QWSIR8ZdEBze1Zpl7ocb70XDEmlhXVdw?e=ZUozQB"&gt;cmsimde 改版, Replit 套用新倉儲版本&lt;/a&gt; (for @nfu users only)&lt;/p&gt;
+&lt;h1&gt;cad2022 w5 教學影片&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:v:/s/cad2022/EUxluWJoSGFDobtgaUliDRoBIbe--qCjx5We-1WwGMhTyQ?e=ZXZeof"&gt;如何在 stud.cycu.org Ubuntu 伺服器上執行動態網站, 如何將改版的靜態網頁推向 Github Pages&lt;/a&gt; (for @nfu users only)&lt;/p&gt;</content><category term="cad2022"></category><category term="w5"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>cad2022 第三週課程</title><link href="https://mde.tw/blog/2022_fall_cad2022_w3.html" rel="alternate"></link><published>2022-09-22T12:00:00+08:00</published><updated>2022-10-01T20:54:47+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-09-22:/blog/2022_fall_cad2022_w3.html</id><summary type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;電腦輔助設計第三週課程內容. 各教學影片均需透過 @nfu 登錄的 Onedrive 帳號登入後, 才能觀看.&lt;/p&gt;
 
 

@@ -27,6 +27,11 @@ Ubuntu
 
 lsb_release -a 
 
+openssh-server
+====
+
+讓 Ubuntu 可以接受 ssh: sudo apt install openssh-server
+
 Squid
 ====
 

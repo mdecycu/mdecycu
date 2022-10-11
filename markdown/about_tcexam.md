@@ -218,7 +218,7 @@ partial score for MCMA: 打勾, 表示針對 Multiple Choice Multiple Answer 允
 
 Let'sEncrypt renew: 開啟管理者模式下的 cmd, 然後執行 "C:\Program Files (x86)\Certbot\bin\certbot" renew
 
-
+exam.cycu.org 之 https 數位簽章 due day: 2022.12.27
 
 
 
