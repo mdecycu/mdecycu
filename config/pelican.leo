@@ -3629,6 +3629,9 @@ Author: mdecycu
 </t>
 <t tx="leo.20221004235303.1">建立帳號指令檔案
 ====
+自 w4 起, 利用一台 Ubuntu 虛擬主機建立各學員帳號, 並且利用雙埠號派送方式 (內部為 9xxxx, 外部為 8xxxx), 讓各學員得以利用 https://stud.cycu.org 符號名稱執行個人倉儲中的動態網頁, 如同 Replit 上的雲端系統, 使用者可以將此動態網站內容與個人 Github 倉儲中的靜態網頁同步.
+
+各學員擁有動態網頁與靜態網頁的目的, 在能透過伺服器上的 Python 程式與靜態網頁上的 Brython 前端程式進行互動, 將之後進行電腦輔助設計與實習過程中的歷程整理在網頁上外, 還能透過 NX2027 NXOpen 與 CoppeliaSim Remote API 程式編寫各種電腦輔助設計延伸程式.
 
 &lt;pre class="brush: python"&gt;
 with open("2022_fall_ubuntu_account_pass.txt") as f:

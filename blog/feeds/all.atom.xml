@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-12T00:39:05+08:00</updated><entry><title>2022 Fall w4-w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-12T00:39:05+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w4 繼續說明網路設定與個人網頁維護. 2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-12T16:08:17+08:00</updated><entry><title>2022 Fall w4-w5</title><link href="https://mde.tw/blog/2022_fall_cad2022_w5.html" rel="alternate"></link><published>2022-10-04T11:00:00+08:00</published><updated>2022-10-12T16:08:17+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-04:/blog/2022_fall_cad2022_w5.html</id><summary type="html">&lt;p&gt;2022 Fall w4 繼續說明網路設定與個人網頁維護. 2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall w4 繼續說明網路設定與個人網頁維護. 2022 Fall w5, 為每位學員在 stud.cycu.org 建立帳號.&lt;/p&gt;
 
 
 &lt;h1&gt;建立帳號指令檔案&lt;/h1&gt;
+&lt;p&gt;自 w4 起, 利用一台 Ubuntu 虛擬主機建立各學員帳號, 並且利用雙埠號派送方式 (內部為 9xxxx, 外部為 8xxxx), 讓各學員得以利用 https://stud.cycu.org 符號名稱執行個人倉儲中的動態網頁, 如同 Replit 上的雲端系統, 使用者可以將此動態網站內容與個人 Github 倉儲中的靜態網頁同步.&lt;/p&gt;
+&lt;p&gt;各學員擁有動態網頁與靜態網頁的目的, 在能透過伺服器上的 Python 程式與靜態網頁上的 Brython 前端程式進行互動, 將之後進行電腦輔助設計與實習過程中的歷程整理在網頁上外, 還能透過 NX2027 NXOpen 與 CoppeliaSim Remote API 程式編寫各種電腦輔助設計延伸程式.&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 with open("2022_fall_ubuntu_account_pass.txt") as f:
     data = f.readlines()
