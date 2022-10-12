@@ -414,7 +414,7 @@ doc["add1to100"].bind('click', add)
 <div id="brython_div1"></div>
 <!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
-<p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button></p>
+<p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
 <p>
 <script type="text/python3">
@@ -507,6 +507,11 @@ aitetris_url = "https://gist.githubusercontent.com/mdecycu/d9082d678096bd58378d6
 aitetris = button2(aitetris_url)
 doc["aitetris"].bind("click", aitetris.do)
 ################################## aitetris end
+################################## threejsblock start
+threejsblock_url = "https://gist.githubusercontent.com/mdecycu/2c6323eff49b496d1bafd210f3ec9707/raw/df37802f9e8a386b6424f7945af622b1cd0a9ca5/threejs_rotating_block.py"
+threejsblock = button2(threejsblock_url)
+doc["threejsblock"].bind("click", threejsblock.do)
+################################## threejsblock end
 </script>
 </p>
 <p><!-- add 1 to 100 part2 結束--></p>

@@ -141,43 +141,12 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Python for SW << <a href='Python for SW.html'>Previous</a> <a href='Python for NX.html'>Next</a> >> Python for NX<br /><h1>Python for INV</h1>
-<p>針對 HW1 使用 AutoDesk Inventor 2019 教育版繪零件圖者, 可以利用下列 Python 程式修改零件參數, 取零件影像圖並計算零件體積:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import pythoncom
-import win32com.client
-import win32api
-import os
- 
-# Open Inventor
-invApp = win32com.client.Dispatch("Inventor.Application")
-#print(invApp)
-invApp.Visible = True
- 
-invApp.SilentOperation = True
- 
-# Set location of assembly
-partName = 'C:/tmp/Part1.ipt'
- 
-# Open the model
-oDoc = invApp.Documents.Open(partName)
-# use UserParameters to access the user parameters
-#oUserParams = oDoc.ComponentDefinition.Parameters.UserParameters
-#oNewParam = oUserParams.AddByExpression("x", "9", "mm")
-# use Item() to get the model parameter named "d0"
-d0 = oDoc.ComponentDefinition.Parameters.Item("d0")
-# Expression can add dimension unit
-#d0.Expression = "2 cm"
-# Value use the default system unit: cm
-d0.Value = 2
-# use Update() method to get the new part volume
-oDoc.Update()
-# fit the active view and save the part image
-invApp.ActiveView.Fit(True)
-oDoc.SaveAs("C:/tmp/Part1.png", True)
-print(oDoc.ComponentDefinition.MassProperties.Volume)
-#invApp.Quit()</pre>
-<p></p>
-<br />Python for SW << <a href='Python for SW.html'>Previous</a> <a href='Python for NX.html'>Next</a> >> Python for NX</div>
+    <div id="tipue_search_content">Rust << <a href='Rust.html'>Previous</a> <a href='TCExam.html'>Next</a> >> TCExam<br /><h1>Carbon</h1>
+<p><a href="https://en.wikipedia.org/wiki/Carbon_(programming_language)">Carbon 語言</a>是 Google 開發希望能夠取代 C++ 的程式語言.</p>
+<p><a href="https://github.com/carbon-language/carbon-lang">https://github.com/carbon-language/carbon-lang</a></p>
+<p><a href="https://github.com/carbon-language/carbon-lang/blob/trunk/README.md">https://github.com/carbon-language/carbon-lang/blob/trunk/README.md</a></p>
+<p><a href="https://tipseason.com/carbon-language-tutorial-syntax/">https://tipseason.com/carbon-language-tutorial-syntax/</a></p>
+<p><a href="https://blog.logrocket.com/exploring-carbon-new-superset-c-plus-plus/">https://blog.logrocket.com/exploring-carbon-new-superset-c-plus-plus/</a></p><br />Rust << <a href='Rust.html'>Previous</a> <a href='TCExam.html'>Next</a> >> TCExam</div>
         
     <!-- footer -->
       <div class="container">
