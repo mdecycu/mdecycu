@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/</loc>
-<lastmod>2022-10-12T16:09:07-00:00</lastmod>
+<lastmod>2022-10-12T23:44:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/archives.html</loc>
-<lastmod>2022-10-12T16:09:07-00:00</lastmod>
+<lastmod>2022-10-12T23:44:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/tags.html</loc>
-<lastmod>2022-10-12T16:09:07-00:00</lastmod>
+<lastmod>2022-10-12T23:44:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/categories.html</loc>
-<lastmod>2022-10-12T16:09:07-00:00</lastmod>
+<lastmod>2022-10-12T23:44:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://mde.tw/blog/pages/about/</loc>
 <lastmod>2022-08-27T20:22:54+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://mde.tw/blog/2022_fall_cad2022_w6.html</loc>
+<lastmod>2022-10-12T23:44:41+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -250,7 +257,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/category/cad2022.html</loc>
-<lastmod>2022-10-12T16:08:17+08:06</lastmod>
+<lastmod>2022-10-12T23:44:41+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -389,21 +396,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://mde.tw/blog/tag/w5.html</loc>
-<lastmod>2022-10-12T16:08:17+08:06</lastmod>
+<loc>https://mde.tw/blog/tag/w6.html</loc>
+<lastmod>2022-10-12T23:44:41+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/tag/cad2022.html</loc>
-<lastmod>2022-10-12T16:08:17+08:06</lastmod>
+<lastmod>2022-10-12T23:44:41+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mde.tw/blog/tag/cp2022.html</loc>
+<lastmod>2022-10-12T23:44:41+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://mde.tw/blog/tag/w5.html</loc>
 <lastmod>2022-10-12T16:08:17+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -607,7 +621,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mde.tw/blog/author/mdecycu.html</loc>
-<lastmod>2022-10-12T16:08:17+08:06</lastmod>
+<lastmod>2022-10-12T23:44:41+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
