@@ -141,6 +141,12 @@
 <v t="leo.20221012225834.1"><vh>@clean 2022_fall_w6.md</vh>
 <v t="leo.20221012225849.1"><vh>2022 Fall w6</vh></v>
 </v>
+<v t="leo.20221022090659.1"><vh>@clean 2022_fall_w7.md</vh>
+<v t="leo.20221022090916.1"><vh>2022 Fall w7</vh></v>
+</v>
+<v t="leo.20221029215856.1"><vh>@clean 2022_kmolab_courses.md</vh>
+<v t="leo.20221029220008.1"><vh>2022 Fall 課程</vh></v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -2646,6 +2652,20 @@ Author: mdecycu
 
 lsb_release -a 
 
+更新 LTS 版本
+
+&lt;pre class="brush:jscript"&gt;
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt autoremove
+
+sudo retoob
+
+sudo do-release-upgrade
+&lt;/pre&gt;
+
 openssh-server
 ====
 
@@ -3853,6 +3873,81 @@ Siemens NX 一直以來都是包含 CAD/E/M 的大套工具, 其中最值得與 
 在結合 Python 與 NX 的過程中, 可以再設法直接從產品組立件所轉出的 STL 零件, 透過 API 程式組成 CoppeliaSim 系統模擬所需的檔案格式, 以便接續進行零組件的控制系統設計與模擬流程.　
 
 此外, cad2022 希望能將先前建構的手足球系統, 套用到 CoppeliaSim 的 Visualization Stream 功能上, 讓位於不同電腦的使用者可以透過不同埠號對同一個手足球場景進行控制, 可進行的模式分為 human vs human, human vs computer, 以及 computer vs computer 的對陣模式.</t>
+<t tx="leo.20221022090659.1">@language md
+---
+Title: 2022 Fall w7
+Date: 2022-10-22 11:00
+Category: cad2022
+Tags: w6, cad2022, cp2022
+Slug: 2022_fall_cad2022_w7
+Author: mdecycu
+---
+
+2022 Fall 課程進入第七週, 隨著一台 HP 大主機的硬碟毀損, 原本的課程教學流程必須隨之改變.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20221022090916.1">代理主機升級
+----
+
+進入代號 4 的主機, 希望將 LTS 20.04 升級為 22.04, 其生命週期可以橫跨 2026.02, 因為 EOL 為 2027.04.
+
+步驟如下:
+
+&lt;pre class="brush: jscript"&gt;
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+sudo reboot
+lbs_release -a 
+sudo do-release-upgrade
+&lt;/pre&gt;
+
+由於代號 4 的主機允許外部電腦連接用的代理任務, 因此更新之前, 先將系統備份後進行.
+
+代號 4 的代理主機透過 [dstdomain], 將 cycu.org 的連線納入.
+
+[dstdomain]: https://wiki.squid-cache.org/SquidFaq/SquidAcl?action=fullsearch&amp;value=dstdomain
+
+DNS 伺服器
+----
+
+目前 代號 3 為  mde DNS, 代號 2 為 mde 備份 DNS, 代號 6 為 eng DNS, 代號 7 則為 eng 備份 DNS.
+
+之前 2 and 3 已經升級為 22.04, 但 6 目前仍為 20.04.
+
+</t>
+<t tx="leo.20221029215856.1">@language md
+---
+Title: 2022 Fall 課程
+Date: 2022-10-29 11:00
+Category: cad2022
+Tags: w6, cad2022, cp2022
+Slug: 2022_fall_courses_w8
+Author: mdecycu
+---
+
+2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20221029220008.1">計算機程式課程核心
+----
+
+一言以蔽之, 計算機程式課程的核心, 就是教導如何在網站上執行程式, 假如只是考慮到網站的前端, 就是讓學員了解如何運用 html、css 與 Javascript, 若涵蓋網站後端, 則指如何使用 Python 程式與網站前端互動.
+
+然而對機械設計流程之後的應用而言, 在網站上執行程式的重點, 是如何利用網路與程式在網站上進行機電系統模擬.
+
+網站
+====
+
+KMOLab 課程的網站雖然以 Github Pages 上的網站為主, 但是在轉換為 html 超文件網站之前, 使用者可以透過網站前端與後端的計算機程式與 CAD 套件互動, 然後再設法將模擬或設計的機電資系統結果呈現在 Github Pages 網站上.
+
+由於 Siemens NX 套件的 NXOpen 程式延伸架構允許利用 Python 程式編寫 API 程式, 因此就網站前端的程式語言選擇, 並非直接使用 Javascript, 而是採用 Brython. 也就是使用者可以在網頁上編寫 Python 格式的 Brython 程式, 主為 Javascript 後執行. 至於後端則使用 CPython + Flask 設法與 NX 、Solvespace 及 Coppeliasim 進行互動.
+
+2022 Fall 各學員的網站倉儲採用 Github Classroom 配置, 也就是讓各學員的個人課程倉儲位於計算機程式 (cp2022) 與電腦輔助設計實習 (cad2022) 的 organization 代號下: mdecp2022 與 mdecad2022.</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

@@ -27,6 +27,20 @@ Ubuntu
 
 lsb_release -a 
 
+更新 LTS 版本
+
+<pre class="brush:jscript">
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt autoremove
+
+sudo retoob
+
+sudo do-release-upgrade
+</pre>
+
 openssh-server
 ====
 
