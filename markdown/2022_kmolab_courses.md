@@ -910,6 +910,122 @@ CAD 課程的重點是利用電腦輔助設計套件進行產品設計, 而 KMOL
 [Pyweb3d]: https://github.com/mdecycu/pyweb3d
 [threejsFrontend]: https://github.com/CoppeliaRobotics/threejsFrontend
 
+以下為電腦輔助設計與實習課程 2a 修課學員的個人倉儲靜態網頁連結:
+
+<p id="brython_div3"></p>
+<script type="text/python3">
+# 從 Brython 的 browser 模組導入 document 與 html 程式庫
+from browser import document, html
+
+# 利用 document 物件, 以索引 "brython_div3" 取得已經位於 html 網頁中 id="brython_div3" 的位置, 且對應到 brython_div2 變數
+brython_div2 = document["brython_div3"]
+# 可以用三個單引號或三個雙引號標註多行註解
+# 其中的 html 物件有許多建立 html 超文件內容的方法, 以下分別建立
+# BUTTON 按鈕, BR 跳行 (break), 以及 A 網站連結 (Anchor)
+# <= 是 Brython 程式語言的特殊符號, 專用於將 html 超文件資料送給網頁對應變數
+"""
+brython_div2 <= html.BUTTON("hello")
+brython_div2 <= html.BR()
+brython_div2 <= html.A("google", href="https://google.com")
+"""
+try:
+    c = document.query["c"]
+except:
+    c = "1a"
+c = "2a"
+# 將 1b.txt 資料從 Github Pages 網頁中取下
+url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
+# 利用 open() 開啟網頁, 利用 read() 讀取網頁內容
+# 然後利用 split() 方法, 利用跳行符號對資料進行切割, 切割後的資料結構為 list
+# list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
+data = open(url).read().split("\n")
+# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
+mdecp2022 = "https://mdecp2022.github.io/site-"
+# 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
+data = data[1:-1]
+# 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
+count = 0
+for i in data:
+    count += 1
+    stud = i.split("\t")
+    # 第一欄位為學號
+    stud_num = stud[0]
+    # 第二欄未為 github 帳號
+    github_acc = stud[1]
+    #print(stud_num, github_acc)
+    # 若沒有找到 github 帳號, 以學號作為帳號
+    if github_acc == "":
+        github_acc = stud_num
+    # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
+    site = mdecp2022 + github_acc
+    # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
+    link = html.A(stud_num, href=site)
+    brython_div2 <= link
+    # 每一筆資料列出後, 以 break 標註跳行
+    # 每一行列出五筆資料後, 跳行
+    brython_div2 <= " "
+    if count % 5 == 0:
+        brython_div2 <= html.BR()
+</script>
+
+以下為電腦輔助設計與實習課程 2b 修課學員的個人倉儲靜態網頁連結:
+
+<p id="brython_div4"></p>
+<script type="text/python3">
+# 從 Brython 的 browser 模組導入 document 與 html 程式庫
+from browser import document, html
+
+# 利用 document 物件, 以索引 "brython_div4" 取得已經位於 html 網頁中 id="brython_div4" 的位置, 且對應到 brython_div2 變數
+brython_div2 = document["brython_div4"]
+# 可以用三個單引號或三個雙引號標註多行註解
+# 其中的 html 物件有許多建立 html 超文件內容的方法, 以下分別建立
+# BUTTON 按鈕, BR 跳行 (break), 以及 A 網站連結 (Anchor)
+# <= 是 Brython 程式語言的特殊符號, 專用於將 html 超文件資料送給網頁對應變數
+"""
+brython_div2 <= html.BUTTON("hello")
+brython_div2 <= html.BR()
+brython_div2 <= html.A("google", href="https://google.com")
+"""
+try:
+    c = document.query["c"]
+except:
+    c = "1a"
+c = "2b"
+# 將 1b.txt 資料從 Github Pages 網頁中取下
+url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
+# 利用 open() 開啟網頁, 利用 read() 讀取網頁內容
+# 然後利用 split() 方法, 利用跳行符號對資料進行切割, 切割後的資料結構為 list
+# list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
+data = open(url).read().split("\n")
+# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
+mdecp2022 = "https://mdecp2022.github.io/site-"
+# 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
+data = data[1:-1]
+# 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
+count = 0
+for i in data:
+    count += 1
+    stud = i.split("\t")
+    # 第一欄位為學號
+    stud_num = stud[0]
+    # 第二欄未為 github 帳號
+    github_acc = stud[1]
+    #print(stud_num, github_acc)
+    # 若沒有找到 github 帳號, 以學號作為帳號
+    if github_acc == "":
+        github_acc = stud_num
+    # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
+    site = mdecp2022 + github_acc
+    # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
+    link = html.A(stud_num, href=site)
+    brython_div2 <= link
+    # 每一筆資料列出後, 以 break 標註跳行
+    # 每一行列出五筆資料後, 跳行
+    brython_div2 <= " "
+    if count % 5 == 0:
+        brython_div2 <= html.BR()
+</script>
+
 cmsimde
 ====
 

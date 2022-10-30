@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-30T21:14:54+08:00</updated><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-10-30T21:14:54+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-30T21:23:07+08:00</updated><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-10-30T21:23:07+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 
 
@@ -859,6 +859,120 @@ doc["reverse"].bind("click", reverse)
 &lt;p&gt;&lt;a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EWdB5MhlZRJKjt5UiNRebR8BXb3xB2g0Bbg0JZHSNqpmLA?e=h5cEIV"&gt;下載 CoppeliaSim 4.3.0 rev12&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在 &lt;a href="https://www.onshape.com/en/education/"&gt;Onshape&lt;/a&gt; 建立教育版帳號.&lt;/p&gt;
 &lt;p&gt;因為電腦輔助設計與實習課程承接先前以 Brython 及 Python 為核心的計算機程式課程, 因此透過 &lt;a href="https://pypi.org/project/python-solvespace/"&gt;python-solvespace&lt;/a&gt; 可以解 2D 設計約束條件, &lt;a href="https://mde.tw/content/Python%20for%20NX.html"&gt;Python for NX&lt;/a&gt; 可以利用 &lt;a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html"&gt;NXOpen 中的 Python API&lt;/a&gt; 處理零組件設計, 利用 &lt;a href="https://github.com/onshape-public/onshape-clients"&gt;Onshape-clients&lt;/a&gt; 也能與 &lt;a href="https://www.onshape.com/en/education/"&gt;Onshape&lt;/a&gt; 零組件進行延伸互動. 當零組件設計繪圖完成後轉入 CoppeliaSim, 則可以利用 &lt;a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm"&gt;Python remote API&lt;/a&gt; 執行控制系統設計. 最終將完成的零組件設計與前述網站結合則除了透過 &lt;a href="https://github.com/CoppeliaRobotics/threejsFrontend"&gt;threejsFrontend&lt;/a&gt; 外, 也可自行利用 &lt;a href="https://github.com/mdecycu/pyweb3d"&gt;Pyweb3d&lt;/a&gt; 完成.&lt;/p&gt;
+&lt;p&gt;以下為電腦輔助設計與實習課程 2a 修課學員的個人倉儲靜態網頁連結:&lt;/p&gt;
+&lt;p id="brython_div3"&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+# 從 Brython 的 browser 模組導入 document 與 html 程式庫
+from browser import document, html
+
+# 利用 document 物件, 以索引 "brython_div3" 取得已經位於 html 網頁中 id="brython_div3" 的位置, 且對應到 brython_div2 變數
+brython_div2 = document["brython_div3"]
+# 可以用三個單引號或三個雙引號標註多行註解
+# 其中的 html 物件有許多建立 html 超文件內容的方法, 以下分別建立
+# BUTTON 按鈕, BR 跳行 (break), 以及 A 網站連結 (Anchor)
+# &lt;= 是 Brython 程式語言的特殊符號, 專用於將 html 超文件資料送給網頁對應變數
+"""
+brython_div2 &lt;= html.BUTTON("hello")
+brython_div2 &lt;= html.BR()
+brython_div2 &lt;= html.A("google", href="https://google.com")
+"""
+try:
+    c = document.query["c"]
+except:
+    c = "1a"
+c = "2a"
+# 將 1b.txt 資料從 Github Pages 網頁中取下
+url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
+# 利用 open() 開啟網頁, 利用 read() 讀取網頁內容
+# 然後利用 split() 方法, 利用跳行符號對資料進行切割, 切割後的資料結構為 list
+# list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
+data = open(url).read().split("\n")
+# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
+mdecp2022 = "https://mdecp2022.github.io/site-"
+# 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
+data = data[1:-1]
+# 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
+count = 0
+for i in data:
+    count += 1
+    stud = i.split("\t")
+    # 第一欄位為學號
+    stud_num = stud[0]
+    # 第二欄未為 github 帳號
+    github_acc = stud[1]
+    #print(stud_num, github_acc)
+    # 若沒有找到 github 帳號, 以學號作為帳號
+    if github_acc == "":
+        github_acc = stud_num
+    # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
+    site = mdecp2022 + github_acc
+    # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
+    link = html.A(stud_num, href=site)
+    brython_div2 &lt;= link
+    # 每一筆資料列出後, 以 break 標註跳行
+    # 每一行列出五筆資料後, 跳行
+    brython_div2 &lt;= " "
+    if count % 5 == 0:
+        brython_div2 &lt;= html.BR()
+&lt;/script&gt;
+
+&lt;p&gt;以下為電腦輔助設計與實習課程 2b 修課學員的個人倉儲靜態網頁連結:&lt;/p&gt;
+&lt;p id="brython_div4"&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+# 從 Brython 的 browser 模組導入 document 與 html 程式庫
+from browser import document, html
+
+# 利用 document 物件, 以索引 "brython_div4" 取得已經位於 html 網頁中 id="brython_div4" 的位置, 且對應到 brython_div2 變數
+brython_div2 = document["brython_div4"]
+# 可以用三個單引號或三個雙引號標註多行註解
+# 其中的 html 物件有許多建立 html 超文件內容的方法, 以下分別建立
+# BUTTON 按鈕, BR 跳行 (break), 以及 A 網站連結 (Anchor)
+# &lt;= 是 Brython 程式語言的特殊符號, 專用於將 html 超文件資料送給網頁對應變數
+"""
+brython_div2 &lt;= html.BUTTON("hello")
+brython_div2 &lt;= html.BR()
+brython_div2 &lt;= html.A("google", href="https://google.com")
+"""
+try:
+    c = document.query["c"]
+except:
+    c = "1a"
+c = "2b"
+# 將 1b.txt 資料從 Github Pages 網頁中取下
+url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
+# 利用 open() 開啟網頁, 利用 read() 讀取網頁內容
+# 然後利用 split() 方法, 利用跳行符號對資料進行切割, 切割後的資料結構為 list
+# list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
+data = open(url).read().split("\n")
+# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
+mdecp2022 = "https://mdecp2022.github.io/site-"
+# 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
+data = data[1:-1]
+# 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
+count = 0
+for i in data:
+    count += 1
+    stud = i.split("\t")
+    # 第一欄位為學號
+    stud_num = stud[0]
+    # 第二欄未為 github 帳號
+    github_acc = stud[1]
+    #print(stud_num, github_acc)
+    # 若沒有找到 github 帳號, 以學號作為帳號
+    if github_acc == "":
+        github_acc = stud_num
+    # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
+    site = mdecp2022 + github_acc
+    # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
+    link = html.A(stud_num, href=site)
+    brython_div2 &lt;= link
+    # 每一筆資料列出後, 以 break 標註跳行
+    # 每一行列出五筆資料後, 跳行
+    brython_div2 &lt;= " "
+    if count % 5 == 0:
+        brython_div2 &lt;= html.BR()
+&lt;/script&gt;
+
 &lt;h1&gt;cmsimde&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/mdecycu/cmsimde"&gt;cmsimde&lt;/a&gt; 是一套利用 Python 與 Flask 建立的網際內容管理系統. 利用 &lt;a href="https://github.com/mdecycu/cmsimde"&gt;cmsimde&lt;/a&gt; 與 Github Classroom 配置使用者網站的複雜度, 其中大部分來自電腦輔助設計室的網路環境與自架伺服器都只部署在純 &lt;a href="https://en.wikipedia.org/wiki/IPv6"&gt;IPv6&lt;/a&gt; 的網路環境中. 其實 &lt;a href="https://en.wikipedia.org/wiki/IPv6"&gt;IPv6&lt;/a&gt; 網路協定早在 1995 年便已推出, 但台灣至今的 &lt;a href="https://en.wikipedia.org/wiki/IPv6"&gt;IPv6&lt;/a&gt; 的&lt;a href="https://ipv6now.twnic.tw/ipv6/index.html"&gt;網路部署&lt;/a&gt;也僅達到將近 50%. 就連 github.com 截至目前的 git clone 與 git push 都還僅支援 IPv4. 因此在僅有 IPv4 的網路環境下, 或僅有 IPv6 的電腦輔助設計室與自架伺服器的各別協定使用, 都必須選擇性設定雙網路協定的代理主機.&lt;/p&gt;
 &lt;p&gt;上課時段將電腦輔助設計室直接連結到系主幹的目的, 是為了取得最大對外連線頻寬, 且避開許多錯誤設定的 IPv4 伺服器所造成的網路封包阻絕效應. 但其結果就是必須在純 IPv6 的網路環境中工作, 而當學員回到宿舍或其他網路連線條件下, 又幾乎都在 IPv4 的網路協定下工作, 為因應這兩種互不相容的網路環境, 最佳的設定就是使用兩套可攜的隨身系統, 分別在不同網路協定下運用. &lt;/p&gt;
