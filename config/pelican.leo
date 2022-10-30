@@ -4861,8 +4861,8 @@ url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
 # 然後利用 split() 方法, 利用跳行符號對資料進行切割, 切割後的資料結構為 list
 # list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
 data = open(url).read().split("\n")
-# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
-mdecp2022 = "https://mdecp2022.github.io/site-"
+# 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecad2022 變數對應
+mdecad2022 = "https://mdecad2022.github.io/site-"
 # 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
 data = data[1:-1]
 # 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
@@ -4879,7 +4879,7 @@ for i in data:
     if github_acc == "":
         github_acc = stud_num
     # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
-    site = mdecp2022 + github_acc
+    site = mdecad2022 + github_acc
     # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
     link = html.A(stud_num, href=site)
     brython_div2 &lt;= link
@@ -4896,22 +4896,19 @@ for i in data:
 &lt;script type="text/python3"&gt;
 # 從 Brython 的 browser 模組導入 document 與 html 程式庫
 from browser import document, html
+import random
 
-# 利用 document 物件, 以索引 "brython_div4" 取得已經位於 html 網頁中 id="brython_div4" 的位置, 且對應到 brython_div2 變數
-brython_div2 = document["brython_div4"]
+# 利用 document 物件, 以索引 "brython_div4" 取得已經位於 html 網頁中 id="brython_div4" 的位置, 且對應到 brython_div1 變數
+brython_div1 = document["brython_div4"]
 # 可以用三個單引號或三個雙引號標註多行註解
 # 其中的 html 物件有許多建立 html 超文件內容的方法, 以下分別建立
 # BUTTON 按鈕, BR 跳行 (break), 以及 A 網站連結 (Anchor)
 # &lt;= 是 Brython 程式語言的特殊符號, 專用於將 html 超文件資料送給網頁對應變數
 """
-brython_div2 &lt;= html.BUTTON("hello")
-brython_div2 &lt;= html.BR()
-brython_div2 &lt;= html.A("google", href="https://google.com")
+brython_div1 &lt;= html.BUTTON("hello")
+brython_div1 &lt;= html.BR()
+brython_div1 &lt;= html.A("google", href="https://google.com")
 """
-try:
-    c = document.query["c"]
-except:
-    c = "1a"
 c = "2b"
 # 將 1b.txt 資料從 Github Pages 網頁中取下
 url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
@@ -4920,27 +4917,37 @@ url = "https://mde.tw/studlist/2022fall/" + c + ".txt"
 # list 資料結構以 [] 區隔, 表示資料為數列, 其起始的索引值為 0
 data = open(url).read().split("\n")
 # 將每一位學員的靜態網頁共同的網路連結部分設為字串, 且與 mdecp2022 變數對應
-mdecp2022 = "https://mdecp2022.github.io/site-"
+mdecad2022 = "https://mdecad2022.github.io/site-"
 # 因為取下的資料第一筆為標題, 而最後一筆為空字串, 可以利用 Brython 的數列索引取值範圍將索引 0 與最後一個數列值去除
 data = data[1:-1]
+
+try:
+    num = document.query["num"]
+    random.shuffle(data)
+    data = data[:5]
+except:
+    pass
+
 # 利用 for 重複迴圈逐一取出 data 數列中的值, 然後以 \t, 也就是 tab 符號切割
 count = 0
 for i in data:
-    count += 1
     stud = i.split("\t")
     # 第一欄位為學號
     stud_num = stud[0]
     # 第二欄未為 github 帳號
-    github_acc = stud[1]
-    #print(stud_num, github_acc)
-    # 若沒有找到 github 帳號, 以學號作為帳號
-    if github_acc == "":
+    try:
+        github_acc = stud[1]
+        #print(stud_num, github_acc)
+        # 若沒有找到 github 帳號, 以學號作為帳號
+        if github_acc == "":
+            github_acc = stud_num
+    except:
         github_acc = stud_num
     # 將靜態網頁共同連結的變數與各自的 github 帳號, 組成完整的各學員靜態網頁連結
-    site = mdecp2022 + github_acc
-    # 利用 A 物件產生連結, 然後放入 id="brython_div21 所在的網頁位置
+    site = mdecad2022 + github_acc
+    # 利用 A 物件產生連結, 然後放入 id="brython_div1 所在的網頁位置
     link = html.A(stud_num, href=site)
-    brython_div2 &lt;= link
+    brython_div1 &lt;= link
     # 每一筆資料列出後, 以 break 標註跳行
     # 每一行列出五筆資料後, 跳行
     brython_div2 &lt;= " "
