@@ -884,3 +884,62 @@ doc["reverse"].bind("click", reverse)
 
 電腦輔助設計與實習課程核心
 ----
+
+CAD 課程的重點是利用電腦輔助設計套件進行產品設計, 而 KMOLab 所使用的套件包含 Siemens NX, Solvespace 與 Onshape, 機電模擬系統則採用 CoppeliaSim.
+
+[下載 NX2027 lite 可攜版本]
+
+[下載 Solvespace 3.1 版 for Windows]
+
+[下載 CoppeliaSim 4.3.0 rev12]
+
+在 [Onshape] 建立教育版帳號.
+
+[下載 NX2027 lite 可攜版本]: https://nfuedu.sharepoint.com/:u:/s/cad2022/EclS-NMhqJ9JvCa-pIQ_jMsBOLhmGLdxH5xv7JH8CHQMug?e=SMFg8L
+[下載 Solvespace 3.1 版 for Windows]: https://github.com/solvespace/solvespace/releases/download/v3.1/solvespace.exe
+[Onshape]: https://www.onshape.com/en/education/
+[下載 CoppeliaSim 4.3.0 rev12]: https://nfuedu.sharepoint.com/:u:/s/cad2022/EWdB5MhlZRJKjt5UiNRebR8BXb3xB2g0Bbg0JZHSNqpmLA?e=h5cEIV
+
+因為電腦輔助設計與實習課程承接先前以 Brython 及 Python 為核心的計算機程式課程, 因此透過 [python-solvespace] 可以解 2D 設計約束條件, [Python for NX] 可以利用 [NXOpen 中的 Python API] 處理零組件設計, 利用 [Onshape-clients] 也能與 [Onshape] 零組件進行延伸互動. 當零組件設計繪圖完成後轉入 CoppeliaSim, 則可以利用 [Python remote API] 執行控制系統設計. 最終將完成的零組件設計與前述網站結合則除了透過 [threejsFrontend] 外, 也可自行利用 [Pyweb3d] 完成.
+
+[python-solvespace]: https://pypi.org/project/python-solvespace/
+[Python for NX]: https://mde.tw/content/Python%20for%20NX.html
+[Onshape-clients]: https://github.com/onshape-public/onshape-clients
+[NXOpen 中的 Python API]: https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html
+[Python remote API]: https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm
+[Pyweb3d]: https://github.com/mdecycu/pyweb3d
+[threejsFrontend]: https://github.com/CoppeliaRobotics/threejsFrontend
+
+cmsimde
+====
+
+[cmsimde] 是一套利用 Python 與 Flask 建立的網際內容管理系統. 利用 [cmsimde] 與 Github Classroom 配置使用者網站的複雜度, 其中大部分來自電腦輔助設計室的網路環境與自架伺服器都只部署在純 [IPv6] 的網路環境中. 其實 [IPv6] 網路協定早在 1995 年便已推出, 但台灣至今的 [IPv6] 的[網路部署]也僅達到將近 50%. 就連 github.com 截至目前的 git clone 與 git push 都還僅支援 IPv4. 因此在僅有 IPv4 的網路環境下, 或僅有 IPv6 的電腦輔助設計室與自架伺服器的各別協定使用, 都必須選擇性設定雙網路協定的代理主機.
+
+上課時段將電腦輔助設計室直接連結到系主幹的目的, 是為了取得最大對外連線頻寬, 且避開許多錯誤設定的 IPv4 伺服器所造成的網路封包阻絕效應. 但其結果就是必須在純 IPv6 的網路環境中工作, 而當學員回到宿舍或其他網路連線條件下, 又幾乎都在 IPv4 的網路協定下工作, 為因應這兩種互不相容的網路環境, 最佳的設定就是使用兩套可攜的隨身系統, 分別在不同網路協定下運用. 
+
+道理雖然簡單, 但由於其他課程並未觸及 IPv6, 且即便在中華電信的網路連線下, 也並非全時提供 IPv6 網路環境, 因此造成許多初學者使用 cmsimde 網站與 Github 倉儲上的諸多困難.
+
+要克服網路與電腦使用上的諸多問題, 唯一的方法就是先了解基本原理, 然後再逐步依照教學流程設定後, 仔細比對網路連線原理, 多多針對不同使用情境加以調適練習就可逐步熟悉各種設定細節.
+
+使用 [cmsimde] 建立網站的另外一項瓶頸也來自子模組的使用, 最早將 [cmsimde] 用於 Github 倉儲與網站設定的背景是, 各使用者可以在既有 [cmsimde] 子模組的架構下, 透過 user.py 採 [Blueprints] 延伸各種網際內容管理或電腦輔助設計前後端流程的功能. 但隨著 Github Classroom、 MS Teams 與多種 CAD 套件的導入, 延伸程式的編寫門檻越堆越高, 這幾年的課程即便推展至 KMOLab 的協同產品設計課程, 進度也難以觸及 user.py 的範圍.
+
+尤其最近幾年的手機軟硬體功能已經足以與電腦並駕齊驅, 將手機與平板的應用導入課程已經是必然的趨勢, 因此接下來必須進一步思考是否重新架構 cmsimde 與學員個人倉儲及網站的配置, 刪除子模組的配置, 直接以 cmsimde 目錄導入, 如此至少可以免除 ssh 與 https 網路協定的雙重設定, 以降低配置上的複雜度.
+
+[cmsimde]: https://github.com/mdecycu/cmsimde
+[IPv6]: https://en.wikipedia.org/wiki/IPv6
+[網路部署]: https://ipv6now.twnic.tw/ipv6/index.html
+[Blueprints]: https://flask.palletsprojects.com/en/2.2.x/blueprints/
+
+stud.cycu.org
+====
+
+2022 Fall 由於 Heroku 取消免費帳號的使用, 且 Replit 的免費帳號資源過少, 導致在廣域網路上必須自行配置所有學員的動態網站伺服器, 也就是 stud.cycu.org 主機的啟用與配置.
+
+為了讓兩百多名學員能在同一台伺服器上執行動態網站, 各學員必須遠端登入伺服器使用 shell script 指令, 並以 Filezilla 的 sftp 降低學員對 Linux 指令不熟悉所造成的檔案編輯與配置問題. 其中用來查核個人是否啟動 python3 server.py 的 ps 指令為 ps axo pid,comm,user | grep "server.py" 只是 Quota 與 port 使用權限的配置仍需進一步思考最佳管理模式.
+
+TCExam
+====
+
+2022 Fall 重啟線上考試後, 重新啟用 TCExam, 目前正朝讓各學員自行出複選題目建立題庫的可行性.
+
+
