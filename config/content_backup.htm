@@ -110,7 +110,8 @@ acp "update cmsimde submodule"</pre>
 <h4>我們生活在智慧城市或場域 (大學, 學院, 科系, 班級, 團隊) 嗎?</h4>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/referencework/10.1007/978-3-030-69698-6">Handbook of Smart Cities</a></p>
 <h4>CMSiMDE 引用 ASCII STL方法:</h4>
-<p>將 ascii.stl 檔案上傳至 downloads 目錄後, 利用 File List 功能, 後列出 ascii.stl, 以滑鼠點擊會出現顯示 stl 檔案的頁面, 導入頁面時, 以 iframe 標註之 src 對應至顯示 stl 檔案的 html 連結即可, 例如:  &lt;iframe width="600" height="400" src="./../cmsimde/static/viewstl.html?src=./../downloads/spikeball.stl"&gt;&lt;/iframe&gt;</p>
+<p>將 ascii.stl 檔案上傳至 downloads 目錄後, 利用 File List 功能, 後列出 ascii.stl, 以滑鼠點擊會出現顯示 stl 檔案的頁面, 導入頁面時, 以 iframe 標註之 src 對應至顯示 stl 檔案的 html 連結即可, 例如:  &lt;iframe width="600" height="400" src=""&gt;&lt;/iframe&gt;</p>
+<p>src 在動態網站中為 /static/viewstl.html?src=/downloads/spikeball.stl</p>
 <p><iframe height="400" src="/static/viewstl.html?src=/downloads/spikeball.stl" width="600"></iframe></p><h3>Portable Python</h3>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
@@ -681,15 +682,35 @@ const scene = new THREE.Scene();
 </script>
 </p>
 <p><iframe height="600" src="https://threejs.org/docs/scenes/geometry-browser.html" width="800"></iframe></p>
-<h2>Pandoc</h2>
+<h2>ffmepg</h2>
+<p>FFmpeg 手冊: <a href="http://ffmpeg.org/ffmpeg.html">http://ffmpeg.org/ffmpeg.html</a></p>
+<h4>擷取 mp4 片段檔案</h4>
+<p>從 origin.mp4 影片中的第一秒開始, 切出 15 分鐘的影片, 存為 new.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -i origin.mp4 -ss 00:00:01 -t 00:15:00 -async 1 new.mp4</p>
+<h4>刪除影片中的聲音資料</h4>
+<p style="padding-left: 30px;">ffmpeg -i origin.mp4 -c copy -an new.mp4</p>
+<p>合併 mp4 檔案</p>
+<p>建立 allmp4.txt 內容為<br/>file '/path/to/1.mp4'<br/>file '/path/to/2.mp4'<br/>file '/path/to/3.mp4'</p>
+<p>將 1.mp4, 2.mp4 與 3.mp4 合併為 new.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -f concat -i allmp4.txt -c copy new.mp4</p>
+<h4>影片中加入字幕</h4>
+<p>利用 <a href="http://www.aegisub.org/">http://www.aegisub.org/</a> 可攜版本工具加入字幕</p>
+<p>直接將 input.srt 字幕資料 burn 入 input.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4</p>
+<h4>影片畫面中座標 x=5, y=950 位置中加入圖檔</h4>
+<h4 style="padding-left: 30px;"><img alt="" height="30" src="/images/kmol_102x30_color.png" width="102"/></h4>
+<p style="padding-left: 30px;">ffmpeg -i input.mp4 -i kmol_102x30_color.png -filter_complex "overlay=5:950" output.mp4</p>
+<h4>其他圖形化工具:</h4>
+<p style="padding-left: 30px;"><a href="http://www.aegisub.org/">http://www.aegisub.org/</a> (Font: SimSun, Size: 40, Bold, Primary, Color (255, 200, 5))</p>
+<p style="padding-left: 30px;"><a href="http://www.avidemux.org/nightly/win64_support/">http://www.avidemux.org/nightly/win64_support/</a> (建立使用 2.6.21 版本, 可與 aegisub 配合使用)</p>
+<p style="padding-left: 30px;"><a href="https://www.openshot.org/">https://www.openshot.org/</a> (必須分段輸入字幕, 無法與 aegisub 配合使用)</p><h2>Pandoc</h2>
 <p><a href="https://pandoc.org/">https://pandoc.org/</a></p>
 <p>cmsimde -&gt; LaTex -&gt; Github Actions -&gt; PDF</p>
 <p><a href="https://github.com/mdecycu/4072pj1">https://github.com/mdecycu/4072pj1</a></p>
 <p><a href="https://github.com/mdecycu/pj4082">https://github.com/mdecycu/pj4082</a></p>
 <p><a href="https://stackoverflow.com/questions/52396579/can-i-convert-github-pages-with-jekyll-to-pdf">https://stackoverflow.com/questions/52396579/can-i-convert-github-pages-with-jekyll-to-pdf</a></p>
 <p><a href="https://github.com/topics/html-to-pdf">https://github.com/topics/html-to-pdf</a></p>
-<p><a href="https://github.com/chiamingyen/sphinxBook">https://github.com/chiamingyen/sphinxBook</a></p>
-<h2>VSCode</h2>
+<p><a href="https://github.com/chiamingyen/sphinxBook">https://github.com/chiamingyen/sphinxBook</a></p><h2>VSCode</h2>
 <h4>EBooks:</h4>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-6901-5">Visual Studio Code Distilled </a>(2021)</p>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-7344-9">Optimizing Visual Studio Code for Python Development</a> (2021)</p>
@@ -2252,7 +2273,340 @@ var winkVideoData_40923151 = {
 <p><a href="https://solvespace.com">https://solvespace.com</a></p>
 <p><a href="https://github.com/solvespace/solvespace">https://github.com/solvespace/solvespace</a></p>
 <p><a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a></p>
-<h2>Realizable</h2>
+<p>將 Solvespace 轉出的 Binary STL 零組件轉為 ASCII STL 程式碼:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import struct
+normals = []
+points = []
+triangles = []
+triangle_number = 0
+def load_binary_stl(fp):
+    '''
+    二位元 STL 檔案格式如下:
+    檔案標頭共有 80 個字元(bytes), 內容通常省略, 但是內容不可使用 solid, 以免與文字檔案 STL 混淆
+    UINT8[80] – Header
+    UINT32 – Number of triangles (I:佔 4 bytes 的 unsigned integer)
+   
+    foreach triangle
+    REAL32[3] – Normal vector (f:每一座標分量為一佔 4 bytes 的 float, 共佔 12 bytes)
+    REAL32[3] – Vertex 1
+    REAL32[3] – Vertex 2
+    REAL32[3] – Vertex 3
+    UINT16 – Attribute byte count (H:兩個 bytes 的 unsigned short, 表示 attribute byte count)
+    end
+   
+    '''
+    # 已經在外部開檔
+    #fp=open(filename,'rb')
+    header=fp.read(80)
+    triangle_number = struct.unpack('I',fp.read(4))[0]
+    #print(triangle_number)
+    count=0
+    while True:
+        try:
+            p=fp.read(12)
+            if len(p)==12:
+                n=[struct.unpack('f',p[0:4])[0],struct.unpack('f',p[4:8])[0],struct.unpack('f',p[8:12])[0]]
+                normals.append(n)
+                l = len(points)
+                #print(n)
+            p=fp.read(12)
+            if len(p)==12:
+                p1=[struct.unpack('f',p[0:4])[0],struct.unpack('f',p[4:8])[0],struct.unpack('f',p[8:12])[0]]
+                points.append(p1)
+                #print(p1)
+            p=fp.read(12)
+            if len(p)==12:
+                p2=[struct.unpack('f',p[0:4])[0],struct.unpack('f',p[4:8])[0],struct.unpack('f',p[8:12])[0]]
+                points.append(p2)
+            p=fp.read(12)
+            if len(p)==12:
+                p3=[struct.unpack('f',p[0:4])[0],struct.unpack('f',p[4:8])[0],struct.unpack('f',p[8:12])[0]]
+                points.append(p3)
+                triangles.append((l, l+1, l+2))
+            # 使用 count 來計算三角形平面個數
+            # triangle_number 為 STL 檔案中的三角形個數
+            count += 1
+            #print(count)
+            # 在前面 12*4 個 bytes 的 normal 與三個點資料後, 為
+            # 一個 2 bytes 長的 unsigned short, 其值為零, 為 attribute
+            fp.read(2)
+            # 讀完所有三角平面後, 即跳出 while
+            if count &gt; triangle_number:
+                break
+        except EOFError:
+            break
+    #fp.close()
+def read_length(f):
+    length = struct.unpack("@i", f.read(4))
+    return length[0]
+def read_header(f):
+    f.seek(f.tell()+80)
+def write_as_ascii(outfilename):
+    f = open(outfilename, "w")
+    f.write ("solid "+outfilename+"\n")
+    for n  in range(len(triangles)):
+        f.write ("facet normal {} {} {}\n".format(normals[n][0],normals[n][1],normals[n][2]))
+        f.write ("outer loop\n")
+        f.write ("vertex {} {} {}\n".format(points[triangles[n][0]][0],points[triangles[n][0]][1],points[triangles[n][0]][2]))
+        f.write ("vertex {} {} {}\n".format(points[triangles[n][1]][0],points[triangles[n][1]][1],points[triangles[n][1]][2]))
+        f.write ("vertex {} {} {}\n".format(points[triangles[n][2]][0],points[triangles[n][2]][1],points[triangles[n][2]][2]))
+        f.write ("endloop\n")
+        f.write ("endfacet\n")
+    f.write ("endsolid "+outfilename+"\n")
+    f.close()
+def main():
+    infilename = "binary.stl"
+    outfilename = "ascii.stl"
+    try:
+        f = open(infilename, "rb")
+        #read_header(f)
+        #l = read_length(f)
+        try:
+            load_binary_stl(f)
+            l = len(normals)
+        except Exception as e:
+            print("Exception",e)
+        print(len(normals), len(points), len(triangles), l)
+        write_as_ascii(outfilename)
+        print("done")
+    except Exception as e:
+        print(e)
+if __name__ == '__main__':
+    main()</pre>
+<h4>切割多零件 STL 檔案:</h4>
+<p>stlSplitter.py 與 stlRW.py</p>
+<p>stlSplitter.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#!/usr/bin/env python
+# STL splitter
+# splits a STL file containing separate objects
+#
+# copyright 2014 Francesco Santini &lt;francesco.santini@gmail.com&gt;
+#
+# based on https://github.com/cmpolis/convertSTL by Chris Polis
+# and BinarySTL https://github.com/sukhbinder/python by Sukhbinder Singh
+#
+# Released under the MIT/X license
+ 
+ 
+import stlRW
+import sys
+from os import path
+ 
+## functions
+ 
+# maybe insert a tolerance for floating points?
+def check_connection(tri1, tri2):
+    for v1 in tri1[0:2]:
+        for v2 in tri2[0:2]:
+            if (v1[0] == v2[0] and v1[1] == v2[1] and v1[2] == v2[2]): return True
+    return False
+     
+ 
+if len(sys.argv) &lt; 2:
+    print("Usage: " + sys.argv[0] + " &lt;file.stl&gt;")
+    sys.exit(-1)
+ 
+fname = sys.argv[1]
+ 
+print("Reading...")
+ 
+head,points,n,v1,v2,v3,isAscii = stlRW.stlRead(fname)
+ 
+print("Analyzing...")
+ 
+faceTree = []
+ 
+for triangleIndex in range(0, len(v1)):
+    triangle = [ v1[triangleIndex], v2[triangleIndex], v3[triangleIndex], n[triangleIndex] ]
+    connectedTo = []
+    for treeindex in range(0, len(faceTree)):
+        for face in faceTree[treeindex]:
+            if check_connection(face, triangle):
+                connectedTo.append(treeindex) # the triangle is connected to at least one triangle of the current treeIndex
+                break
+       
+    if len(connectedTo) == 0:
+        # this is a triangle from a new set
+        #print "new set"
+        faceTree.append([])
+        faceTree[len(faceTree)-1].append(triangle)
+    elif len(connectedTo) == 1:
+        #print "existing set"
+        # the triangle is connected to one set
+        faceTree[connectedTo[0]].append(triangle)
+    else:
+        #print "connecting triangle"
+        #this triangle connects two branches of the tree: collapse the branches
+        faceTree[connectedTo[0]].append(triangle)
+        for i in range(len(connectedTo)-1, 0, -1):
+            faceTree[connectedTo[0]].extend(faceTree.pop(connectedTo[i]))
+       
+print("Number of separate objects: ", len(faceTree))
+ 
+print("Writing files")
+ 
+origFile, origExt = path.splitext(fname)
+for i in range(0, len(faceTree)):
+    newFile = origFile + "-" + str(i+1) + origExt
+    print("Writing ", newFile)
+    n = [field[2] for field in faceTree[i]]
+    v1 = [field[0] for field in faceTree[i]] 
+    v2 = [field[1] for field in faceTree[i]] 
+    v3 = [field[2] for field in faceTree[i]]
+    stlRW.stlWrite(newFile, n, v1, v2, v3)</pre>
+<p>stlRW.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># STL reader-writer
+#
+# copyright 2014 Francesco Santini &lt;francesco.santini@gmail.com&gt;
+#
+# based on https://github.com/cmpolis/convertSTL by Chris Polis
+# and BinarySTL https://github.com/sukhbinder/python by Sukhbinder Singh
+#
+# Released under the MIT/X license
+ 
+import numpy as np
+from struct import unpack, pack
+ 
+def stlReadBinary(fname):
+    fp = open(fname, 'rb')
+    Header = fp.read(80)
+    nn = fp.read(4)
+    Numtri = unpack('i', nn)[0]
+    #print nn
+    record_dtype = np.dtype([
+                  ('normals', np.float32,(3,)),  
+                  ('Vertex1', np.float32,(3,)),
+                  ('Vertex2', np.float32,(3,)),
+                  ('Vertex3', np.float32,(3,)) ,              
+                  ('atttr', '&lt;i2',(1,) )
+    ])
+    data = np.fromfile(fp , dtype = record_dtype , count =Numtri)
+    fp.close()
+ 
+    Normals = data['normals']
+    Vertex1= data['Vertex1']
+    Vertex2= data['Vertex2']
+    Vertex3= data['Vertex3']
+ 
+    p = np.append(Vertex1,Vertex2,axis=0)
+    p = np.append(p,Vertex3,axis=0) #list(v1)
+    Points =np.array(list(set(tuple(p1) for p1 in p)))
+ 
+    return Header,Points,Normals,Vertex1,Vertex2,Vertex3,False
+ 
+def stlReadAscii(fname):
+    fp = open(fname, 'r')
+    Normals = []
+    Vertex1 = []
+    Vertex2 = []
+    Vertex3 = []
+    Points = []
+    while True:
+        line = fp.readline()
+        if not line: break
+        if line.find("solid") &gt; -1 or line.find("endfacet") &gt; -1: continue
+        if line.find("facet normal") &gt; -1:
+            normline = line[line.find("facet normal")+len("facet normal"):]
+            normal = np.array([float(val.strip()) for val in normline.split()])
+            Normals.append(normal)
+            vertices = []
+            fp.readline() # outer loop
+            # read vertices after normal
+            for vIndex in range(0,3):
+                vLine = fp.readline()
+                vLine = vLine[vLine.find("vertex")+len("vertex"):]
+                vertices.append(np.array([float(val.strip()) for val in vLine.split()]))
+            Vertex1.append(vertices[0])
+            Vertex2.append(vertices[1])
+            Vertex3.append(vertices[2])
+            Points.extend(vertices)
+            fp.readline() # endloop
+    return "", Points, Normals, Vertex1, Vertex2, Vertex3,True
+     
+   
+def stlRead(fname):
+    fp = open(fname, "r")
+    try:
+        if fp.readline().find("solid") &gt; -1:
+            fp.close()
+            return stlReadAscii(fname)
+        else:
+            fp.close()
+            return stlReadBinary(fname)
+    except:
+        return stlReadBinary(fname)
+     
+def stlWriteBinary(fname, normals, v1, v2, v3):
+    with open(fname, "wb") as fout:
+        # write 80 bytes header
+        for i in range(0, 80): fout.write(pack("&lt;c", b" "))
+        fout.write(pack("&lt;I", len(normals))) # number of triangles
+        for i in range(0, len(normals)):
+            fout.write(pack("&lt;fff", *normals[i]))
+            fout.write(pack("&lt;fff", *v1[i]))
+            fout.write(pack("&lt;fff", *v2[i]))
+            fout.write(pack("&lt;fff", *v3[i]))
+            fout.write(pack("&lt;H", 0)) # attribute
+       
+def writeVector(fd, vec):
+    for v in vec:
+        fd.write("{:.7e}".format(v))
+        fd.write(" ")
+       
+def stlWriteAscii(fname, normals, v1, v2, v3):
+    with open(fname, "w") as fout:
+        fout.write("solid \n")
+        for i in range(0, len(normals)):
+            fout.write("  facet normal ")
+            writeVector(fout, normals[i])
+            fout.write("\n")
+            fout.write("    outer loop\n")
+            fout.write("      vertex ")
+            writeVector(fout, v1[i])
+            fout.write("\n")
+            fout.write("      vertex ")
+            writeVector(fout, v2[i])
+            fout.write("\n")
+            fout.write("      vertex ")
+            writeVector(fout, v3[i])
+            fout.write("\n")
+            fout.write("    endloop\n")
+            fout.write("  endfacet\n")
+       
+       
+def stlWrite(fname, normals, v1, v2, v3, isAscii=False):
+    if isAscii:
+        stlWriteAscii(fname, normals, v1, v2, v3)
+    else:
+        stlWriteBinary(fname, normals, v1, v2, v3)
+       
+# test
+if __name__ == "__main__":
+    import sys
+    fname = sys.argv[1]
+    h,p,n,v1,v2,v3,isAscii = stlRead(fname)
+    print(len(n))
+    print(v1[0])
+    stlWriteBinary("binary.stl", n, v1, v2, v3);
+    stlWriteAscii("ascii.stl", n, v1, v2, v3);</pre>
+<p>用法:</p>
+<p style="padding-left: 30px;">python stlSplitter.py solvespace_assembly_ascii.stl</p>
+<p>目前可以分割從 Solvespace 轉出的組立檔案, 但是各零件比例與座標位置錯誤, 希望修正後可以套用到 wrl 組立件檔案的分割, 以便將 Solvespace 轉出的 wrl 組立檔案輸入 Webots.</p>
+<p>Solvespace 轉出的 STL 組件, 利用 stlSplitter.py 轉出各零件 STL 後, 再利用 <a href="https://www.patrickmin.com/meshconv/">https://www.patrickmin.com/meshconv/</a> 轉為 WRL, 之後再將 WRL 零件轉入 Webots.</p>
+<p>STL 零件檔案也可以利用 <a href="https://github.com/cnr-isti-vclab/meshlab">https://github.com/cnr-isti-vclab/meshlab</a> (GUI 以 Qt 編寫) 轉為 WRL, 之後再轉入 Webots.</p>
+<p style="padding-left: 30px;">相關 converter 程式與 meshconv.exe: </p>
+<p style="padding-left: 60px;"><a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EWjKjLe_XOlItHMNYKX54mABiy-fdfRZ4ZZYLJNSkTWK9Q?e=JXJp3S">meshconv_stl_split_and_converter.7z</a> (for @nfu users only)</p>
+<p style="padding-left: 30px;">可攜 <a href="https://nfuedu.sharepoint.com/:u:/s/cad2022/EZl4rhs3STFEg64VZ0Wp_2gBQZ59_zDo1G00-ZLk1SCHZQ?e=YsXSJV">meshlab_portable.7z</a> (for @nfu users only)</p>
+<hr/>
+<p>Split STL in Javascript: <a href="http://mde.tw/cad2019/downloads/splitstl/">http://mde.tw/cad2019/downloads/splitstl/</a></p>
+<p>Split STL in C++: <a href="https://github.com/admesh/stlsplit">https://github.com/admesh/stlsplit</a></p>
+<p>STL viewer in C: <a href="https://github.com/hroncok/viewstl">https://github.com/hroncok/viewstl</a></p>
+<p>Flutter and three.js: <a href="https://github.com/andreibosco/flutter_threejs_test">https://github.com/andreibosco/flutter_threejs_test</a></p>
+<p><a href="https://nfuedu.sharepoint.com/:b:/s/cad2022/ESSIbY3PBIpMssjlvNBRBk4BSUSsyQl1sQnTh8IIWQiQSQ?e=V7ufLT">An Optimal Algorithm for 3D Triangle Mesh Slicing.pdf</a> (for @nfu users only)</p>
+<h4>Libfivepy</h4>
+<p><a href="https://gitlab.com/rcmz0/libfivepy">https://gitlab.com/rcmz0/libfivepy</a></p>
+<p><a href="https://github.com/mkeeter/fstl">https://github.com/mkeeter/fstl</a></p>
+<p><a href="https://github.com/wxkNeter/qt-stl">https://github.com/wxkNeter/qt-stl</a></p><h2>Realizable</h2>
 <p>機械元件建模工具:</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cad2021/content/Compile%20Solvespace.html">Solvespace</a> (開源)、<a href="https://mde.tw/cad2021_hw/content/NX1980.html">NX1980</a> (高端)、<a href="https://www.onshape.com/en/">Onshape</a> (全雲端)</p>
 <p>電子電機控制與感測模擬工具:</p>

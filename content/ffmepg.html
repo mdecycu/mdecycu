@@ -2,7 +2,7 @@
         <head>
         <title>mde.tw</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,26 +141,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Virtualbox << <a href='Virtualbox.html'>Previous</a> <a href='Solvespace.html'>Next</a> >> Solvespace<br /><h1>cube</h1>
-<p>以下為採用 NX1980 繪製的正方體零件, 可能原先的繪圖流程是在草圖階段繪圖時並未對長度與寬度設定尺寸, 就直接長出實體, 然後再回到草圖設定尺寸, 因此 Tools -&gt; Expressions 以 p1 定義高度, 而長度則設為 p2, 寬度設為 p3, 在沒有透過 set Expressions 對長度與寬度對應尺寸約束之前, 在 Tools -&gt; Expressions 只能看到 p1, 其實 p2 與 p3 應該已經跟草圖的尺寸綁定, 因此可以透過 NXOpen Python API 程式 對無列出長寬尺寸變數的零件進行操控, 看是否能夠利用 p2 與 p3 變數控制草圖大小.</p>
-<p>以下為設法透過草圖編輯列出尺變數的 Wink 影片:</p>
-<p><a href="./../downloads/w10_cube_1980_cubes.7z">參考零件.7z</a></p>
-<p>
-<script>
-var winkVideoData_40923151 = {
-  dataVersion: 1,
-  frameRate: 10,
-  buttonFrameLength: 5,
-  buttonFrameOffset: 2,
-  frameStops: {
-  },
-};
-</script>
-</p>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_40923151" height="630" muted="true" width="1008">
-<source src="./../downloads/w10_cube.mp4" type="video/mp4"/></video></div>
-<br />Virtualbox << <a href='Virtualbox.html'>Previous</a> <a href='Solvespace.html'>Next</a> >> Solvespace</div>
+    <div id="tipue_search_content">Three.js << <a href='Three.js.html'>Previous</a> <a href='Pandoc.html'>Next</a> >> Pandoc<br /><h1>ffmepg</h1>
+<p>FFmpeg 手冊: <a href="http://ffmpeg.org/ffmpeg.html">http://ffmpeg.org/ffmpeg.html</a></p>
+<h4>擷取 mp4 片段檔案</h4>
+<p>從 origin.mp4 影片中的第一秒開始, 切出 15 分鐘的影片, 存為 new.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -i origin.mp4 -ss 00:00:01 -t 00:15:00 -async 1 new.mp4</p>
+<h4>刪除影片中的聲音資料</h4>
+<p style="padding-left: 30px;">ffmpeg -i origin.mp4 -c copy -an new.mp4</p>
+<p>合併 mp4 檔案</p>
+<p>建立 allmp4.txt 內容為<br/>file '/path/to/1.mp4'<br/>file '/path/to/2.mp4'<br/>file '/path/to/3.mp4'</p>
+<p>將 1.mp4, 2.mp4 與 3.mp4 合併為 new.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -f concat -i allmp4.txt -c copy new.mp4</p>
+<h4>影片中加入字幕</h4>
+<p>利用 <a href="http://www.aegisub.org/">http://www.aegisub.org/</a> 可攜版本工具加入字幕</p>
+<p>直接將 input.srt 字幕資料 burn 入 input.mp4</p>
+<p style="padding-left: 30px;">ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4</p>
+<h4>影片畫面中座標 x=5, y=950 位置中加入圖檔</h4>
+<h4 style="padding-left: 30px;"><img alt="" height="30" src="./../images/kmol_102x30_color.png" width="102"/></h4>
+<p style="padding-left: 30px;">ffmpeg -i input.mp4 -i kmol_102x30_color.png -filter_complex "overlay=5:950" output.mp4</p>
+<h4>其他圖形化工具:</h4>
+<p style="padding-left: 30px;"><a href="http://www.aegisub.org/">http://www.aegisub.org/</a> (Font: SimSun, Size: 40, Bold, Primary, Color (255, 200, 5))</p>
+<p style="padding-left: 30px;"><a href="http://www.avidemux.org/nightly/win64_support/">http://www.avidemux.org/nightly/win64_support/</a> (建立使用 2.6.21 版本, 可與 aegisub 配合使用)</p>
+<p style="padding-left: 30px;"><a href="https://www.openshot.org/">https://www.openshot.org/</a> (必須分段輸入字幕, 無法與 aegisub 配合使用)</p><br />Three.js << <a href='Three.js.html'>Previous</a> <a href='Pandoc.html'>Next</a> >> Pandoc</div>
         
     <!-- footer -->
       <div class="container">
