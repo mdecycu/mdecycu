@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-10-31T13:51:54+08:00</updated><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-10-31T13:51:54+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-11-08T23:02:24+08:00</updated><entry><title>2022 Fall 課程 w9</title><link href="https://mde.tw/blog/2022_fall_courses_w9.html" rel="alternate"></link><published>2022-11-08T11:00:00+08:00</published><updated>2022-11-08T23:02:24+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-11-08:/blog/2022_fall_courses_w9.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第九週, 期中線上考試週.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Fall 課程進入第九週, 期中線上考試週.&lt;/p&gt;
+
+
+&lt;h1&gt;TCExam&lt;/h1&gt;
+&lt;p&gt;這個學期又重新啟用 TCExam, 這是一套用 PHP 加上資料庫所寫的線上考試系統, 只不過從 &lt;a href="https://github.com/tecnickcom/tcexam"&gt;https://github.com/tecnickcom/tcexam&lt;/a&gt; 取得的原始碼無法在最新的 PHP 8.1 與 PostgreSQL 15 版中執行.&lt;/p&gt;
+&lt;p&gt;從 &lt;a href="https://www.tiobe.com/tiobe-index/php/"&gt;TIOBE Index&lt;/a&gt; 可以很清楚看出, 2005-2010 年是 PHP 程式語言最盛行的階段, 目前已經掉到常用程式語言第十名左右. 但因為 TCExam 的架構完整, 允許利用題庫出題, 且能夠使用 xml 匯入或匯出題庫, 因此只要能在最新的 PHP 與 PostgreSQL 系統中執行, 應該還算堪用.&lt;/p&gt;
+&lt;p&gt;由於目前 HTML5 中的 Canvas 與 WebGL 可以建立網際互動式題目, 但若要與 TCExam 結合, 多少還是得使用 PHP, 因此在 &lt;a href="https://mde.tw/content/pjexam.html"&gt;https://mde.tw/content/pjexam.html&lt;/a&gt; 才會希望利用 Flask 編寫延伸程式, 最終若能擷取其資料庫架構, 重新以 Flask 編寫, 並且置入 AI 與使用者群組的命題內容, 應該是個不錯的專案研究主題.&lt;/p&gt;
+&lt;h1&gt;考試題庫&lt;/h1&gt;
+&lt;p&gt;線上考試的主要目的是鑑別出各學員在特定課程主題的學習成效. 理論上應該會有選擇題, 填充題與問答申論題目. 但是目前僅利用複選題, 讓學員在考試交卷後, 就可以知道分數, 好處是流程效率高, 但卻犧牲掉讓學生填空與思考申論的機會.&lt;/p&gt;
+&lt;h2&gt;題型&lt;/h2&gt;
+&lt;p&gt;目前所使用的題型, 全部都是要求學員從答題選項中, 選出正確的敘述, 而各選擇項目的說明大多採用文字敘述 (目前沒有計算與推導式的題目).&lt;/p&gt;
+&lt;p&gt;其中, 在電腦輔助設計室中的網路設定部分, 學員必須了解如何設定, 並且針對 IPv6 網路協定所使用的設定細節描述, 從選擇項目中選出正確的設定.&lt;/p&gt;
+&lt;p&gt;另外與 SSH 協定連線有關的題目, 或是 git http 網路協定的設定題目, 也大抵與上課時採用純 IPv6 網路連線有關. 只要學員在上課時有實際操作設定, 應該都能分辨出選擇項目中正確的敘述.&lt;/p&gt;
+&lt;p&gt;在 Python 程式語法的題目部分, 則通常給定一段程式碼, 然後試圖讓學員將程式碼複製到可以執行的 Brython 程式環境執行後, 再詢問是否可以執行, 或者經過特定修改後是否能夠執行等問題, 以文句敘述, 要求學員判斷真偽.&lt;/p&gt;
+&lt;p&gt;至於與電腦輔助設計有關的題目, 則希望學員能夠正確開啟 Solvespace, NX2027 與 Onshape 將零組件載入後再答題.&lt;/p&gt;
+&lt;p&gt;目前的 CAD 相關題目, 以 Onshape 而言, 要求使用者了解各零組件檔案擷取, 是採螢幕下方 tab 頁面區分, 並且可從零件繪圖流程查詢相關設計參數. 其餘 NX 與 Solvespace 的題型也大抵類似, 要求學員開啟檔案後, 再進入利用 measure 量測尺寸或查詢設計參數等.&lt;/p&gt;
+&lt;h2&gt;學員分組建立題庫&lt;/h2&gt;
+&lt;p&gt;預計每六人一組, 每週根據先前授課內容, 交出十個複選題, 且每一個題目針對一個課程教學主題, 提供十個選項, 其中規定正確敘述與錯誤敘述各半. 因此若以每題四個選擇, 則每一個題目可以產生 10C4 個組合, 也就是共有 10&lt;em&gt;9&lt;/em&gt;8&lt;em&gt;7/4&lt;/em&gt;3&lt;em&gt;2&lt;/em&gt;1 = 210 種不同組合題目. 因此針對每班約 60 人的線上考題, 應可避開針對同一題組內相同題目的問題.&lt;/p&gt;
+&lt;h1&gt;計算機程式課程主題&lt;/h1&gt;
+&lt;p&gt;當各學員能夠在 stud Ubuntu 主機開啟個人倉儲的動態網站後, 即可直接透過 Gist 與 stud 動態網站練習編寫各種 Brython 程式.&lt;/p&gt;
+&lt;p&gt;首先是希望學員了解如何透過 Brython 特有的 Open() 與 read() 讀取相關網站上的資料後, 進行相關 split() 後, 將資料納入數列後, 可以透過 for 迴圈與判斷式, 熟悉如何使用 List, Tuple 與 Dict 等資料結構.&lt;/p&gt;
+&lt;p&gt;並且從 random 模組及其 shuffle(), 可以編寫各班學號抽點的程式, 之後再利用 Brython 的 html 模組, 直接在  stud 動態網站中建立超文件內容, 其中包括 anchor 與 form 表單等.&lt;/p&gt;
+&lt;p&gt;目前在 Brython 頁面中已經有 block 動態模擬, 貪食蛇以及俄羅斯方塊等遊戲的基本程式範例, 若學員能夠了解如何透過視覺暫留的方式, 在網頁上建立各種遊戲, 接下來或可朝貪食蛇與俄羅斯方塊的基本 AI 架構程式學習.&lt;/p&gt;
+&lt;p&gt;以貪食蛇的 AI 程式而言, 操控者每走一步, 都必須先行評估後續的最佳得分策略, 其中牽涉 &lt;a href="https://en.wikipedia.org/wiki/Breadth-first_search"&gt;BFS&lt;/a&gt; 與 &lt;a href="https://en.wikipedia.org/wiki/Depth-first_search"&gt;DFS&lt;/a&gt; 搜尋法的探討與程式碼實現.&lt;/p&gt;
+&lt;h1&gt;電腦輔助設計與實習課程主題&lt;/h1&gt;
+&lt;p&gt;目前的進度在讓學員針對 Solvespace, NX2027 (即 NX2007 最後一個版本, 與 NX2008 檔案格式相容), 以及 Onshape 進行鑽床零組件繪製練習.&lt;/p&gt;
+&lt;p&gt;其中 Solvespace 可以利用 &lt;a href="https://pypi.org/project/python-solvespace/"&gt;https://pypi.org/project/python-solvespace/&lt;/a&gt; 以 Python 解各繪圖 Group 中草圖尺寸間的約束條件. NX2027 則可透過 NXOpen Python API 對零組件進行程式設計.  若將 NX20227 在 Python 3.8 版次的解譯器環境中啟動, 且模組搜尋連結指向 NX2027\NXBIN\Python, 則可使用 Flask 網際程式與 NX2027 進行 non-interactive 互動, 協助使用者在瀏覽器中的動態網站執行電腦輔助機械零組件設計.&lt;/p&gt;
+&lt;p&gt;至於 Onshape, 則可以利用 &lt;a href="https://dev-portal.onshape.com/"&gt;https://dev-portal.onshape.com/&lt;/a&gt; 與 &lt;a href="https://github.com/onshape-public/onshape-clients"&gt;https://github.com/onshape-public/onshape-clients&lt;/a&gt;, 以 Python 建立 API 延伸程式.&lt;/p&gt;
+&lt;h2&gt;RoboDK&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://robodk.com/"&gt;RoboDK&lt;/a&gt; 源自 &lt;a href="http://www.parallemic.org/RoKiSim.html"&gt;http://www.parallemic.org/RoKiSim.html&lt;/a&gt;, 在電腦輔助設計與實習課程, 可以作為 STL 零組件檢視器. 使用者也可以透過 RoboDK 套件中的各種功能, 了解產業界如何利用機械手臂執行各種電腦輔助製造流程.&lt;/p&gt;</content><category term="cad2022"></category><category term="w6"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-10-31T13:51:54+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 
 
