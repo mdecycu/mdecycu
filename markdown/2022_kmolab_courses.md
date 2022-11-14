@@ -2,7 +2,7 @@
 Title: 2022 Fall 課程 w8
 Date: 2022-10-29 11:00
 Category: cad2022
-Tags: w6, cad2022, cp2022
+Tags: w8, cad2022, cp2022
 Slug: 2022_fall_courses_w8
 Author: mdecycu
 ---

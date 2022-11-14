@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tcexamquestions version="14.8.5
+">
+<header lang="en" date="2022-11-10 14:02:11"></header>
+<body>
+    <module>
+        <name>network_setting</name>
+        <enabled>true</enabled>
+        <subject>
+        <name>cadlab</name>
+        <description>有關電腦輔助設計室網路相關設定</description>
+        <enabled>true</enabled>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請根據機械設計工程系綜一館八樓的電腦輔助設計室電腦與網路相關設定, 選出下列正確的敘述.</description>
+        <explanation>在電腦輔助設計室上課時, 將網路線直接連接到系主幹, 在正常情況下, 可以得到最大的連外頻寬.</explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>上課時段之所以只選用 IPv6 網路協定, 是為了取得對外網路連線最大頻寬.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>機械設計工程系的可直接連外 IPv4 網段, 其網路位址以 140.130.17 開頭.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>機械設計工程系的可直接連外 IPv6 網段, 其網路位址以 2001:288:6004:17 開頭.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>在 Windows 10 命令提示字元視窗中輸入 ipconfig /all, 其中的 ip 代表 internet protocol.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>在 Windows 10 命令提示字元視窗中輸入 ipconfig /all, 其中的 config 代表 configuration.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>中華電腦所提供的 IPv6 DNS 伺服器分別是: 2001:b000:168::1 與 2001:b000:168::2</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>在 Windows 10 要帶出命令提示字元視窗的指令為 cmd, 代表 command, 也就是可以用來執行命令的視窗.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>IPv4 與 IPv6 是兩種不相容的網路協定.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>電腦輔助設計室網路直接連外, 且選用 IPv6 網路協定自動擷取 IP, 所取得的網路位址其前面四個區段將會是: 2002:288:6004:17</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>電腦輔助設計室網路直接連外, 且選用 IPv6 網路協定自動擷取 IP, 可以不用設定 DNS 伺服器, 就能利用符號名稱連接外部網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Chrome, Edge 與 Firefox 等三種瀏覽器, 都必須利用 Windows 10 操作系統設定的代理主機才能上網.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>在 Windows 10 命令提示字元視窗中輸入 ipconfig /all, 表示要電腦自動設定網路連線.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列與課程相關的正確敘述!</description>
+        <explanation>在電腦輔助設計室上課時, 將網路線直接連接到系主幹, 在正常情況下, 可以得到最大的連外頻寬.</explanation>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>上課時段之所以要將電腦輔助設計室的網路直接連到系主幹, 目的是希望每一台電腦都能得到最大的網路頻寬.</description>
+        <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>Google 的搜索引擎已經全面支援 IPv6 網路協定.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>Youtube 的網路播放服務, 已經全面支援 IPv6 網路協定.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>當電腦輔助設計室中的電腦以 IPv6 網路協定上網時, 要自行設定 DNS 伺服器, 才能在瀏覽器中, 以網站的符號名稱連結.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>當電腦輔助設計室中的電腦以 IPv6 網路協定上網時, 若要設定中華電信的 DNS, 其 IP 網址為 2001:b000:168::1</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>當電腦輔助設計室中的電腦只透過 IPv6 網路協定連網, 可以透過代理主機 2001:288:6004:17::42 埠號 3128, 連線到只支援 IPv4 的網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 學期的課程利用 Github Classroom 建立學員的課程倉儲.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 學期的課程利用 Replit 全球資訊網 IDE 執行學員倉儲中的 Python 網際程式.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>www.nfu.edu.tw 網站中的所有網路連結, 已經全面支援 IPv6 網路協定.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 學期的線上考試採用 E3 教育版系統.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列與課程相關的正確敘述,</description>
+        <explanation>在電腦輔助設計室上課時, 將網路線直接連接到系主幹, 在正常情況下, 可以得到最大的連外頻寬.</explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 Fall 計算機程式課程的學員倉儲位於 [url]https://github.com/mdecp2022[/url], 而電腦輔助設計與實習學員倉儲則位於 [url]https://github.com/mdecad2022[/url]</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從課程所提供的[url=https://nfuedu.sharepoint.com/sites/cad2022/Class%20Materials/Forms/AllItems.aspx?id=%2Fsites%2Fcad2022%2FClass%20Materials%2F2022%2Ffall&amp;p=true&amp;ct=1664332996150&amp;or=Teams%2DHL&amp;ga=1]檔案下載區[/url], 可以發現 2022 Fall 所採用的 Wink 版本為 3.01.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從課程所提供的[url=https://nfuedu.sharepoint.com/sites/cad2022/Class%20Materials/Forms/AllItems.aspx?id=%2Fsites%2Fcad2022%2FClass%20Materials%2F2022%2Ffall&amp;p=true&amp;ct=1664332996150&amp;or=Teams%2DHL&amp;ga=1]檔案下載區[/url], 可以發現 2022 Fall 採用了 3.10.6 版的 Python.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從課程的共用公佈欄網站, 可以發現 cp2022 課程的 Teams code 為 xry4zv3, 而 cad2022 課程的 Teams code 為 dyw3r9h</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從 [url]https://tcexam.org/docs/first_test/[/url] 可以看到如何利用 TCExam 建立考試題目的過程.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>假如在電腦的命令提示字元視窗中, 輸入 ipconfig /all 後, 顯示的畫面, Link-local IPv6 Address 欄位的網址開頭為 fe80</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從 [url]https://mde.tw/blog/pages/about/index.html[/url] 進入課程倉儲後, 可以發現 "Sep 26, 2022" 的提交說明字串為: "加入選課學員擷取程式資料".</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從 [url]https://mde.tw/blog/pages/about/index.html[/url] 進入課程倉儲後, 可以發現 "Sep 22, 2022" 總共完成六次改版提交.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>從 [url]https://mde.tw/blog/pages/about/index.html[/url] 可以找到課程 https://mde.tw 網站的倉儲名稱為 github.com</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列與課程相關的正確敘述.</description>
+        <explanation>在電腦輔助設計室上課時, 將網路線直接連接到系主幹, 在正常情況下, 可以得到最大的連外頻寬.</explanation>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>上課時段電腦輔助設計室的網路連線會直接與系網路主幹相連.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>使用 Ipv4 網路協定連網, 無法直接連線到只支援 IPv6 的網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>要下載與課程相關的電子書, 可以透過 https://link.springer.com 網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>當 PC 網路連線只開啟 IPv4 網路連線, 無法直接連到只支援 IPv6 的網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>設定代理主機時所選用的埠號為 3128</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>當 PC 網路連線只開啟 IPv6 網路連線, 無法直接連到只支援 IPv4 的網站.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>課程網站的網址為: mde.tw</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>www.nfu.edu.tw 並不支援 IPv6 網路協定連線.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>每一位學員都必須建立的倉儲服務, 位於 gitlab.com</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列與課程相關的正確敘述:</description>
+        <explanation>在電腦輔助設計室上課時, 將網路線直接連接到系主幹, 在正常情況下, 可以得到最大的連外頻寬.</explanation>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 上課時在 Microsoft Teams 所錄製的教學影片, 可以在手機上的 Teams Apps 中觀看.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 上課時各學員登入 Microsoft Teams 所使用的帳號為"學號@nfu.edu.tw"</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>true</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>學校目前所使用的"學號@nfu.edu.tw"電腦郵箱, 可以從 [url]https://mail.nfu.edu.tw[/url] 登入.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>[url]https://wcms.repl.co[/url] 是 2022 Fall 計算機程式及電腦輔助設計與實習課程的共用公布欄網站.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>學校目前所使用的"學號@nfu.edu.tw"電腦郵箱, 是採用 Gmail 郵件系統.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 課程所使用的考試系統網址為 https://exam.mde.tw</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>2022 Fall 上課時在 Microsoft Teams 所錄製的教學影片, 學員必須自行下載觀看, 因為下課後, 影片檔案就會自動刪除.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>在 Microsoft Teams 儲存與課程有關的檔案, 必須先登入 Github 帳號後, 才能下載.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        <answer>
+        <enabled>true</enabled>
+        <isright>false</isright>
+        <position></position>
+        <keyboard_key></keyboard_key>
+        <description>各學員要進入 Microsoft Teams 課程區域, 只要先登入到學校的電子郵箱後, 就可以直接進入.</description>
+        <explanation>ATTENTION: [8192] htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated | LINE: 793 | FILE: C:\tcexam\tcexam\admin\code\tce_edit_answer.php&lt;/div&gt;
+        &gt;</explanation>
+        </answer>
+        </question>
+        </subject>
+    </module>
+</body>
+</tcexamquestions>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tcexamquestions version="14.8.5
+">
+<header lang="en" date="2022-11-10 14:01:13"></header>
+<body>
+    <module>
+        <name>cad2022</name>
+        <enabled>true</enabled>
+        <subject>
+        <name>NX-part</name>
+        <description>與 NX2027 有關的題目</description>
+        <enabled>true</enabled>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請根據電腦輔助設計課程所使用的 NX 套件, 選出下列正確的敘述.</description>
+        <explanation></explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 電腦輔助設計與實習課程使用 NX 套件的原因之一, 是因為可以利用 NXOpen Python API, 建立輔助設計延伸程式, 此舉正好可與大一的計算機程式課程互相呼應.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>NX 為 Siemens 公司旗下的高階電腦輔助設計與繪圖套件, 同公司的中階電腦輔助設計與繪圖套件為 Solid Edge.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 電腦輔助設計與實習課程所選用的 NX 版本為 2027 版.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 電腦輔助設計與實習課程從第六週開始, 要求學員利用 NX 練習繪圖的零組件檔案, 下載之後的檔案名稱為 drill_press.7z.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 電腦輔助設計與實習課程在第六週時, 要求學員利用 NX 練習繪圖後, 要將練習內容與結果放在個人網站上 H1 格式頁面, 且頁面標題要求為 w6.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>NX 為 Siemens 公司旗下的高階電腦輔助設計與繪圖套件, 同公司的雲端電腦輔助設計套件為 Onshape.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>NX 是一套高階電腦輔助設計與繪圖套件, 同一個公司的中階電腦輔助設計與繪圖套件為通用全球的 SolidWorks.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>2022 電腦輔助設計與實習課程在第六週時, 要求學員利用 NX 練習繪圖後, 要利用 Wink2 製作過程影片.</description>
+            <explanation></explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請根據電腦輔助設計課程所使用的 Onshape 套件, 選出下列正確的敘述.</description>
+        <explanation></explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Onshape 目前的母公司名稱為 PTC.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Onshape 使用者可以分別從 Edge, Firefox 與 Chrome 瀏覽器中登入使用.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>從[url=https://en.wikipedia.org/wiki/Onshape]這裡[/url]可以清楚了解, 其實 Onshape 的開發團隊領導者, 就是當年籌組開發 SolidWorks 的團隊領導者.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Onshape 可從手機的 APP 中登入.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Onshape 其實就是 SolidWorks 的雲端版本.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>Onshape 是一套全雲端電腦輔助設計與繪圖套件, 但一定要在 Windows 操作系統中, 才能夠使用.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>使用 Onshape 之前, 一定要先申請 Replit 帳號, 並且設法將兩者資料同步之後才可使用.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>使用 Onshape 之前, 正如 w6 課程中所述, 必須先下載 Filezilla 後才能夠使用.</description>
+            <explanation></explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列正確的敘述.</description>
+        <explanation></explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url]其中一個關鍵尺寸為 100mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url]使用了公制作為繪圖尺寸.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url]其中一個關鍵尺寸為 255mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url]其中一個關鍵尺寸為 340mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url] 是一個圓形球體.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url]其中一個關鍵尺寸為 200mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url] 是一個正齒輪.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EYwM58N47vREqy_MPP34k-EBXjjay3JM7Vbo8OLlMu4Cxw?e=s4bbAR]這個零件[/url] 是一個圓柱體.</description>
+            <explanation></explanation>
+        </answer>
+        </question>
+        <question>
+        <enabled>true</enabled>
+        <type>multiple</type>
+        <difficulty>1</difficulty>
+        <position></position>
+        <timer>0</timer>
+        <fullscreen>false</fullscreen>
+        <inline_answers>false</inline_answers>
+        <auto_next>false</auto_next>
+        <description>請選出下列正確的敘述..</description>
+        <explanation></explanation>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]中心圓孔直徑為 46mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]中心圓孔高度為 32.5mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>true</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]其中一個倒圓角的半徑為 5mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]為一個圓球體.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]為一個正方體.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]中心圓孔高度為 32mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]其中一個倒圓角的半徑為 3mm.</description>
+            <explanation></explanation>
+        </answer>
+        <answer>
+            <enabled>true</enabled>
+            <isright>false</isright>
+            <position></position>
+            <keyboard_key></keyboard_key>
+            <description>以 NX2027 建立的[url=https://nfuedu.sharepoint.com/:u:/s/cad2022/EeAeYRqZ9KRMsy20Mgxcb7cB2QZkI1iPkBTaGOe7QsjCnA?e=7Lm9mF]這個零件檔案[/url]中心圓孔直徑為 48mm.</description>
+            <explanation></explanation>
+        </answer>
+        </question>
+        </subject>
+    </module>
+</body>
+</tcexamquestions>

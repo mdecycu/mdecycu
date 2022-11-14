@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-11-08T23:02:24+08:00</updated><entry><title>2022 Fall 課程 w9</title><link href="https://mde.tw/blog/2022_fall_courses_w9.html" rel="alternate"></link><published>2022-11-08T11:00:00+08:00</published><updated>2022-11-08T23:02:24+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-11-08:/blog/2022_fall_courses_w9.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第九週, 期中線上考試週.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2022</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cad2022.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2022-11-14T20:39:15+08:00</updated><entry><title>2022 Fall 課程 w10</title><link href="https://mde.tw/blog/2022_fall_courses_w10.html" rel="alternate"></link><published>2022-11-12T11:00:00+08:00</published><updated>2022-11-14T20:39:15+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-11-12:/blog/2022_fall_courses_w10.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第十週, 各班每六名學員自選組員分組, 目的除了鼓勵同儕間的互相學習外, 也希望每週各組依照 TCExam 題組的 XML 檔案格式出題.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Fall 課程進入第十週, 各班每六名學員自選組員分組, 目的除了鼓勵同儕間的互相學習外, 也希望每週各組依照 TCExam 題組的 XML 檔案格式出題.&lt;/p&gt;
+
+
+&lt;h2&gt;XML 格式檔案&lt;/h2&gt;
+&lt;p&gt;在第十週的課程中, 無論是 TCExam 線上考試題庫的格式或是 CoppeliaSim 文字檔案格式, 都可以使用 XML 格式檔案表示.&lt;/p&gt;
+&lt;p&gt;XML 格式檔案就是利用標註 (tags) 涵蓋特定區域範圍的資料, 表示該段範圍資料的屬性. 超文件檔案就是典型的一種 XML 檔案.&lt;/p&gt;
+&lt;p&gt;希望處理 XML 檔案, 必須先取得該檔案所使用的 tags, 以下程式就可以取出某一 XML 檔案中的 tags:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# from https://stackoverflow.com/questions/29596584/getting-a-list-of-xml-tags-in-file-using-xml-etree-elementtree
+import xml.etree.ElementTree as ET
+# load and parse the file
+filename = 'two_link_slvs_shaft_simple.simscene.xml'
+xmlTree = ET.parse(filename)
+
+elemList = []
+
+for elem in xmlTree.iter():
+    elemList.append(elem.tag)
+
+# now I remove duplicities - by convertion to set and back to list
+elemList = list(set(elemList))
+
+# Just printing out the result
+print(elemList)
+
+for i in elemList:
+    print(i)
+&lt;/pre&gt;
+
+&lt;p&gt;TCExam 考試題目輸出後的 XML, 其主要 Tags 大約只有 20 個, 但 CoppeliaSim 完整的 XML 場景存檔後的 XML tags 則超過 340 個. 在這裡我們要使用 Leo Editor 來處理這些 XML 檔案.&lt;/p&gt;
+&lt;p&gt;Leo Editor 有一個 @settings 的設計, 其中除了利用 @data qt-gui-plugin-style-sheet 來設定套件畫面各部分字型的大小與顏色外, 也提供專用於 XML import 的解讀設定, 其設定名稱為 @data import-xml-tags, 以條列式逐一列出希望由 Leo Editor import 流程解讀的 tags 名稱, 然後放在 @settings 節點之下, 且對應的 .leo 必須先行存檔然後再開啟, 此一用來 parse XML tags 的設定才會生效.&lt;/p&gt;
+&lt;p&gt;因此利用 Leo Editor 處理 XML 的流程就是先使用上述程式讀取希望解讀的 .xml 檔案, 然後將取出的 tags 放入 @settings 節點下的 @data import-xml-tags 節點內文, 將 .leo 存檔後打開, 以 File import 讀入 .xml 檔案, 就可以得到利用 @auto 解讀後的 .xml 內容.&lt;/p&gt;</content><category term="cad2022"></category><category term="w10"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall 課程 w9</title><link href="https://mde.tw/blog/2022_fall_courses_w9.html" rel="alternate"></link><published>2022-11-08T11:00:00+08:00</published><updated>2022-11-12T21:36:35+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-11-08:/blog/2022_fall_courses_w9.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第九週, 期中線上考試週.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第九週, 期中線上考試週.&lt;/p&gt;
 
 
@@ -29,7 +61,7 @@
 &lt;p&gt;其中 Solvespace 可以利用 &lt;a href="https://pypi.org/project/python-solvespace/"&gt;https://pypi.org/project/python-solvespace/&lt;/a&gt; 以 Python 解各繪圖 Group 中草圖尺寸間的約束條件. NX2027 則可透過 NXOpen Python API 對零組件進行程式設計.  若將 NX20227 在 Python 3.8 版次的解譯器環境中啟動, 且模組搜尋連結指向 NX2027\NXBIN\Python, 則可使用 Flask 網際程式與 NX2027 進行 non-interactive 互動, 協助使用者在瀏覽器中的動態網站執行電腦輔助機械零組件設計.&lt;/p&gt;
 &lt;p&gt;至於 Onshape, 則可以利用 &lt;a href="https://dev-portal.onshape.com/"&gt;https://dev-portal.onshape.com/&lt;/a&gt; 與 &lt;a href="https://github.com/onshape-public/onshape-clients"&gt;https://github.com/onshape-public/onshape-clients&lt;/a&gt;, 以 Python 建立 API 延伸程式.&lt;/p&gt;
 &lt;h2&gt;RoboDK&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://robodk.com/"&gt;RoboDK&lt;/a&gt; 源自 &lt;a href="http://www.parallemic.org/RoKiSim.html"&gt;http://www.parallemic.org/RoKiSim.html&lt;/a&gt;, 在電腦輔助設計與實習課程, 可以作為 STL 零組件檢視器. 使用者也可以透過 RoboDK 套件中的各種功能, 了解產業界如何利用機械手臂執行各種電腦輔助製造流程.&lt;/p&gt;</content><category term="cad2022"></category><category term="w6"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-10-31T13:51:54+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://robodk.com/"&gt;RoboDK&lt;/a&gt; 源自 &lt;a href="http://www.parallemic.org/RoKiSim.html"&gt;http://www.parallemic.org/RoKiSim.html&lt;/a&gt;, 在電腦輔助設計與實習課程, 可以作為 STL 零組件檢視器. 使用者也可以透過 RoboDK 套件中的各種功能, 了解產業界如何利用機械手臂執行各種電腦輔助製造流程.&lt;/p&gt;</content><category term="cad2022"></category><category term="w9"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall 課程 w8</title><link href="https://mde.tw/blog/2022_fall_courses_w8.html" rel="alternate"></link><published>2022-10-29T11:00:00+08:00</published><updated>2022-11-12T21:36:35+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-29:/blog/2022_fall_courses_w8.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第八週, 就計算機程式與電腦輔助設計實習等課程的架構, 其核心都是繞著網站運作.&lt;/p&gt;
 
 
@@ -1014,7 +1046,7 @@ for i in data:
 &lt;p&gt;2022 Fall 由於 Heroku 取消免費帳號的使用, 且 Replit 的免費帳號資源過少, 導致在廣域網路上必須自行配置所有學員的動態網站伺服器, 也就是 stud.cycu.org 主機的啟用與配置.&lt;/p&gt;
 &lt;p&gt;為了讓兩百多名學員能在同一台伺服器上執行動態網站, 各學員必須遠端登入伺服器使用 shell script 指令, 並以 Filezilla 的 sftp 降低學員對 Linux 指令不熟悉所造成的檔案編輯與配置問題. 其中用來查核個人是否啟動 python3 server.py 的 ps 指令為 ps axo pid,comm,user | grep "server.py" 只是 Quota 與 port 使用權限的配置仍需進一步思考最佳管理模式.&lt;/p&gt;
 &lt;h1&gt;TCExam&lt;/h1&gt;
-&lt;p&gt;2022 Fall 重啟線上考試後, 重新啟用 TCExam, 目前正朝讓各學員自行出複選題目建立題庫的可行性.&lt;/p&gt;</content><category term="cad2022"></category><category term="w6"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall w7</title><link href="https://mde.tw/blog/2022_fall_cad2022_w7.html" rel="alternate"></link><published>2022-10-22T11:00:00+08:00</published><updated>2022-10-29T21:58:38+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-22:/blog/2022_fall_cad2022_w7.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第七週, 隨著一台 HP 大主機的硬碟毀損, 原本的課程教學流程必須隨之改變.&lt;/p&gt;
+&lt;p&gt;2022 Fall 重啟線上考試後, 重新啟用 TCExam, 目前正朝讓各學員自行出複選題目建立題庫的可行性.&lt;/p&gt;</content><category term="cad2022"></category><category term="w8"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall w7</title><link href="https://mde.tw/blog/2022_fall_cad2022_w7.html" rel="alternate"></link><published>2022-10-22T11:00:00+08:00</published><updated>2022-11-12T21:36:35+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-22:/blog/2022_fall_cad2022_w7.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第七週, 隨著一台 HP 大主機的硬碟毀損, 原本的課程教學流程必須隨之改變.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第七週, 隨著一台 HP 大主機的硬碟毀損, 原本的課程教學流程必須隨之改變.&lt;/p&gt;
 
 
@@ -1034,7 +1066,7 @@ sudo do-release-upgrade
 &lt;p&gt;代號 4 的代理主機透過 &lt;a href="https://wiki.squid-cache.org/SquidFaq/SquidAcl?action=fullsearch&amp;amp;value=dstdomain"&gt;dstdomain&lt;/a&gt;, 將 cycu.org 的連線納入.&lt;/p&gt;
 &lt;h2&gt;DNS 伺服器&lt;/h2&gt;
 &lt;p&gt;目前 代號 3 為  mde DNS, 代號 2 為 mde 備份 DNS, 代號 6 為 eng DNS, 代號 7 則為 eng 備份 DNS.&lt;/p&gt;
-&lt;p&gt;之前 2 and 3 已經升級為 22.04, 但 6 目前仍為 20.04.&lt;/p&gt;</content><category term="cad2022"></category><category term="w6"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall w6</title><link href="https://mde.tw/blog/2022_fall_cad2022_w6.html" rel="alternate"></link><published>2022-10-12T11:00:00+08:00</published><updated>2022-10-12T23:44:41+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-12:/blog/2022_fall_cad2022_w6.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第六週, 原本只在近端運作的個人倉儲動態網頁, 這學期可以利用 Replit 與自建的 Ubuntu 伺服器執行, 只是學員必須適應在不同平台上執行程式的挑戰.&lt;/p&gt;
+&lt;p&gt;之前 2 and 3 已經升級為 22.04, 但 6 目前仍為 20.04.&lt;/p&gt;</content><category term="cad2022"></category><category term="w7"></category><category term="cad2022"></category><category term="cp2022"></category></entry><entry><title>2022 Fall w6</title><link href="https://mde.tw/blog/2022_fall_cad2022_w6.html" rel="alternate"></link><published>2022-10-12T11:00:00+08:00</published><updated>2022-10-12T23:44:41+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-10-12:/blog/2022_fall_cad2022_w6.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入第六週, 原本只在近端運作的個人倉儲動態網頁, 這學期可以利用 Replit 與自建的 Ubuntu 伺服器執行, 只是學員必須適應在不同平台上執行程式的挑戰.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入第六週, 原本只在近端運作的個人倉儲動態網頁, 這學期可以利用 Replit 與自建的 Ubuntu 伺服器執行, 只是學員必須適應在不同平台上執行程式的挑戰.&lt;/p&gt;
 
 
