@@ -5122,6 +5122,29 @@ TCExam 考試題目輸出後的 XML, 其主要 Tags 大約只有 20 個, 但 Cop
 Leo Editor 有一個 @settings 的設計, 其中除了利用 @data qt-gui-plugin-style-sheet 來設定套件畫面各部分字型的大小與顏色外, 也提供專用於 XML import 的解讀設定, 其設定名稱為 @data import-xml-tags, 以條列式逐一列出希望由 Leo Editor import 流程解讀的 tags 名稱, 然後放在 @settings 節點之下, 且對應的 .leo 必須先行存檔然後再開啟, 此一用來 parse XML tags 的設定才會生效.
 
 因此利用 Leo Editor 處理 XML 的流程就是先使用上述程式讀取希望解讀的 .xml 檔案, 然後將取出的 tags 放入 @settings 節點下的 @data import-xml-tags 節點內文, 將 .leo 存檔後打開, 以 File import 讀入 .xml 檔案, 就可以得到利用 @auto 解讀後的 .xml 內容.
+
+stud Linux server
+----
+
+先前的 Heroku 提供免費使用帳號時, 上課學員可以設法將 cmsimde 動態網站部署到 Heroku, 儘管 persistent content 的儲存需要收費, 但若能將 Heroku 中的內容與 Github 保持雙向同步, 上課學員就可以利用動態網站即時管理個人倉儲的內容.
+
+現在 Heroku 收掉免費帳號後, 原本希望利用 Replit 所提供的 Python 網際 IDE 環境來執行學員的動態網站, 無奈 Replit 所提供的免費資源沒有 Heroku 優渥, 在緊密連線下無法勝任上課使用. 最終只能自行啟動 stud 伺服器. 讓所有學員在一台 Ubuntu 主機上執行動態網站.
+
+由於 stud 沒有與 DNS 動態設定互動, 因此無法如 Heroku 或 Replit 給每位學員一個獨立的 domain name, 而是發給每一位學員不同的內部與外部埠號, 以 uwsgi 模式執行各自的動態網站.
+
+基本的 stud 主機環境與使用流程如下:
+
+1. stud 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 http 等連線的使用都必須透過雙支援協定才能與僅支援 IPv4 的電腦相連.
+2. 若希望遠端登入 stud 伺服器的電腦, 使用 IPv6 網路協定, 可以直接以 ssh 連線, sftp 也可直接連線.
+3. 若希望遠端登入 stud 伺服器的電腦, 只有 IPv4 網路協定, 則遠端登入使用 ssh 必須設定雙支援代理主機, 假如連線的電腦位於校外, 則可以使用專責 Proxy 或透過校方所提供的 vpn 進行連線後, 再使用 ssh 遠端登入 stud 主機.
+4. 使用者遠端登入 stud 主機後, 因為該主機只有 IPv6 網路, 因此對 github.com 主機的連線, 無論是 ssh 或 http 都必須設定 proxy 代理主機.
+5. 使用者登入 stud, 主要目的是利用主機上的 Python 3 執行位於 github.com 上的個人倉儲動態網站, 因此必須先使用 git clone 取下個人的倉儲.
+6. 由於位於 github.com 上的個人倉儲使用子模組, 因此 git clone 之前必須先設定 ssh 對 github.com 連線的代理主機, 以及取下子模組用的 http 代理主機.
+7. 利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.
+8. git clone 執行時所使用的 http 代理主機設定可透過 git config --global http.proxy http://your_proxy_server:3128 達成.
+9. 完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須 cd 至 cmsimde 後, 以 git pull origin master 取下最新版本.
+10. 當使用 python3 server.py &amp; 執行 process 後, ps axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所  background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.
+
 </t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
