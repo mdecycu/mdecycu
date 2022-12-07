@@ -17,8 +17,8 @@
 <v t="leo.20200520153540.4"><vh>body</vh>
 <v t="leo.20200520153540.5"><vh>reveal div</vh>
 <v t="leo.20200520153540.6"><vh>slides div</vh>
-<v t="yen.20220118074727.1"><vh>2022 Fall</vh>
-<v t="yen.20220118074727.2"><vh>2022 Fall page</vh></v>
+<v t="yen.20220118074727.1"><vh>2023 Spring</vh>
+<v t="yen.20220118074727.2"><vh>2023 Spring Page</vh></v>
 </v>
 </v>
 </v>
@@ -233,9 +233,10 @@ vertical: body pane on the botton</t>
         						
     &lt;/div&gt;
 </t>
-<t tx="yen.20220118074727.2">        ## 2022 Fall
+<t tx="yen.20220118074727.2">        ## 2023 Spring
 
-        ### [cp2022](https://mde.tw/blog/category/cp2022.html) | [cad2022](https://mde.tw/blog/category/cad2022.html) 
+        ### [cp2022](https://mde.tw/blog/category/cp2022.html) | [cad2022](https://mde.tw/blog/category/cad2022.html)
+        ### [cd2023](https://mde.tw/cd2023) | [wcm2023](https://mde.tw/wcm2023)
 
 
 
