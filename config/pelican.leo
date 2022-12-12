@@ -5284,6 +5284,12 @@ position &lt;= html.BR()
 
 從 w15 開始將要再導入 html5 中的 canvas 靜態與動態繪圖, 也希望下列以簡單物件導向方式編寫的線上考試成績處理程式, 可以作為初學者練習 OOP (Object Orient Programming)的範例.
 
+至於, 有沒有 Python Programming 計算機程式課程相關的教課書? 有:
+
+[The Absolute Beginner's Guide to Python Programming] (在學校網段可以直接下載), w15-w18 可以將 Python 程式語法相關的內容設法整理在個人的課程網頁中.
+
+[The Absolute Beginner's Guide to Python Programming]: https://link.springer.com/book/10.1007/978-1-4842-8716-3
+
 &lt;pre class="brush: python"&gt;
 import ast
 from browser import document, html, bind
@@ -5358,7 +5364,12 @@ def get_cname(env):
     score = data.get_score()
     # 以 stud, score 為輸入, 列出展示用的超文件結果
     gen_result(stud, score)
-&lt;/pre&gt;</t>
+&lt;/pre&gt;
+
+電腦輔助設計與實習
+----
+
+</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
