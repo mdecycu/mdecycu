@@ -1,0 +1,5 @@
+<div class="winkVideoContainerClass">
+<video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" muted="true">
+<source src="/downloads/ssh_wink/wink_ssh.mp4" type="video/mp4" />
+</video>
+</div>
