@@ -3567,7 +3567,13 @@ end</pre>
 <p><a href="https://hdl.handle.net/11296/a5b4p7">網際符號輔助軸接連桿機構之基因演算法尺寸合成系統</a> (2012 4+2 碩論) - 中正機研所博班</p>
 <p><a href="https://hdl.handle.net/11296/v9mr92">網際史都華平台機構逆運動學分析與模擬</a> (2012)</p>
 <p><a href="https://hdl.handle.net/11296/w66tpa">網際六軸機械臂系統的逆運動學分析與模擬</a> (2010)</p>
-<p><a href="https://hdl.handle.net/11296/tt6672">基因演算法在網際機構合成系統上的應用</a> (2009)</p><h2>pjcopsim</h2>
+<p><a href="https://hdl.handle.net/11296/tt6672">基因演算法在網際機構合成系統上的應用</a> (2009)</p><h2>Wink</h2>
+<p><a href="/downloads/wink_tutorial/wink_dynamic_site_html.txt">wink_dynamic_site_html.txt</a></p>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" height="630" muted="true" width="1008">
+<source src="/downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/></video></div>
+<p>嵌入 w6_blog.mp4</p>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" height="630" muted="true" width="1008">
+<source src="/downloads/w6_blog.mp4" type="video/mp4"/></video></div><h2>pjcopsim</h2>
 <p>專題動機:</p>
 <p>CoppeliaSim 的<a href="https://www.coppeliarobotics.com/helpFiles/">用戶手冊</a>, 資料來自 <a href="https://github.com/CoppeliaRobotics/helpFiles">helpFiles</a> 倉儲, 但從網頁連結上, 只能取得最新版的資料, 隨著 CoppeliaSim 主要程式庫與模組的 API 架構不斷翻新, 當使用者採用舊版本套件時, 從<a href="https://www.coppeliarobotics.com/helpFiles/">用戶手冊</a>就會攫取到不相應的內容.</p>
 <p>探討如何利用網際內容管理系統架構, 讓 Coppeliasim 用戶手冊, 得以更加容易進行資料附加與應用, 擬藉此提升課程教學與專題研究效益.</p>
@@ -3580,11 +3586,11 @@ end</pre>
 <p style="padding-left: 60px;"><a href="https://github.com/vista-simulator/vista">Vista</a> on Coppeliasim</p>
 <p style="padding-left: 30px;">Tree-based Machine Learning for Image Recognition:</p>
 <p style="padding-left: 60px;">From local explanations to global understanding with explainable AI for trees</p>
-<p style="padding-left: 90px;"><a href="https://www.nature.com/articles/s42256-019-0138-9.epdf">https://www.nature.com/articles/s42256-019-0138-9.epdf</a> </p>
-<p style="padding-left: 90px;"><a href="https://suinlee.cs.washington.edu/home">https://suinlee.cs.washington.edu/home</a> </p>
-<p style="padding-left: 60px;"><a href="https://erdogant.github.io/treeplot/pages/html/index.html">https://erdogant.github.io/treeplot/pages/html/index.html</a> </p>
+<p style="padding-left: 90px;"><a href="https://www.nature.com/articles/s42256-019-0138-9.epdf">https://www.nature.com/articles/s42256-019-0138-9.epdf</a></p>
+<p style="padding-left: 90px;"><a href="https://suinlee.cs.washington.edu/home">https://suinlee.cs.washington.edu/home</a></p>
+<p style="padding-left: 60px;"><a href="https://erdogant.github.io/treeplot/pages/html/index.html">https://erdogant.github.io/treeplot/pages/html/index.html</a></p>
 <p style="padding-left: 30px;">Interpretable Machine Learning:</p>
-<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a> </p><h3>Copsim Doc</h3>
+<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a></p><h3>Copsim Doc</h3>
 <h4>網際 CoppeliaSim 技術手冊管理系統</h4>
 <p>Web-based CoppeliaSim manual management system</p>
 <h4>專題動機</h4>
@@ -3627,7 +3633,38 @@ soup = BeautifulSoup(data, 'html.parser')
 # get anchor under div, and print text
 for a in soup.select('div a[href]'):
     print (a.text)</pre>
-<p></p><h3>Webots Doc</h3>
+<p><span>接下來, 為了同時列出各 div 標註的 id 與其中對應的 href 連結 .htm 檔案名稱, 使用 zip() 進行迴圈處理:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+ 
+soup = BeautifulSoup(data, 'html.parser')
+ 
+count = 0
+for i in zip(soup.find_all('div', id=True), soup.select('div a[href]')):
+    count += 1
+    print(i[0].get('id'), i[1].text)
+print("total html:" + str(count))
+# 主要 .htm 檔案有 57 個</pre>
+<p>從上一個程式的執行, 可以發現列在<span> </span><a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a><span> </span>網頁左側的 .htm 網頁有 57 個, 且 div id 採用 folder.x.x.x 的格式進行設定, folder.x 可以對應到 cmsimde 的 H1 頁面, folder.x.x 則對應 H2 頁面, 而 folder.x.x.x 則對應到 H3 頁面.</p>
+<p>其他專題流程, 根據上述程式的測試, 已知可以利用 cmsimde 將<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>倉儲中的標題 .htm 轉入 config/content.htm 檔案後, 直接利用動態網頁進行編輯管理, 但原始 CoppeliaSim 網頁中的圖檔與相對 href 連結則必須設法轉為 cmsimde 動態網頁的格式.</p>
+<p>一旦 CoppeliaSim 納入 cmsimde 網際內容管理系統後, 參與協同管理者, 就可以利用動態網頁處理衝突後, 轉為靜態網頁進行 Github Pages 的靜態網頁配置, 並利用關鍵字搜尋,  Pelican 與 Reveal 的網誌及簡報進行與 CoppeliaSim 有關的功能與案例介紹, 其中包含各版次延伸程式的編譯與後續應用研究.</p>
+<h4>上述專題研究可以分為:</h4>
+<p>part1: CoppeliaSim 技術手冊網際內容管理系統配置 (技術類別: Python 與 Flask 網際程式應用, Leo Editor 作為 IDE)</p>
+<p>part2: CoppeliaSim 系統與延伸模組編譯 (技術類別: Msys2/C++/Lua/Python Programming 應用, Leo Editor 作為 IDE)</p>
+<p>part3: CoppeliaSim 應用案例研究 (技術類別: NX12, NX2206, Solvespace, Onshape, CoppeliaSim, Lua, Python, Leo Editor 作為 IDE, 基本 MCAD 或 Reinforcement Learning 延伸應用)</p>
+<p>CoppeliaSim 場景利用 Arudino script 執行虛擬控制:<span> </span><a href="https://bitbucket.org/afaina/horosim.git">https://bitbucket.org/afaina/horosim.git</a></p>
+<p>HoRoSim (Holistic Robotic Simulator) allows you to<span> </span><span>simulate physical devices controlled by Arduino code</span>. The user defines standard electronic circuits that are employed in the Arduino code (see<span> </span><a href="https://bitbucket.org/afaina/horosim/src/master/docs/HardwareSetup.md">Hardware Setup function</a>) and a robot simulator, CoppeliaSim, simulates the physics of the device. Thus, HoRoSim simulates Arduino code with a physics engine and based on the electronic circuits defined. You can use the Arduino IDE to compile the code and run it, see instructions bellow.<br/><br/>The simulator has been described in this<span> </span><a href="https://bitbucket.org/afaina/horosim/src/897fb399d296130aef4054a3ee7512b6412e4bfc/docs/faina2021RIE_HoRoSim_postprint.pdf">article</a>, which has been published on the 13th International Conference on 2021 Robotics in Education conference. Cite:<br/><br/>Faiña A. (2022) HoRoSim, a Holistic Robot Simulator: Arduino Code, Electronic Circuits and Physics. In: Merdan M., Lepuschitz W., Koppensteiner G., Balogh R., Obdržálek D. (eds) Robotics in Education. RiE 2021. Advances in Intelligent Systems and Computing, vol 1359. Springer, Cham.<span> </span><a href="https://doi.org/10.1007/978-3-030-82544-7_24">https://doi.org/10.1007/978-3-030-82544-7_24</a></p>
+<h4>應用案例:</h4>
+<p><a href="http://wcm.cycu.org:88/github/cd2022_guide/downloads/w18/Application%20of%20deep%20reinforcement%20learning%20for%20control%20problems.pdf">Application of deep reinforcement learning for control problems.pdf</a></p>
+<p>利用 uStepper STL 零件做為參考, 自行在 NX12 與 NX2027 中進行零組件設計組立後, 轉入 CoppeliaSim 建立 uStepper.ttm, 以及後續應用.</p>
+<p><a href="https://github.com/uStepper/uStepper-RobotArm-Rev3">https://github.com/uStepper/uStepper-RobotArm-Rev3</a></p>
+<p><a href="https://www.thingiverse.com/thing:3876856/files">uStepper Robotic Arm STL files</a></p>
+<p><a href="http://wcm.cycu.org:88/github/cd2022_guide/downloads/w18/ustepper/ustepperArmKinematics.pdf">ustepperArmKinematics.pdf</a></p>
+<p><a href="http://wcm.cycu.org:88/github/cd2022_guide/downloads/w18/ustepper/ustepper_Instructions.pdf">ustepper_Instructions.pdf</a></p>
+<p>References:<span> </span><a href="https://www.stlfinder.com/3dmodels/ustepper/">https://www.stlfinder.com/3dmodels/ustepper/</a></p>
+<p>過程中需要利用 Python GUI 建立控制套件, 可利用<span> </span><a href="https://beeware.org/">https://beeware.org/</a><span> </span>(<a href="https://github.com/beeware">https://github.com/beeware</a>)製作.</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/uoMiHs1qkWM" title="YouTube video player" width="560"></iframe></p><h3>Webots Doc</h3>
 <h4>網際文件處理技術</h4>
 <p>2019 年時 Webots 的使用者手冊文件目錄, 位於 <a href="https://github.com/cyberbotics/webots/tree/a70ccb27ebabd54401780bb28000b7c0ad004102/docs">docs</a>, 其中 <a href="https://github.com/cyberbotics/webots/blob/a70ccb27ebabd54401780bb28000b7c0ad004102/docs/doc.php">doc.php</a> 負責處理當時網站 /doc 目錄下的文件網際派送, 共有三個主要文件:</p>
 <p>Webots Guide: <a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
