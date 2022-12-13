@@ -3459,6 +3459,9 @@ wire_edm_machining</pre>
 <p>Supporting a functional design approach, Mechatronics Concept Designer integrates upstream and downstream engineering domains, including requirements management, mechanical design, electrical design, and software/automation engineering.</p>
 <p>Mechatronics Concept Designer accelerates development of products that involve mechanical, electrical, and software design disciplines, allowing them to work in parallel, focused on a concept<br/>design that includes mechanical components, sensors, actuators, and motion. </p>
 <h1>CoppeliaSim</h1>
+<p>版次差異:</p>
+<p>4.3 rev12 usrset.txt 位於 system 目錄下, 可直接放入隨身碟.</p>
+<p>4.4 rev0 則將usrset.txt 存入 C:\Users\account\AppData\Roaming\CoppeliaSim 目錄下.</p>
 <p>CD (Collaborative Design) 協同產品設計實習課程, 旨在探討多名設計人員, 從利用 NX 及 Solvespace 等單機套件, 過渡到採用 Onshape 雲端 MCAD 套件執行零組件繪製後, 並匯入 CoppeliaSim 建立機電資系統整合模擬流程中, 該如何執行同步 (Simultaneous) 協同設計?</p>
 <p><a href="/downloads/pythonBubbleRob.pdf">Controlling your robot with Python</a></p>
 <p><a href="https://www.sciencedirect.com/science/article/pii/S1569190X22001046">How to pick a mobile robot simulator: A quantitative comparison of</a><br/><a href="https://www.sciencedirect.com/science/article/pii/S1569190X22001046">CoppeliaSim, Gazebo, MORSE and Webots with a focus on accuracy</a><br/><a href="https://www.sciencedirect.com/science/article/pii/S1569190X22001046">of motion</a></p>
@@ -3507,6 +3510,52 @@ end</pre>
     print(i)
 end</pre>
 <p></p><h2>Foosball</h2>
+<p><a href="/downloads/cad2022_foosball_w16_with_ball_python_script.7z">cad2022_foosball_w16_with_ball_python_script.7z</a></p>
+<p>在 CoppeliaSim Python script 導入外部 .py 程式檔案 (為了在倉儲中留下程式版次), 必須使用:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+include solvespace_ex</pre>
+<p>其中, 外部檔案 solvespace_ex.py 內容如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+
+def sysCall_thread():
+    sim.setThreadAutomaticSwitch(True)
+    print( "From threaded Python child script, threadMain")
+    
+    joint=sim.getObject('./left_joint')
+    hammer=sim.getObject('./left_player')
+    slider=sim.getObject('./left_slider')
+
+    velocity = 0
+    hammer_back = 0
+    torque = 0
+    sliding = 0
+    orientation=sim.getJointPosition(joint,sim.handle_world)
+    position=sim.getObjectPosition(hammer,sim.handle_world)
+    slider_position=sim.getJointPosition(slider,sim.handle_world)
+    
+    while sim.getThreadExistRequest() == False:
+        message, auxiliaryData, auxiliaryData2 = sim.getSimulatorMessage()
+        if (message == sim.message_keypress):
+            if (auxiliaryData[0] == ord("w")):
+                print("w is pressed")
+                velocity=100
+                torque=200
+                hammer_back = 0
+            if (auxiliaryData[0] == ord("s")):
+                print("s is pressed")
+                hammer_back = 1
+                torque=-200
+                velocity = -100
+            if (auxiliaryData[0] == ord("a")):
+                print("a is pressed")
+                sliding = sliding + 0.05
+            if (auxiliaryData[0] == ord("d")):
+                print("d is pressed")
+                sliding = sliding - 0.05
+        if hammer_back == 1:
+            sim.setJointPosition(joint, -1, orientation)
+        sim.setJointTargetPosition(joint, velocity)
+        sim.setJointTargetPosition(slider, sliding)</pre>
 <p><a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=foosball">foosball keyword searching on IEEE</a></p>
 <p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.5428&amp;rep=rep1&amp;type=pdf">Development Of Robotic Foosball As A Versatile Platform For Robotics Research and Contests</a> (2003)</p>
 <p><a href="https://gki.informatik.uni-freiburg.de/papers/weigel-etal-robocup-02-kiro.pdf">Kiro</a> (2006)</p>
@@ -3567,7 +3616,14 @@ end</pre>
 <p><a href="https://hdl.handle.net/11296/a5b4p7">網際符號輔助軸接連桿機構之基因演算法尺寸合成系統</a> (2012 4+2 碩論) - 中正機研所博班</p>
 <p><a href="https://hdl.handle.net/11296/v9mr92">網際史都華平台機構逆運動學分析與模擬</a> (2012)</p>
 <p><a href="https://hdl.handle.net/11296/w66tpa">網際六軸機械臂系統的逆運動學分析與模擬</a> (2010)</p>
-<p><a href="https://hdl.handle.net/11296/tt6672">基因演算法在網際機構合成系統上的應用</a> (2009)</p><h2>pjcopsim</h2>
+<p><a href="https://hdl.handle.net/11296/tt6672">基因演算法在網際機構合成系統上的應用</a> (2009)</p><h2>Wink</h2>
+<p><a href="/downloads/wink_tutorial/wink_dynamic_site_html.txt">wink_dynamic_site_html.txt</a></p>
+<p><a href="/downloads/wink_tutorial/wink_dynamic_site_html2.txt">wink_dynamic_site_html2.txt</a></p>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" height="630" muted="true" width="1008">
+<source src="/downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/></video></div>
+<p>嵌入 w6_blog.mp4</p>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" height="630" muted="true" width="1008">
+<source src="/downloads/w6_blog.mp4" type="video/mp4"/></video></div><h2>pjcopsim</h2>
 <p>專題動機:</p>
 <p>CoppeliaSim 的<a href="https://www.coppeliarobotics.com/helpFiles/">用戶手冊</a>, 資料來自 <a href="https://github.com/CoppeliaRobotics/helpFiles">helpFiles</a> 倉儲, 但從網頁連結上, 只能取得最新版的資料, 隨著 CoppeliaSim 主要程式庫與模組的 API 架構不斷翻新, 當使用者採用舊版本套件時, 從<a href="https://www.coppeliarobotics.com/helpFiles/">用戶手冊</a>就會攫取到不相應的內容.</p>
 <p>探討如何利用網際內容管理系統架構, 讓 Coppeliasim 用戶手冊, 得以更加容易進行資料附加與應用, 擬藉此提升課程教學與專題研究效益.</p>
@@ -3580,11 +3636,11 @@ end</pre>
 <p style="padding-left: 60px;"><a href="https://github.com/vista-simulator/vista">Vista</a> on Coppeliasim</p>
 <p style="padding-left: 30px;">Tree-based Machine Learning for Image Recognition:</p>
 <p style="padding-left: 60px;">From local explanations to global understanding with explainable AI for trees</p>
-<p style="padding-left: 90px;"><a href="https://www.nature.com/articles/s42256-019-0138-9.epdf">https://www.nature.com/articles/s42256-019-0138-9.epdf</a> </p>
-<p style="padding-left: 90px;"><a href="https://suinlee.cs.washington.edu/home">https://suinlee.cs.washington.edu/home</a> </p>
-<p style="padding-left: 60px;"><a href="https://erdogant.github.io/treeplot/pages/html/index.html">https://erdogant.github.io/treeplot/pages/html/index.html</a> </p>
+<p style="padding-left: 90px;"><a href="https://www.nature.com/articles/s42256-019-0138-9.epdf">https://www.nature.com/articles/s42256-019-0138-9.epdf</a></p>
+<p style="padding-left: 90px;"><a href="https://suinlee.cs.washington.edu/home">https://suinlee.cs.washington.edu/home</a></p>
+<p style="padding-left: 60px;"><a href="https://erdogant.github.io/treeplot/pages/html/index.html">https://erdogant.github.io/treeplot/pages/html/index.html</a></p>
 <p style="padding-left: 30px;">Interpretable Machine Learning:</p>
-<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a> </p><h3>Copsim Doc</h3>
+<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a></p><h3>Copsim Doc</h3>
 <h4>網際 CoppeliaSim 技術手冊管理系統</h4>
 <p>Web-based CoppeliaSim manual management system</p>
 <h4>專題動機</h4>
