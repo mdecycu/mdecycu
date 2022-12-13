@@ -3488,8 +3488,25 @@ wire_edm_machining</pre>
 <h4>Snooker Table:</h4>
 <p style="padding-left: 30px;"><a href="/downloads/Snooker Table Assembly_sldasm.stp">Snooker Table Assembly_sldasm.stp</a> (<a href="https://grabcad.com/library/foosball-pool-table-1">source</a>)</p><h2>Lua</h2>
 <p><a href="https://mde.tw/downloads/lua">https://mde.tw/downloads/lua</a> (靜態網際 Lua 解譯環境)</p>
-<p><a href="/downloads/lua/index.html">https://stud.cycu.org:8800/downloads/lua/index.html</a> (動態網際 Lua 解譯環境) </p>
-<h2>Foosball</h2>
+<p><a href="/downloads/lua/index.html">https://stud.cycu.org:8800/downloads/lua/index.html</a> (動態網際 Lua 解譯環境)</p>
+<p><a href="https://mde.tw/pjcopsim/content/luaCrashCourse.html">https://mde.tw/pjcopsim/content/luaCrashCourse.html</a></p>
+<p>Lua 輸入 char 取得其對應 ASCII number:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">-- 利用 string.byte() 列出字元對應 ASCII 十進位數字碼
+--[[
+多行註解
+--]]
+print(string.byte("a"))
+print(string.byte("w"))
+print(string.byte("s"))
+print(string.byte("d"))</pre>
+<p>for 迴圈:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">for i = 1, 10 do
+    print(i)
+end</pre>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">for i = 1, 10, 2 do
+    print(i)
+end</pre>
+<p></p><h2>Foosball</h2>
 <p><a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=foosball">foosball keyword searching on IEEE</a></p>
 <p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.5428&amp;rep=rep1&amp;type=pdf">Development Of Robotic Foosball As A Versatile Platform For Robotics Research and Contests</a> (2003)</p>
 <p><a href="https://gki.informatik.uni-freiburg.de/papers/weigel-etal-robocup-02-kiro.pdf">Kiro</a> (2006)</p>
@@ -3567,7 +3584,50 @@ wire_edm_machining</pre>
 <p style="padding-left: 90px;"><a href="https://suinlee.cs.washington.edu/home">https://suinlee.cs.washington.edu/home</a> </p>
 <p style="padding-left: 60px;"><a href="https://erdogant.github.io/treeplot/pages/html/index.html">https://erdogant.github.io/treeplot/pages/html/index.html</a> </p>
 <p style="padding-left: 30px;">Interpretable Machine Learning:</p>
-<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a> </p><h3>Webots Doc</h3>
+<p style="padding-left: 60px;"><a href="https://christophm.github.io/interpretable-ml-book/influential.html">https://christophm.github.io/interpretable-ml-book/influential.html</a> </p><h3>Copsim Doc</h3>
+<h4>網際 CoppeliaSim 技術手冊管理系統</h4>
+<p>Web-based CoppeliaSim manual management system</p>
+<h4>專題動機</h4>
+<p>從<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>可以取得 CoppeliaSim 套件各版次的最新技術手冊資料, 在 github Pages 進行配置後, 可建立<span> </span><a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a><span> </span>網站, 若使用者希望能夠針對各版本靈活運用這份技術資料, 並隨著各種功能的研究與運用流程, 配合加入客製化案例與延伸說明時, 就必須設法透過網際內容管理的模式進行修改.</p>
+<h4>相關技術探討</h4>
+<p><a href="https://github.com/cyberbotics/webots">https://github.com/cyberbotics/webots</a><span> </span>的技術手冊採用 Markdown 格式編寫, 透過<span> </span><a href="https://github.com/showdownjs/showdown">https://github.com/showdownjs/showdown</a><span> </span>即時轉為 html, 由於文檔內容以 Github 倉儲管理, 因此即時轉檔加上倉儲內容的版次發布功能, 可以直接在 Github Pages 網站擷取各套件版次對應的技術手冊內容.</p>
+<p>至於 CoppeliaSim 在<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>倉儲中並未揭露其技術手冊編輯與管理流程, 但從其使用 iframe 配置技術手冊的網頁架構, 且採用 Google 搜尋進行內容關鍵字查詢的情況來看, 應該是採用 html 檔案編輯工具進行內容維護後, 再提交推送至<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>倉儲.</p>
+<h4>研究方法</h4>
+<p>從現有技術面而言,<span> </span><a href="https://github.com/cyberbotics/webots">https://github.com/cyberbotics/webots</a><span> </span>利用 Markdown 轉 html 的方式, 最易於管理網頁資料, 但<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>並無原始 Markdown 資料, 因此若希望採用 Webots 的技術手冊管理流程, 勢必要先將 html 轉為 Markdown 進行編輯配置後, 再轉回易於管理與配置的網站系統. 過程中最大的問題是 Markdown 對於圖檔縮放所提供的彈性, 較 html 低, 一般為了頁面效果, 會混用 Markdown 與 html 標註 (例如: Pelican 網誌系統), 此舉將增加文檔編輯過程中解決衝突時的難度.</p>
+<p>針對目前<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>網站檔案皆為 html 的情況, 直接採用網際 html 編輯系統與 Github Pages 進行管理, 應該是最可行的方案.</p>
+<h4>研究流程</h4>
+<p>假如要將<span> </span><a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a><span> </span>納入 cmsimde 網際內容管理系統的架構進行配置, 首先必須取得其<span> </span><a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a><span> </span>網頁左側的 html 階次. 也就是從 wb_tree.html 檔案中, 根據各 htm 檔案引用時 div 標註中的 id 進行階次判斷:</p>
+<p>首先, 可以利用 bs4 取得 wb_tree.html 中各 div 標註的 id 數列:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+ 
+soup = BeautifulSoup(data, 'html.parser')
+ 
+#finding the div with the id
+ids = [tag['id'] for tag in soup.select('div[id]')]
+   
+print(ids)</pre>
+<p><span>第二種方法, 也可以取出各 div 標註的 id 內容:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+ 
+soup = BeautifulSoup(data, 'html.parser')
+ 
+for ID in soup.find_all('div', id=True):  
+    print(ID.get('id'))</pre>
+<p><span>接著必須取得各 div 標註中 anchor 標註的超文件 text 資料, 也就是 </span><a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a><span><span> </span>網頁左側, 各連結的字串, 分別對應到 href 連結的 .htm 檔案名稱:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+ 
+soup = BeautifulSoup(data, 'html.parser')
+ 
+# get anchor under div, and print text
+for a in soup.select('div a[href]'):
+    print (a.text)</pre>
+<p></p><h3>Webots Doc</h3>
 <h4>網際文件處理技術</h4>
 <p>2019 年時 Webots 的使用者手冊文件目錄, 位於 <a href="https://github.com/cyberbotics/webots/tree/a70ccb27ebabd54401780bb28000b7c0ad004102/docs">docs</a>, 其中 <a href="https://github.com/cyberbotics/webots/blob/a70ccb27ebabd54401780bb28000b7c0ad004102/docs/doc.php">doc.php</a> 負責處理當時網站 /doc 目錄下的文件網際派送, 共有三個主要文件:</p>
 <p>Webots Guide: <a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
