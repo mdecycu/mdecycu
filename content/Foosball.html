@@ -142,6 +142,52 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Lua << <a href='Lua.html'>Previous</a> <a href='Mujoco.html'>Next</a> >> Mujoco<br /><h1>Foosball</h1>
+<p><a href="./../downloads/cad2022_foosball_w16_with_ball_python_script.7z">cad2022_foosball_w16_with_ball_python_script.7z</a></p>
+<p>在 CoppeliaSim Python script 導入外部 .py 程式檔案 (為了在倉儲中留下程式版次), 必須使用:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+include solvespace_ex</pre>
+<p>其中, 外部檔案 solvespace_ex.py 內容如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+
+def sysCall_thread():
+    sim.setThreadAutomaticSwitch(True)
+    print( "From threaded Python child script, threadMain")
+    
+    joint=sim.getObject('./left_joint')
+    hammer=sim.getObject('./left_player')
+    slider=sim.getObject('./left_slider')
+
+    velocity = 0
+    hammer_back = 0
+    torque = 0
+    sliding = 0
+    orientation=sim.getJointPosition(joint,sim.handle_world)
+    position=sim.getObjectPosition(hammer,sim.handle_world)
+    slider_position=sim.getJointPosition(slider,sim.handle_world)
+    
+    while sim.getThreadExistRequest() == False:
+        message, auxiliaryData, auxiliaryData2 = sim.getSimulatorMessage()
+        if (message == sim.message_keypress):
+            if (auxiliaryData[0] == ord("w")):
+                print("w is pressed")
+                velocity=100
+                torque=200
+                hammer_back = 0
+            if (auxiliaryData[0] == ord("s")):
+                print("s is pressed")
+                hammer_back = 1
+                torque=-200
+                velocity = -100
+            if (auxiliaryData[0] == ord("a")):
+                print("a is pressed")
+                sliding = sliding + 0.05
+            if (auxiliaryData[0] == ord("d")):
+                print("d is pressed")
+                sliding = sliding - 0.05
+        if hammer_back == 1:
+            sim.setJointPosition(joint, -1, orientation)
+        sim.setJointTargetPosition(joint, velocity)
+        sim.setJointTargetPosition(slider, sliding)</pre>
 <p><a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=foosball">foosball keyword searching on IEEE</a></p>
 <p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.5428&amp;rep=rep1&amp;type=pdf">Development Of Robotic Foosball As A Versatile Platform For Robotics Research and Contests</a> (2003)</p>
 <p><a href="https://gki.informatik.uni-freiburg.de/papers/weigel-etal-robocup-02-kiro.pdf">Kiro</a> (2006)</p>
