@@ -141,10 +141,126 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Game << <a href='Game.html'>Previous</a> <a href='Algorithms.html'>Next</a> >> Algorithms<br /><h1>Simulator</h1>
-<p><a href="https://sim.firialabs.com/">CodeSpace Development Environment (firialabs.com)</a></p>
-<p style="padding-left: 30px;"><a href="https://groups.google.com/g/brython/c/0kA4pM1YirE">https://groups.google.com/g/brython/c/0kA4pM1YirE</a></p>
-<br />Game << <a href='Game.html'>Previous</a> <a href='Algorithms.html'>Next</a> >> Algorithms</div>
+    <div id="tipue_search_content">CPython << <a href='CPython.html'>Previous</a> <a href='PDF.html'>Next</a> >> PDF<br /><h1>Pybean</h1>
+<p><a href="./../downloads/pybean/pybean.py">pybean.py</a></p>
+<p>pybean_ex1.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 從 pybean.py 導入 Store 與 SQLiteWrite 模組
+from pybean import Store, SQLiteWriter
+# 預計將資料存入 book.db, 且將 frozen 設為 False 表示隨時可以修改資料庫中資料表的欄位
+library = Store(SQLiteWriter("book.db", frozen=False))
+# 在 library 物件中建立一個資料表, 名稱為 "book", 可以將 book 變數設想為資料庫物件
+book = library.new("book")
+# 資料表中的 title 欄位內容設定
+book.title = "Boost development with pybean"
+# 資料表中的 author 欄位內容設定
+book.author = "Charles Xavier"
+# 將上述的兩個資料表欄位內容存檔
+library.save(book)
+# 資料存入資料庫之後, 就可以從資料庫中的資料表 book 查詢特定內容
+for book in library.find("book","author like ?",["Charles Xavier"]):
+        print(book.title)
+# 準備利用 delete 方法刪除 book 資料表
+#library.delete(book)
+# 提交上述的資料庫操作
+library.commit()</pre>
+<p>pybean_ex2.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#coding: utf-8
+from pybean import Store, SQLiteWriter
+# "frozen=True" means the SQLiteWriter won't create tables and columns on the fly
+# 使用 frozen = False 表示可以動態建立資料表
+library = Store(SQLiteWriter("database.sqlite", frozen=False))
+# 建立  book 資料 bean, 也就是建立一個名稱為 book 的資料表
+book = library.new("book")
+# 動態建立 book 資料表中的 title 欄位, 且將字串值放入此一 book 資料表中的 title 欄位
+book.title = "第一本書的標題"
+# 再動態建立 author 欄位, 且將字串值放入此一 author 欄位
+book.author = "第一本書的作者"
+# 儲存資料表 book 中的資料
+library.save(book)
+# 利用資料庫檔案中的 find 方法搜尋 book 資料表, 找出其中 author 欄位值有 "Charles Xavier" 字串的資料
+for book in library.find("book","author like ?",["第一本書的作者"]):
+    # 若找到對應資料, 印出 book 資料表中 title 欄位的資料
+    print (book.title)
+# 找出資料表中的所有資料
+# find all books, find method returns an iterator
+print(library.find("book"))
+print(library.find("book","1"))
+for book in library.find("book","1"):
+    print (book.title)
+# 再建立 bean 與輸入資料值
+# 建立  book 資料 bean, 也就是建立一個名稱為 book 的資料表
+book = library.new("book")
+# 動態建立 book 資料表中的 title 欄位, 且將字串值放入此一 book 資料表中的 title 欄位
+book.title = "這是書的標題"
+# 再動態建立 author 欄位, 且將字串值放入此一 author 欄位
+book.author = "書的作者"
+# 儲存資料表 book 中的資料
+library.save(book)
+number_of_books = library.count("book")
+number_of_書_books = library.count("book", "author like ?", ["書的作者"])
+print(number_of_books,number_of_書_books)
+# 刪除此一 book 資料表內容 (請注意 book 為對應 book = library.new("book") 之後的內容資料
+library.delete(book)
+number_of_books = library.count("book")
+number_of_書_books = library.count("book", "author like ?", ["書的作者"])
+print(number_of_books,number_of_書_books)
+for book in library.find("book"):
+    print (book.title, book.author)
+# 這是 pybean 0.2.1 版的新用法, 將各資料存取流程中所用的 commit, 集中到最後 save 與 delete 時才統一 commit, 此舉提升 pybean 0.2.1 版本的運行速度　
+library.commit()</pre>
+<p>pybean_ex3.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 導入 pybean 模組與所要使用的 Store 及 SQLiteWriter 方法
+from pybean import Store, SQLiteWriter
+# 利用 Store  建立資料庫檔案對應物件, 並且設定 frozen=False 表示要開放動態資料表的建立
+library = Store(SQLiteWriter("database2.sqlite", frozen=False))
+# 動態建立 book 資料表
+book = library.new("book")
+# 動態建立 title 欄位
+book.title = "如何使用 Pybean 儲存資料"
+# 動態建立 author 欄位
+book.author = "Pybean 作者群"
+# 儲存資料表內容
+library.save(book)
+# 當資料庫內容有變更時, 必須要執行 commit() 才會有作用
+library.commit()
+
+# 資料查詢
+for book in library.find("book","author like ?",["Pybean 作者群"]):
+    # 列印資料表中的 title 欄位
+    print (book.title)
+        
+# 計算資料查詢筆數
+搜尋資料筆數 = library.count("book", "1 order by author")
+print(搜尋資料筆數)
+
+# 資料更新
+# 以 find_one 找出所要更新的一筆資料
+一筆資料 = library.find_one("book","author=?",["Pybean 作者群"])
+# 針對所搜尋出的一筆資料進行修改
+一筆資料.author = "修改後的資料"
+# 將修改後的一筆資料存入資料表中
+library.save(一筆資料)
+# 執行上述資料變更
+library.commit()
+
+# 再新增一筆資料
+book.title = "如何使用 Pybean 儲存資料"
+book.author = "Pybean 作者群"
+# 儲存資料表內容
+library.save(book)
+# 當資料庫內容有變更時, 必須要執行 commit() 才會有作用
+library.commit()
+
+# 資料刪除
+# 以 find_one 找出所要刪除的一筆資料
+一筆資料 = library.find_one("book","author=?",["Pybean 作者群"])
+# 針對所搜尋出的一筆資料進行刪除
+library.delete(一筆資料)
+# 執行上述資料刪除
+library.commit()
+</pre>
+<p></p>
+<p></p><br />CPython << <a href='CPython.html'>Previous</a> <a href='PDF.html'>Next</a> >> PDF</div>
         
     <!-- footer -->
       <div class="container">
