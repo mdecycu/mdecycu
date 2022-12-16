@@ -3681,14 +3681,79 @@ def sysCall_thread():
 <p><a href="https://www.researchgate.net/publication/341204434_KIcker_An_Industrial_Drive_and_Control_Foosball_System_automated_with_Deep_Reinforcement_Learning">KIcker</a> (2021)</p>
 <p><a href="https://youtu.be/Hu7LFrP43tA">https://youtu.be/Hu7LFrP43tA</a></p>
 <p><a href="https://forum.allaboutcircuits.com/threads/automated-foosball-hardware-advice-for-crazy-speeds.137860/">https://forum.allaboutcircuits.com/threads/automated-foosball-hardware-advice-for-crazy-speeds.137860/</a></p>
-<p><a href="/downloads/foosball/foosball_solvespace_vrep.7z">foosball_solvespace_vrep.7z</a></p><h2>Mujoco</h2>
+<p><a href="/downloads/foosball/foosball_solvespace_vrep.7z">foosball_solvespace_vrep.7z</a></p><h2>Examples</h2>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/en/legacyRemoteApiOverview.htm">Legacy remote API Python</a> 只支援到 CoppeliaSm 4.3 版, 將以 <a href="https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm">ZeroMQ remote API</a> 取代.</p>
+<p><a href="/downloads/mable_machine_coppeliasim_v4.3.0rev12.7z">mable_machine_coppeliasim_v4.3.0rev12.7z</a></p>
+<p>Marble Machine Legacy remote API example:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sim as vrep
+import math
+import sys
+
+# child threaded script: 
+#simExtRemoteApiStart(19999)
+#
+ 
+vrep.simxFinish(-1)
+ 
+clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+
+#啟動模擬
+vrep.simxStartSimulation(clientID, vrep.simx_opmode_oneshot)
+
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+
+ 
+errorCode1,Revolute_joint_handle=vrep.simxGetObjectHandle(clientID,'Revolute_joint',vrep.simx_opmode_oneshot_wait)
+errorCode2,sensorHandle=vrep.simxGetObjectHandle(clientID,'Finish',vrep.simx_opmode_oneshot_wait)
+
+deg = math.pi/180
+
+count = 0
+count1 = 0
+
+if errorCode1 == -1:
+    print('Can not find left or right motor')
+    sys.exit()
+    
+while vrep.simxGetConnectionId(clientID) != -1:
+    (errorCode3, detectionState1, detectedPoint1, detectedObjectHandle1, detectedSurfaceNormalVector1) = vrep.simxReadProximitySensor(clientID, sensorHandle, vrep.simx_opmode_streaming)
+    if errorCode3 == vrep.simx_return_ok:
+        if detectionState1:
+            count += 1
+            print("通過球總數:", count)
+     
+     
+    errorCode4=vrep.simxSetJointTargetVelocity(clientID,Revolute_joint_handle,0.5, vrep.simx_opmode_oneshot_wait)
+    
+    
+    '''
+    def setJointPosition(incAngle, steps):
+        for i  in range(steps):
+            errorCode4=vrep.simxSetJointPosition(clientID, Revolute_joint_handle, i*incAngle*deg, vrep.simx_opmode_oneshot_wait)
+        #終止模擬
+        vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
+     
+    # 每步 10 度, 轉兩圈
+    setJointPosition(10, 720)
+    '''
+
+    #print("通過球總數:", count)
+</pre>
+<h3>ZeroMQ</h3>
+<p><a href="/downloads/marble_machine_w_zmq.7z">marble_machine_w_zmq.7z</a></p>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm">https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm</a> </p>
+<p></p>
+<p></p><h2>Mujoco</h2>
 <p><a href="https://mujoco.org/">https://mujoco.org/</a></p>
 <p><a href="https://mujoco.readthedocs.io/en/latest/overview.html">https://mujoco.readthedocs.io/en/latest/overview.html</a></p>
 <p><a href="https://www.deepmind.com/blog/opening-up-a-physics-simulator-for-robotics">https://www.deepmind.com/blog/opening-up-a-physics-simulator-for-robotics</a></p>
 <p style="padding-left: 30px;"><a href="https://www.coursehero.com/study-guides/boundless-biology/somatosensation/">https://www.coursehero.com/study-guides/boundless-biology/somatosensation/</a></p>
 <p><a href="https://www.deepmind.com/blog/open-sourcing-mujoco">https://www.deepmind.com/blog/open-sourcing-mujoco</a></p>
-<p><a href="https://github.com/deepmind/mujoco">https://github.com/deepmind/mujoco</a></p>
-<h2>ROS</h2>
+<p><a href="https://github.com/deepmind/mujoco">https://github.com/deepmind/mujoco</a></p><h2>ROS</h2>
 <p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-7750-8.pdf">Robot Operating System for Absolute Beginners</a> (2022)</p>
 <h1>Projects</h1>
 <p>在大學階段執行專案題目研究 (即畢業專題) 的目的:</p>

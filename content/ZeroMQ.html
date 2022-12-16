@@ -141,64 +141,11 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Python << <a href='Python.html'>Previous</a> <a href='Rust.html'>Next</a> >> Rust<br /><h1>ANSIC</h1>
-<p>Based on <a href="https://study.com/academy/lesson/ansi-c-history-formation-structure.html">study.com</a>: The C programming language was developed in the <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Labs</a> of AT&amp;T by an employee called <a href="https://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis Ritchie</a> between 1969 and 1973 while working on Unix operating system. He created this language using <a href="https://en.wikipedia.org/wiki/ALGOL">ALGOL</a>, <a href="https://en.wikipedia.org/wiki/BCPL">BCPL</a>, and <a href="https://en.wikipedia.org/wiki/B_(programming_language)">B</a> the languages that were used before C was created. He added many powerful features to C and used it to further develop the <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a> operating system. <a href="https://en.wikipedia.org/wiki/American_National_Standards_Institute">American National Standards Institute</a> (ANSI) in 1983, formed a committee to provide a comprehensive definition to the C language and thus came into existence the new ANSI C language with better features.</p>
-<p><a href="https://link.springer.com/book/10.1007/978-1-4612-1484-7">C Programming</a> (1999)</p>
-<p><a href="https://link.springer.com/book/10.1007/978-3-030-50750-3">Computer Programming in C for Beginners</a> (2020)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// Our first program
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-int main()
-{
-    printf("Hello world!\n");
-    return 0;
-}</pre>
-<p><a href="https://gmnfuedutw-my.sharepoint.com/:u:/g/personal/yen_gm_nfu_edu_tw/EXxz57GzrnBKmnniJvffmoABCDC_cUCbqlTa4cx29dC_UA?e=iCaVgk">cp2022_ANSIC_w_tinyc_scite.7z</a> (for cp2022 @gm users only) / <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EU0vRPRqlYlEgS4rJzcAq-0BDP2Lac2WfJl9dSAz2UEkgA?e=uo0n6a">cp2022_ANSIC_w_tinyc_scite.7z for @nfu</a></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// from https://stackoverflow.com/questions/6127503/shuffle-array-in-c
-#include &lt;stdio.h&gt; //for printf()
-#include &lt;stdlib.h&gt; //for srand() and rand()
-#include &lt;time.h&gt; //for time()
-#include &lt;memory.h&gt; //for memcpy()
-// 作業, 請計算各數值在各位數出現的總數, 是否依照亂數機率出現?
-// 作業, 請將此程式改用 Brython 編寫.
-
-void main ()
-{
-    int elesize = sizeof (int);
-    int i;
-    int j;
-    int r;
-    int num = 10;
-    int times = 50;
-    int src [num];
-    int tgt [num];
-    
-    srand ( (unsigned int) time (0) );
-    
-    for (j = 0; j &lt; times; j++)
-    {
-        for (i = 0; i &lt; num; src [i] = i++);
-        
-        for (i = num; i &gt; 0; i --)
-        {
-            r = rand () % i;
-            memcpy (&amp;tgt [num - i], &amp;src [r], elesize);
-            memcpy (&amp;src [r], &amp;src [i - 1], elesize);
-        }
-        
-        for (i = 0; i &lt; num; printf ("%d ", tgt [i++] ) );
-        printf("\n");
-    }
-}</pre>
-<p>利用 <a href="https://en.wikipedia.org/wiki/Differential_evolution">Differential Evoluation</a> (差分進化演算法), 以 <a href="https://en.wikipedia.org/wiki/ANSI_C">ANSI C</a> 程式語言編寫適應方程式的最大化或最小化演算:</p>
-<p style="padding-left: 30px;"><a href="./../downloads/volume_in_de_ex1.c">volume_in_de_ex1.c</a></p>
-<p style="padding-left: 30px;"><a href="https://gist.github.com/mdecourse/b5df54ab3d5f2f079f785541d1178a66">其他範例程式</a></p>
-<p style="padding-left: 30px;">相同演算法, 以 CPython 解題:</p>
-<p style="padding-left: 60px;"><a href="./../downloads/volume_in_de_ex1.py">volume_in_de_ex1.py</a></p>
-<p style="padding-left: 30px;">相同演算法, <a href="https://mde.tw/cp2022/content/Brython.html?src=https://gist.githubusercontent.com/mdecourse/b5df54ab3d5f2f079f785541d1178a66/raw/ccdea7b056702bcf06ed24c7407a43e0a1aacdbc/volume_in_de_ex1.py">以 Brython 解題</a>.</p>
-<p style="padding-left: 30px;">此一採<a href="https://www.analyzemath.com/calculus/Problems/maximum_volume_problem.html">固定表面積的紙盒體積最大化</a>運算範例, <a href="./../downloads/volume_in_de_ex1.py">volume_in_de_ex1.py</a> 的原始作者為<a href="https://hdl.handle.net/11296/tur9hu">李孟恭</a> (<a href="https://github.com/kmollee/algorithm/blob/master/de.py">https://github.com/kmollee/algorithm/blob/master/de.py</a>)</p>
-<p>從 <a href="https://github.com/Akagi201/lw_oopc/blob/master/doc/%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1C%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D.md">lw-oopc 的簡介</a> 以及<a href="https://github.com/Akagi201/lw_oopc">升級版 lw-oopc 原始碼</a>中, 則可以進一步對 ANSI C 在嵌入式 (embedded) 系統上的應用有所了解.</p>
-<p style="padding-left: 60px;"></p><br />Python << <a href='Python.html'>Previous</a> <a href='Rust.html'>Next</a> >> Rust</div>
+    <div id="tipue_search_content">Examples << <a href='Examples.html'>Previous</a> <a href='Mujoco.html'>Next</a> >> Mujoco<br /><h1>ZeroMQ</h1>
+<p><a href="./../downloads/marble_machine_w_zmq.7z">marble_machine_w_zmq.7z</a></p>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm">https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm</a> </p>
+<p></p>
+<p></p><br />Examples << <a href='Examples.html'>Previous</a> <a href='Mujoco.html'>Next</a> >> Mujoco</div>
         
     <!-- footer -->
       <div class="container">
