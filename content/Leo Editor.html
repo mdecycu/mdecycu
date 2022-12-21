@@ -145,7 +145,18 @@ img.add_border {
 <p><a href="https://leoeditor.com/">https://leoeditor.com/</a></p>
 <p><a href="https://github.com/leo-editor/leo-editor">https://github.com/leo-editor/leo-editor</a></p>
 <p><a href="https://groups.google.com/g/leo-editor">https://groups.google.com/g/leo-editor</a></p>
-<p><a href="https://edreamleo.blogspot.com/">https://edreamleo.blogspot.com/</a></p><br />Bash << <a href='Bash.html'>Previous</a> <a href='Fossil SCM.html'>Next</a> >> Fossil SCM</div>
+<p><a href="https://edreamleo.blogspot.com/">https://edreamleo.blogspot.com/</a></p>
+<p>Leo editor importer script:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''Recursively import all python files in a directory and clean the result.'''
+# ctrl + b to execute
+
+c.recursiveImport(
+    dir_ = r'./',
+    kind = '@clean', # The new best practice.
+    safe_at_file = False,
+    theTypes = ['.cpp']
+)</pre>
+<p></p><br />Bash << <a href='Bash.html'>Previous</a> <a href='Fossil SCM.html'>Next</a> >> Fossil SCM</div>
         
     <!-- footer -->
       <div class="container">
