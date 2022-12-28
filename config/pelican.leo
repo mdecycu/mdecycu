@@ -159,6 +159,9 @@
 <v t="leo.20221209213615.1"><vh>@clean 2022_fall_w14.md</vh>
 <v t="leo.20221209213632.1"><vh>2022 Fall 課程 w14</vh></v>
 </v>
+<v t="leo.20221228144547.1"><vh>@clean 2022 fall_w17.md</vh>
+<v t="leo.20221228144731.1"><vh>2022 Fall 課程總結</vh></v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -5370,6 +5373,29 @@ def get_cname(env):
 ----
 
 </t>
+<t tx="leo.20221228144547.1">@language md
+---
+Title: 2022 Fall 課程總結
+Date: 2022-12-28 11:00
+Category: cad2022
+Tags: w17, cad2022, cp2022
+Slug: 2022_fall_courses_w17
+Author: mdecycu
+---
+
+2022 Fall 課程進入最後兩週, 將要讓每一位學員上台簡報各自的網站與倉儲.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20221228144731.1">Repository
+----
+
+透過 Github Classroom 建立各學員的課程倉儲, 可以讓開課教師省下許多設定, 而利用 Repository 中的 Pages 設定, 各學員可以利用網站展示個人的課程作業與學習心得, 同時若再納入 [Reveal.js] 就能直接在線上進行課程心得簡報.
+
+cmsimde 的 Reveal 簡報系統位於 reveal 目錄中, 是一組超文件檔案, 可以利用 config 目錄中的 reveal.leo 進行管理.
+
+[Reveal.js]: https://revealjs.com/</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
