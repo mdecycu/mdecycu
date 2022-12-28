@@ -2965,7 +2965,18 @@ python3 cmsimde/wsgi.py</pre>
 <p><a href="https://leoeditor.com/">https://leoeditor.com/</a></p>
 <p><a href="https://github.com/leo-editor/leo-editor">https://github.com/leo-editor/leo-editor</a></p>
 <p><a href="https://groups.google.com/g/leo-editor">https://groups.google.com/g/leo-editor</a></p>
-<p><a href="https://edreamleo.blogspot.com/">https://edreamleo.blogspot.com/</a></p><h2>Fossil SCM</h2>
+<p><a href="https://edreamleo.blogspot.com/">https://edreamleo.blogspot.com/</a></p>
+<p>Leo editor importer script:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''Recursively import all python files in a directory and clean the result.'''
+# ctrl + b to execute
+
+c.recursiveImport(
+    dir_ = r'./',
+    kind = '@clean', # The new best practice.
+    safe_at_file = False,
+    theTypes = ['.cpp']
+)</pre>
+<p></p><h2>Fossil SCM</h2>
 <p><a href="https://www.fossil-scm.org">https://www.fossil-scm.org</a></p>
 <p><a href="https://sqlite.org/whynotgit.html">https://sqlite.org/whynotgit.html</a></p>
 <h2>Classroom</h2>
