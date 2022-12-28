@@ -5393,9 +5393,46 @@ Author: mdecycu
 
 透過 Github Classroom 建立各學員的課程倉儲, 可以讓開課教師省下許多設定, 而利用 Repository 中的 Pages 設定, 各學員可以利用網站展示個人的課程作業與學習心得, 同時若再納入 [Reveal.js] 就能直接在線上進行課程心得簡報.
 
-cmsimde 的 Reveal 簡報系統位於 reveal 目錄中, 是一組超文件檔案, 可以利用 config 目錄中的 reveal.leo 進行管理.
+cmsimde 的 Reveal 簡報系統位於 reveal 目錄中, 是一組超文件檔案, 可以利用 config 目錄中的 reveal.leo 進行管理. 在 [Reveal.js] 簡報中執行 Brython 程式的範例, 請參考 &lt;https://mde.tw/content/Revealjs.html&gt;.
 
-[Reveal.js]: https://revealjs.com/</t>
+[Reveal.js]: https://revealjs.com/
+
+Git 學習教材
+----
+
+&lt;https://github.com/doggy8088/Learn-Git-in-30-days/tree/master/zh-tw&gt;
+
+&lt;https://backlog.com/git-tutorial/tw/&gt;
+
+&lt;https://learngitbranching.js.org/&gt;
+
+Brython 程式學習
+----
+
+Brython 環境建置? 導入所需程式庫, 啟動 Brython, 開始編寫 Brython 程式.
+
+Brython 網際程式編輯器如何建置? i.e. &lt;https://mde.tw/content/Python.html&gt; 這一頁是如何建立的?
+
+Brython 讀取 Gist 中的檔案與程式檔案後, 如何將字串轉為可用的程式內容? 試著了解 &lt;https://stackoverflow.com/questions/15197673/using-pythons-eval-vs-ast-literal-eval&gt; 中的說明.
+
+Brython 的 canvas 2D 繪圖應用.
+
+Brython 的 WebGL 3D 繪圖應用, 設法利用 Three.js 編寫 STL 零件檔案檢視程式. &lt;https://www.adobe.com/creativecloud/file-types/image/vector/stl-file.html&gt;
+
+CAD 套件
+----
+
+NX CAD 系統安裝與可攜程式建置.
+
+NX 零組件繪圖練習.
+
+NX 零組件轉入 CoppeliaSim, 加入感測器與 actuation system. 手足球系統建置, 
+
+將 NX 換為 Onshape 或 Solvespace. 自行編譯 Solvespace.
+
+自行編寫 Python 或 Brython 程式分割 STL 組立件.
+
+自行編譯 CoppeliaSim.</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
