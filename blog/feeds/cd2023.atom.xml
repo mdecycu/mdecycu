@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cd2023</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/cd2023.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2023-03-25T15:19:10+08:00</updated><entry><title>2023 Spring 第三週</title><link href="https://mde.tw/blog/2023_spring_w3.html" rel="alternate"></link><published>2023-03-09T11:00:00+08:00</published><updated>2023-03-25T15:19:10+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2023-03-09:/blog/2023_spring_w3.html</id><summary type="html">&lt;p&gt;2023 Spring 課程開始第三週, 這個學期起, 開課論述與先前大同小異, 但是執行內容將會有很大的不同.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2023 Spring 課程開始第三週, 這個學期起, 開課論述與先前大同小異, 但是執行內容將會有很大的不同.&lt;/p&gt;
+
+
+&lt;h2&gt;Stud 與 Stud2 虛擬主機&lt;/h2&gt;
+&lt;p&gt;stud.cycu.org 是 2022 Fall 用來建構多人網際內容管理系統的虛擬主機, 由於刪除用戶資料過於繁瑣, 於是選擇重新建立 stud2.cycu.org. &lt;/p&gt;
+&lt;p&gt;而建構一台大約兩百多人使用的虛擬主機, 需要下列執行環境:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;多人環境下的 Python3 環境, 可以順利執行動態 cmsimde 網際內容管理系統&lt;/li&gt;
+&lt;li&gt;https 的代理伺服器 (stunnel) 與連外的網站數位簽章建置 (letsencrypt)&lt;/li&gt;
+&lt;li&gt;建立多人帳號所需的準備工作 (使用 newusers 指令)&lt;/li&gt;
+&lt;li&gt;將所配置的多人帳號資訊, 逐一透過郵件進行通知 (Gmail)&lt;/li&gt;
+&lt;li&gt;除了先前採 waitress 執行 Flask 網站, 當網站內容變更後 (通常因為 git pull), 需要再利用 hupper -m 執行 server.py, 才能 auto reload&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;協同產品設計&lt;/h2&gt;
+&lt;p&gt;pj1 希望透過 Python remote API 建立一個 browser based 跨網路的機器人足球遊戲, 採 CoppeliaSim 建立. 其中需要在 remoteApiConnections.txt 設定場景主機預定開啟的 ports, 以便讓各 client 能夠經由主機 IPv4 位址 (IPv6 尚無法運作) 中的特定 port 傳送 API 指令. 且各 client 可以由場景主機所啟動的 Visualization Streaming 串流同時觀看運動場景 (內建在 23020 埠號播放).&lt;/p&gt;
+&lt;h2&gt;Solid Edge 與 Femap&lt;/h2&gt;
+&lt;p&gt;2021 年起 Siemens 開始釋出 Community 版本的 Solid Edge, 允許非營利單位可以免費使用. 同時也提供永久免費的 Femap 讓教育單位使用. 針對這兩項工具的新教育版使用授權, 全球各級學校終於可以更有彈性使用專業的 CAD/E 套件.&lt;/p&gt;</content><category term="cd2023"></category><category term="w3"></category><category term="cd2023"></category><category term="wcm2023"></category></entry></feed>
