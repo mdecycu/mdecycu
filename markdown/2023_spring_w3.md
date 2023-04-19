@@ -29,10 +29,29 @@ stud.cycu.org 是 2022 Fall 用來建構多人網際內容管理系統的虛擬�
 
 pj1 希望透過 Python remote API 建立一個 browser based 跨網路的機器人足球遊戲, 採 CoppeliaSim 建立. 其中需要在 remoteApiConnections.txt 設定場景主機預定開啟的 ports, 以便讓各 client 能夠經由主機 IPv4 位址 (IPv6 尚無法運作) 中的特定 port 傳送 API 指令. 且各 client 可以由場景主機所啟動的 Visualization Streaming 串流同時觀看運動場景 (內建在 23020 埠號播放).
 
+2023 年 Spring 開始導入 zmqRemoteAPI, 先前的 legacy Python 程式將會隨著新版 CoppeliaSim 的內容架構而逐步退場.
+
 Solid Edge 與 Femap
 ----
 
 2021 年起 Siemens 開始釋出 Community 版本的 Solid Edge, 允許非營利單位可以免費使用. 同時也提供永久免費的 Femap 讓教育單位使用. 針對這兩項工具的新教育版使用授權, 全球各級學校終於可以更有彈性使用專業的 CAD/E 套件.
 
+Proxy and DNS Servers
+----
 
+固定的幾台 Proxy servers 必須定時對系統以及服務更新, 其中包括 3, 4, 42, 53, 69:
+
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+
+sudo /etc/init.d/squid restart
+
+sudo service bind9 restart
+
+for Windows Server connected from Mac RDT need to setup under the admin connect session.
+
+3 and 4 on 209 and 6 (eng) on 0811-2-0-cd02 
+
+Excel 計算平均 =INT(SUM(IF(B2="缺席",0, B2),IF(C2="缺席",0,C2),IF(D2="缺席",0,D2),IF(E2="缺席",0,E2),IF(F2="缺席",0,F2))/5)
 
