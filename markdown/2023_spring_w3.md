@@ -55,3 +55,18 @@ for Windows Server connected from Mac RDT need to setup under the admin connect 
 
 Excel 計算平均 =INT(SUM(IF(B2="缺席",0, B2),IF(C2="缺席",0,C2),IF(D2="缺席",0,D2),IF(E2="缺席",0,E2),IF(F2="缺席",0,F2))/5)
 
+Nginx 伺服下的 public_html
+----
+
+sudo_user@cad2:~#sudo vi /etc/nginx/sites-available/default
+# 設定讓各用戶的 public_html 目錄可以作為 nginx 伺服網頁目錄
+server {
+        .....
+        .....
+        location ~ ^/~(.+?)(/.*)?$ {
+              alias /home/$1/public_html$2;
+              index  index.html index.htm;
+              autoindex on;
+        }
+# 設定完成後必須重新啟動 nginx
+sudo_user@cad2:~# systemctl restart nginx
