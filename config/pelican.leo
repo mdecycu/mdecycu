@@ -5482,7 +5482,9 @@ Proxy and DNS Servers
 固定的幾台 Proxy servers 必須定時對系統以及服務更新, 其中包括 3, 4, 42, 53, 69:
 
 sudo apt update
+
 sudo apt upgrade
+
 sudo apt autoremove
 
 sudo /etc/init.d/squid restart
@@ -5498,6 +5500,7 @@ Excel 計算平均 =INT(SUM(IF(B2="缺席",0, B2),IF(C2="缺席",0,C2),IF(D2="�
 Nginx 伺服下的 public_html
 ----
 
+&lt;pre class="brush:jscript"&gt;
 sudo_user@cad2:~#sudo vi /etc/nginx/sites-available/default
 # 設定讓各用戶的 public_html 目錄可以作為 nginx 伺服網頁目錄
 server {
@@ -5510,6 +5513,7 @@ server {
         }
 # 設定完成後必須重新啟動 nginx
 sudo_user@cad2:~# systemctl restart nginx
+&lt;/pre&gt;
 
 Exam_dot_cycu
 ----
@@ -5517,8 +5521,11 @@ Exam_dot_cycu
 https 數位簽章更新, 每 90 天必須更新一次
 
 renew certificate (更新數位簽章)
+
 stop nginx service (必須先關閉 nginx 伺服器)
+
 on administrator command window (cmd 在管理者模式下啟動)
+
 execute (執行下列指令)
 
 certbot certonly --standalone

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2023-05-03T22:10:02+08:00</updated><entry><title>2023 Spring 第三週</title><link href="https://mde.tw/blog/2023_spring_w3.html" rel="alternate"></link><published>2023-03-09T11:00:00+08:00</published><updated>2023-05-03T22:10:02+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2023-03-09:/blog/2023_spring_w3.html</id><summary type="html">&lt;p&gt;2023 Spring 課程開始第三週, 這個學期起, 開課論述與先前大同小異, 但是執行內容將會有很大的不同.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw</title><link href="https://mde.tw/blog/" rel="alternate"></link><link href="https://mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>https://mde.tw/blog/</id><updated>2023-05-03T22:18:30+08:00</updated><entry><title>2023 Spring 第三週</title><link href="https://mde.tw/blog/2023_spring_w3.html" rel="alternate"></link><published>2023-03-09T11:00:00+08:00</published><updated>2023-05-03T22:18:30+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2023-03-09:/blog/2023_spring_w3.html</id><summary type="html">&lt;p&gt;2023 Spring 課程開始第三週, 這個學期起, 開課論述與先前大同小異, 但是執行內容將會有很大的不同.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2023 Spring 課程開始第三週, 這個學期起, 開課論述與先前大同小異, 但是執行內容將會有很大的不同.&lt;/p&gt;
 
 
@@ -20,33 +20,36 @@
 &lt;p&gt;2021 年起 Siemens 開始釋出 Community 版本的 Solid Edge, 允許非營利單位可以免費使用. 同時也提供永久免費的 Femap 讓教育單位使用. 針對這兩項工具的新教育版使用授權, 全球各級學校終於可以更有彈性使用專業的 CAD/E 套件.&lt;/p&gt;
 &lt;h2&gt;Proxy and DNS Servers&lt;/h2&gt;
 &lt;p&gt;固定的幾台 Proxy servers 必須定時對系統以及服務更新, 其中包括 3, 4, 42, 53, 69:&lt;/p&gt;
-&lt;p&gt;sudo apt update
-sudo apt upgrade
-sudo apt autoremove&lt;/p&gt;
+&lt;p&gt;sudo apt update&lt;/p&gt;
+&lt;p&gt;sudo apt upgrade&lt;/p&gt;
+&lt;p&gt;sudo apt autoremove&lt;/p&gt;
 &lt;p&gt;sudo /etc/init.d/squid restart&lt;/p&gt;
 &lt;p&gt;sudo service bind9 restart&lt;/p&gt;
 &lt;p&gt;for Windows Server connected from Mac RDT need to setup under the admin connect session.&lt;/p&gt;
 &lt;p&gt;3 and 4 on 209 and 6 (eng) on 0811-2-0-cd02 &lt;/p&gt;
 &lt;p&gt;Excel 計算平均 =INT(SUM(IF(B2="缺席",0, B2),IF(C2="缺席",0,C2),IF(D2="缺席",0,D2),IF(E2="缺席",0,E2),IF(F2="缺席",0,F2))/5)&lt;/p&gt;
 &lt;h2&gt;Nginx 伺服下的 public_html&lt;/h2&gt;
-&lt;p&gt;sudo_user@cad2:~#sudo vi /etc/nginx/sites-available/default&lt;/p&gt;
-&lt;h1&gt;設定讓各用戶的 public_html 目錄可以作為 nginx 伺服網頁目錄&lt;/h1&gt;
-&lt;p&gt;server {
+&lt;pre class="brush:jscript"&gt;
+sudo_user@cad2:~#sudo vi /etc/nginx/sites-available/default
+# 設定讓各用戶的 public_html 目錄可以作為 nginx 伺服網頁目錄
+server {
         .....
         .....
         location ~ ^/~(.+?)(/.*)?$ {
               alias /home/$1/public_html$2;
               index  index.html index.htm;
               autoindex on;
-        }&lt;/p&gt;
-&lt;h1&gt;設定完成後必須重新啟動 nginx&lt;/h1&gt;
-&lt;p&gt;sudo_user@cad2:~# systemctl restart nginx&lt;/p&gt;
+        }
+# 設定完成後必須重新啟動 nginx
+sudo_user@cad2:~# systemctl restart nginx
+&lt;/pre&gt;
+
 &lt;h2&gt;Exam_dot_cycu&lt;/h2&gt;
 &lt;p&gt;https 數位簽章更新, 每 90 天必須更新一次&lt;/p&gt;
-&lt;p&gt;renew certificate (更新數位簽章)
-stop nginx service (必須先關閉 nginx 伺服器)
-on administrator command window (cmd 在管理者模式下啟動)
-execute (執行下列指令)&lt;/p&gt;
+&lt;p&gt;renew certificate (更新數位簽章)&lt;/p&gt;
+&lt;p&gt;stop nginx service (必須先關閉 nginx 伺服器)&lt;/p&gt;
+&lt;p&gt;on administrator command window (cmd 在管理者模式下啟動)&lt;/p&gt;
+&lt;p&gt;execute (執行下列指令)&lt;/p&gt;
 &lt;p&gt;certbot certonly --standalone&lt;/p&gt;</content><category term="cd2023"></category><category term="w3"></category><category term="cd2023"></category><category term="wcm2023"></category></entry><entry><title>2022 Fall 課程總結</title><link href="https://mde.tw/blog/2022_fall_courses_w17.html" rel="alternate"></link><published>2022-12-28T11:00:00+08:00</published><updated>2023-03-24T23:02:26+08:00</updated><author><name>mdecycu</name></author><id>tag:mde.tw,2022-12-28:/blog/2022_fall_courses_w17.html</id><summary type="html">&lt;p&gt;2022 Fall 課程進入最後兩週, 將要讓每一位學員上台簡報各自的網站與倉儲.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2022 Fall 課程進入最後兩週, 將要讓每一位學員上台簡報各自的網站與倉儲.&lt;/p&gt;
 
