@@ -5510,6 +5510,19 @@ server {
         }
 # 設定完成後必須重新啟動 nginx
 sudo_user@cad2:~# systemctl restart nginx
+
+Exam_dot_cycu
+----
+
+https 數位簽章更新, 每 90 天必須更新一次
+
+renew certificate (更新數位簽章)
+stop nginx service (必須先關閉 nginx 伺服器)
+on administrator command window (cmd 在管理者模式下啟動)
+execute (執行下列指令)
+
+certbot certonly --standalone
+
 </t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {

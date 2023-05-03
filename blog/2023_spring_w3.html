@@ -61,7 +61,7 @@
 <meta property="og:url" content="https://mde.tw/blog/2023_spring_w3.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2023-03-09 11:00:00+08:00"/>
-<meta property="article:modified_time" content="2023-05-03 15:38:23.154396+08:00"/>
+<meta property="article:modified_time" content="2023-05-03 22:10:02.701862+08:00"/>
 <meta property="article:author" content="https://mde.tw/blog/author/mdecycu.html">
 <meta property="article:section" content="cd2023"/>
 <meta property="article:tag" content="w3"/>
@@ -78,7 +78,7 @@
   "name": "2023 Spring 第三週",
   "headline": "2023 Spring 第三週",
   "datePublished": "2023-03-09 11:00:00+08:00",
-  "dateModified": "2023-05-03 15:38:23.154396+08:00",
+  "dateModified": "2023-05-03 22:10:02.701862+08:00",
   "author": {
     "@type": "Person",
     "name": "mdecycu",
@@ -269,6 +269,13 @@ sudo apt autoremove</p>
         }</p>
 <h1>設定完成後必須重新啟動 nginx</h1>
 <p>sudo_user@cad2:~# systemctl restart nginx</p>
+<h2>Exam_dot_cycu</h2>
+<p>https 數位簽章更新, 每 90 天必須更新一次</p>
+<p>renew certificate (更新數位簽章)
+stop nginx service (必須先關閉 nginx 伺服器)
+on administrator command window (cmd 在管理者模式下啟動)
+execute (執行下列指令)</p>
+<p>certbot certonly --standalone</p>
             </section>
 
             <section class="post-info">
