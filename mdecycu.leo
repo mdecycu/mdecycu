@@ -11,15 +11,14 @@
 <v t="yen.20161112105128.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
 <v t="leo.20170830094232.1"><vh>about mde.tw</vh></v>
-<v t="leo.20200520153540.1"><vh>@clean index.html</vh>
-<v t="leo.20200520153540.2"><vh>html</vh>
-<v t="leo.20200520153540.3"><vh>head</vh></v>
-<v t="leo.20200520153540.4"><vh>body</vh>
-<v t="leo.20200520153540.5"><vh>reveal div</vh>
-<v t="leo.20200520153540.6"><vh>slides div</vh>
-<v t="yen.20220118074727.1"><vh>2023 Spring</vh>
-<v t="yen.20220118074727.2"><vh>2023 Spring Page</vh></v>
-</v>
+<v t="leo.20230614114908.1"><vh>@clean index.html</vh>
+<v t="leo.20230614114908.2"><vh>html</vh>
+<v t="leo.20230614114908.3"><vh>head</vh></v>
+<v t="leo.20230614114908.4"><vh>body</vh>
+<v t="leo.20230614114908.5"><vh>reveal div</vh>
+<v t="leo.20230614114908.6"><vh>slides div</vh>
+<v t="leo.20230614115035.1"><vh>2023 Fall Page</vh></v>
+<v t="leo.20230614115046.1"><vh>2023 Spring Page</vh></v>
 </v>
 </v>
 </v>
@@ -84,22 +83,20 @@ def domake():
 # 利用執行緒執行 https 伺服器
 make = threading.Thread(target=domake)
 make.start()</t>
-<t tx="leo.20200520153540.1">@language xml
+<t tx="leo.20230614114908.1">@language xml
 @tabwidth -4
-@others
-</t>
-<t tx="leo.20200520153540.2">&lt;!doctype html&gt;
+@others</t>
+<t tx="leo.20230614114908.2">&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 @others
-&lt;/html&gt;
-</t>
-<t tx="leo.20200520153540.3">&lt;head&gt;
+&lt;/html&gt;</t>
+<t tx="leo.20230614114908.3">&lt;head&gt;
     &lt;meta charset="utf-8"&gt;
 
-    &lt;title&gt;KMOLab&lt;/title&gt;
+    &lt;title&gt;reveal.js – The HTML Presentation Framework&lt;/title&gt;
 
-    &lt;meta name="description" content="KMOLab"&gt;
-    &lt;meta name="author" content="KMOLab"&gt;
+    &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
+    &lt;meta name="author" content="Hakim El Hattab"&gt;
 
     &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
     &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
@@ -112,10 +109,19 @@ make.start()</t>
 
     &lt;!-- Theme used for syntax highlighting of code --&gt;
     &lt;link rel="stylesheet" href="reveal/plugin/highlight/monokai.css" id="highlight-theme"&gt;
-&lt;/head&gt;
-</t>
-<t tx="leo.20200520153540.4">&lt;body&gt;
+&lt;/head&gt;</t>
+<t tx="leo.20230614114908.4">&lt;body&gt;
 @others
+    &lt;script src="reveal/dist/reveal.js"&gt;&lt;/script&gt;
+    &lt;script src="reveal/plugin/zoom/zoom.js"&gt;&lt;/script&gt;
+    &lt;script src="reveal/plugin/notes/notes.js"&gt;&lt;/script&gt;
+    &lt;script src="reveal/plugin/search/search.js"&gt;&lt;/script&gt;
+    &lt;script src="reveal/plugin/markdown/markdown.js"&gt;&lt;/script&gt;
+    &lt;script src="reveal/plugin/highlight/highlight.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+
+        // Also available as an ES module, see:
+        // https://revealjs.com/initialization/
         Reveal.initialize({
             controls: true,
             progress: true,
@@ -127,25 +133,29 @@ make.start()</t>
         });
 
     &lt;/script&gt;
-&lt;/body&gt;
-</t>
-<t tx="leo.20200520153540.5">&lt;div class="reveal"&gt;
-@others
-        // Also available as an ES module, see:
-        // https://revealjs.com/initialization/
-</t>
-<t tx="leo.20200520153540.6">    &lt;!-- Any section element inside of this container is displayed as a slide --&gt;
-    &lt;div class="slides"&gt;
-@others
-&lt;/div&gt;
-    &lt;script src="reveal/dist/reveal.js"&gt;&lt;/script&gt;
-    &lt;script src="reveal/plugin/zoom/zoom.js"&gt;&lt;/script&gt;
-    &lt;script src="reveal/plugin/notes/notes.js"&gt;&lt;/script&gt;
-    &lt;script src="reveal/plugin/search/search.js"&gt;&lt;/script&gt;
-    &lt;script src="reveal/plugin/markdown/markdown.js"&gt;&lt;/script&gt;
-    &lt;script src="reveal/plugin/highlight/highlight.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
+&lt;/body&gt;</t>
+<t tx="leo.20230614114908.5">&lt;div class="reveal"&gt;
+    @others
+&lt;/div&gt;</t>
+<t tx="leo.20230614114908.6">&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
+&lt;div class="slides"&gt;
+    @others
+&lt;/div&gt;</t>
+<t tx="leo.20230614115035.1">        &lt;section data-markdown&gt;
+            &lt;script type="text/template"&gt;
+        ## 2023 Fall
 
+        ### [cp2023](https://mde.tw/cp2023) | [cad2023](https://mde.tw/cad2023)
+            &lt;/script&gt;
+        &lt;/section&gt;
+</t>
+<t tx="leo.20230614115046.1">        &lt;section data-markdown&gt;
+            &lt;script type="text/template"&gt;
+        ## 2023 Spring
+
+        ### [cd2023](https://mde.tw/cd2023) | [wcm2023](https://mde.tw/wcm2023)
+            &lt;/script&gt;
+        &lt;/section&gt;
 </t>
 <t tx="yen.20161112105128.1"></t>
 <t tx="yen.20161112105128.2">QTreeWidget {
@@ -223,22 +233,5 @@ QLineEdit#editorLabel {
 }</t>
 <t tx="yen.20161112105128.3">horizontal: body pane to the left
 vertical: body pane on the botton</t>
-<t tx="yen.20220118074727.1">        &lt;section data-markdown&gt;
-            &lt;script type="text/template"&gt;
-@others
-            &lt;/script&gt;
-        &lt;/section&gt;
-
-
-        						
-    &lt;/div&gt;
-</t>
-<t tx="yen.20220118074727.2">        ## 2023 Spring
-
-        ### [cd2023](https://mde.tw/cd2023) | [wcm2023](https://mde.tw/wcm2023)
-
-
-
-</t>
 </tnodes>
 </leo_file>
