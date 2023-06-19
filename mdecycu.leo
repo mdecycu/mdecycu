@@ -18,7 +18,6 @@
 <v t="leo.20230614114908.5"><vh>reveal div</vh>
 <v t="leo.20230614114908.6"><vh>slides div</vh>
 <v t="leo.20230614115035.1"><vh>2023 Fall Page</vh></v>
-<v t="leo.20230614115046.1"><vh>2023 Spring Page</vh></v>
 </v>
 </v>
 </v>
@@ -146,14 +145,6 @@ make.start()</t>
         ## 2023 Fall
 
         ### [cp2023](https://mde.tw/cp2023) | [cad2023](https://mde.tw/cad2023)
-            &lt;/script&gt;
-        &lt;/section&gt;
-</t>
-<t tx="leo.20230614115046.1">        &lt;section data-markdown&gt;
-            &lt;script type="text/template"&gt;
-        ## 2023 Spring
-
-        ### [cd2023](https://mde.tw/cd2023) | [wcm2023](https://mde.tw/wcm2023)
             &lt;/script&gt;
         &lt;/section&gt;
 </t>
