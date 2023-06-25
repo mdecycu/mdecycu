@@ -3615,6 +3615,56 @@ Defaults timestamp_timeout=60
 
 可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.
 
+Stunnel
+----
+
+/etc/default/stunnel4 需要加入 
+
+ENABLED=1
+
+才能讓 stunnel4 與伺服器同時啟動, 重新啟動則使用 sudo /etc/init.d/stunnel4 restart
+
+當伺服器運作期程結束, 可以在 /etc/sudoers 已經納入 timeout 設定後, 利用 python3 del_users.py 刪除對應的使用者與其用戶目錄.
+
+&lt;pre class="brush: python"&gt;
+import subprocess
+ 
+"""
+/etc/sudoers
+vi /etc/sudoers
+use w! to write the read only file
+add the following to sudoers
+ 
+# only require a password once every 60 minutes
+Defaults timestamp_timeout=60
+ 
+use 
+sudo python3 del_users.py
+to delete users and their home directories
+"""
+ 
+with open("users.txt", "r") as f:
+    data = f.read().splitlines()
+#print(data)
+stud_list = []
+for i in data:
+    stud_num = i.split(":")[0]
+    #print(stud_num)
+    stud_list.append(stud_num)    
+for user in stud_list:
+    try:
+        subprocess.run(["sudo", "userdel", "-r", user], check=True)
+        print(str(user) + " deleted!")
+        subprocess.run(["sudo", "rm", "-rf", f"/home/{user}"], check=True)
+        print(str(user) + " home deleted!")
+    except subprocess.CalledProcessesError:
+        print(str(user) + " is not deleted!")
+&lt;/pre&gt;
+
+其中的 users.txt 就是前面用來建立用戶帳號的設定檔案.
+
+
+
 [next line difference]: https://askubuntu.com/questions/1129965/users-created-using-newusers-command-unable-to-login-in-ubuntu-18-04
 
 [sudoers]: https://askubuntu.com/questions/155791/how-do-i-sudo-a-command-in-a-script-without-being-asked-for-a-password/155827#155827
