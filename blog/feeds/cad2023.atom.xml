@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mde.tw - cad2023</title><link href="./" rel="alternate"></link><link href="./feeds/cad2023.atom.xml" rel="self"></link><id>./</id><updated>2023-12-24T23:18:08+08:00</updated><entry><title>2023 Fall 第十五週</title><link href="./2023_fall_w15.html" rel="alternate"></link><published>2023-12-24T11:00:00+08:00</published><updated>2023-12-24T23:18:08+08:00</updated><author><name>mdecycu</name></author><id>tag:None,2023-12-24:./2023_fall_w15.html</id><summary type="html">&lt;p&gt;2023 Fall 即將結束, 截至目前, 課程到底傳達了甚麼?&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2023 Fall 即將結束, 截至目前, 課程到底傳達了甚麼?&lt;/p&gt;
+
+
+&lt;h2&gt;Replit&lt;/h2&gt;
+&lt;p&gt;就在  Replit 即將關閉 repl.co 的免費部署功能之際, 突然發現其實即便 &lt;a href="https://docs.github.com/en/education/manage-coursework-with-github-classroom/integrate-github-classroom-with-an-ide/replit-with-github-classroom"&gt;Github Classroom 早就宣布不再支援 Replit 整合&lt;/a&gt;, 加上 &lt;a href="https://twitter.com/angryepicbanana/status/1725022939337175514"&gt;Replit 悄悄終止讓教育單位免費使用 Teams&lt;/a&gt;, Github Classroom 所推播的協同作業倉儲仍可透過 Replit 以 SSH 協定將內容改版推向 Github.&lt;/p&gt;
+&lt;p&gt;操作方式很簡單, 流程就與 s.cycu.org 伺服器上的使用方法相同, 與 Replit 帳號對應 Github 倉儲的唯一差別就是: 不再需要透過 Replit 與 Github 的 Application 整合, 而是透過 SSH public key 與 private key 之間的配對信任.&lt;/p&gt;
+&lt;p&gt;步驟一: 將 Github Classroom Organization 上的倉儲 import 到 Replit 的方法沒有改變. 設定 cmsimde 網際內容管理的編輯網站也與先前相同, 也就是需要以 python3 main.py 與 Run 按鈕對應, secrets 中的 config 變數可以從 README.md 中的 Brython 程式取得. chmod u+x init_replit 之後, 透過 script 執行, 就能取下子模組, 並且在 虛擬主機中安裝所需的 Python 模組.&lt;/p&gt;
+&lt;p&gt;步驟二: 在 shell 中以 ssh-keygen 建立 /home/runner/.ssh 目錄中的公私鑰, 然後將 id_rsa.pub 複製到倉儲目錄後, 送到對應的 Github 帳號區. 至於 .ssh/config 則只需要 Host, User 與 Hostname 的設定, 因為 Replit 與 Github.com 都可支援 IPv4.&lt;/p&gt;
+&lt;p&gt;步驟三: 將先前 import 倉儲至 Replit 的 .git/config 設定改為 SSH 連線. 接下來就可以直接將 Replit 中的倉儲改版內容新增提交與推送到 Github 了.&lt;/p&gt;</content><category term="cad2023"></category><category term="w15"></category><category term="cad2023"></category></entry></feed>

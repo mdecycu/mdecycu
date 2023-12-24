@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
-<leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
+<!-- Created by Leo: https://leo-editor.github.io/leo-editor/leo_toc.html -->
+<leo_file xmlns:leo="http://leo-editor.github.io/leo-editor/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2"/>
 <globals/>
 <preferences/>
@@ -164,6 +164,11 @@
 </v>
 <v t="leo.20230309100614.1"><vh>@clean 2023_spring_w3.md</vh>
 <v t="leo.20230309100916.1"><vh>2023 Spring 第三週</vh></v>
+</v>
+</v>
+<v t="leo.20231224214447.1"><vh>2024</vh>
+<v t="leo.20231224214455.1"><vh>@clean 2023_1224.md</vh>
+<v t="leo.20231224214745.1"><vh>2023 Fall w15</vh></v>
 </v>
 </v>
 </v>
@@ -5581,6 +5586,37 @@ execute (執行下列指令)
 certbot certonly --standalone
 
 </t>
+<t tx="leo.20231224214447.1"></t>
+<t tx="leo.20231224214455.1">@language md
+---
+Title: 2023 Fall 第十五週
+Date: 2023-12-24 11:00
+Category: cad2023
+Tags: w15, cad2023
+Slug: 2023_fall_w15
+Author: mdecycu
+---
+
+2023 Fall 即將結束, 截至目前, 課程到底傳達了甚麼?
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20231224214745.1">Replit
+----
+就在  Replit 即將關閉 repl.co 的免費部署功能之際, 突然發現其實即便 [Github Classroom 早就宣布不再支援 Replit 整合], 加上 [Replit 悄悄終止讓教育單位免費使用 Teams], Github Classroom 所推播的協同作業倉儲仍可透過 Replit 以 SSH 協定將內容改版推向 Github.
+
+操作方式很簡單, 流程就與 s.cycu.org 伺服器上的使用方法相同, 與 Replit 帳號對應 Github 倉儲的唯一差別就是: 不再需要透過 Replit 與 Github 的 Application 整合, 而是透過 SSH public key 與 private key 之間的配對信任.
+
+步驟一: 將 Github Classroom Organization 上的倉儲 import 到 Replit 的方法沒有改變. 設定 cmsimde 網際內容管理的編輯網站也與先前相同, 也就是需要以 python3 main.py 與 Run 按鈕對應, secrets 中的 config 變數可以從 README.md 中的 Brython 程式取得. chmod u+x init_replit 之後, 透過 script 執行, 就能取下子模組, 並且在 虛擬主機中安裝所需的 Python 模組.
+
+步驟二: 在 shell 中以 ssh-keygen 建立 /home/runner/.ssh 目錄中的公私鑰, 然後將 id_rsa.pub 複製到倉儲目錄後, 送到對應的 Github 帳號區. 至於 .ssh/config 則只需要 Host, User 與 Hostname 的設定, 因為 Replit 與 Github.com 都可支援 IPv4.
+
+步驟三: 將先前 import 倉儲至 Replit 的 .git/config 設定改為 SSH 連線. 接下來就可以直接將 Replit 中的倉儲改版內容新增提交與推送到 Github 了.
+
+
+[Github Classroom 早就宣布不再支援 Replit 整合]: https://docs.github.com/en/education/manage-coursework-with-github-classroom/integrate-github-classroom-with-an-ide/replit-with-github-classroom
+[Replit 悄悄終止讓教育單位免費使用 Teams]: https://twitter.com/angryepicbanana/status/1725022939337175514</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
