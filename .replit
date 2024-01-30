@@ -33,6 +33,11 @@ MPLBACKEND = "TkAgg"
 POETRY_CACHE_DIR = "${REPL_HOME}/.cache/pypoetry"
 POETRY_INSTALLER_MODERN_INSTALLATION = "0"
 
+GIT_AUTHOR_NAME = "mdecycu"
+GIT_AUTHOR_EMAIL = "mdecycuorg@gmail.com"
+GIT_COMMITTER_NAME = "mdecycu"
+GIT_COMMITTER_EMAIL = "mdecycuorg@gmail.com"
+
 # Enable unit tests. This is only supported for a few languages.
 [unitTest]
 language = "python3"
