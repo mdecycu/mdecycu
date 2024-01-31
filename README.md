@@ -1,19 +1,20 @@
-### Hi there 👋
+### mde.tw/content
 
 <!--
-**mdecycu/mdecycu** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# cmsite
+cmsimde template uses mdecycu/cmsimde as submodule
 
-Here are some ideas to get you started:
+On Replit:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+for cmsite: git submodule update --init --recursive 
 
+for cmsimde_site: cmsimde is as directory not submodule
+
+for cmsimde: pip install flask flask_cors bs4 lxml pelican markdown gevent
+
+password generator: https://mde.tw/cd2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b92b16621dd0246c352cf13d6463b333/raw/0bfa669750aba3abe48554509bbd43d65b6e5c82/hashlib_password_generator.py
+
+<!--
 ### Pelican
 
 pelican markdown -o blog -s local_publishconf.py

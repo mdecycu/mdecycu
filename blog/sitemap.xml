@@ -5,763 +5,784 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2023-12-24T23:18:45-00:00</lastmod>
+<lastmod>2024-01-31T03:17:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2023-12-24T23:18:45-00:00</lastmod>
+<lastmod>2024-01-31T03:17:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2023-12-24T23:18:45-00:00</lastmod>
+<lastmod>2024-01-31T03:17:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2023-12-24T23:18:45-00:00</lastmod>
+<lastmod>2024-01-31T03:17:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./pages/about/</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./2024_spring_cd_01.html</loc>
+<lastmod>2024-01-31T03:16:52+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2023_fall_w15.html</loc>
-<lastmod>2023-12-24T23:18:08+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2023_spring_w3.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w17.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w14.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w12.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w10.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w9.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_courses_w8.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cad2022_w7.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cad2022_w6.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cad2022_w5.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_about_leo_editor.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cad2022_server _and_version.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cad2022_w3.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_cp2022_w3.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_about_cad.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_about_postgresql.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_about_network.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_about_ubuntu.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./enjoy_your_ride.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022_fall_semester_week2.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./replit_cmsimde_tutorial.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./the_end_of_free_service.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-wink.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-classroom.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-nx.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./cp2022-w1.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-tcexam.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./useful-windows-commands.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./useful-git-commands.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-fossil-scm.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./about-ethercalc.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./compile-solvespace.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./compile-coppeliasim-4.3.0-rev12.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./renew-cad-lab-software.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./Create-a-portable-python-system.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./portable-CoppeliaSim-4.3.0-rev12.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022-Fall-Intro-to-computer-programming.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./2022-Fall-computer-aided-design-and-practices.html</loc>
-<lastmod>2023-12-24T21:42:24+08:00</lastmod>
+<lastmod>2024-01-31T02:34:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cad.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cad2022.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cad2023.html</loc>
-<lastmod>2023-12-24T23:18:08+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cadlab.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cd2023.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./category/cd2024.html</loc>
+<lastmod>2024-01-31T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/compilation.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/cp2022.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/ethercalc.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/fossil-scm.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/free.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/git.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/github.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/leo-editor.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/network.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/nx.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/postgresql.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/replit.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/server.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/tcexam.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/ubuntu.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/video.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/windows.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./category/wink.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./tag/cd2024.html</loc>
+<lastmod>2024-01-31T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w15.html</loc>
-<lastmod>2023-12-24T23:18:08+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/cad2023.html</loc>
-<lastmod>2023-12-24T23:18:08+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w3.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/cd2023.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/wcm2023.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w17.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/cad2022.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/cp2022.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w10.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w9.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w8.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w7.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w6.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w5.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/leojs.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/w4.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/inspiring.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/cmsimde.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/replit.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/heroku.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/mp4.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/ffmpeg.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/javascript.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/classroom.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/siemens.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/portable-python.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/exam.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/php.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/pgsql.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/nginx.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/batch.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/commands.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/remote-add.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/recurse-submodules.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/repository.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/scm.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/redis.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/dump.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/solvespace.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/coppeliasim.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/syllabus.html</loc>
-<lastmod>2023-12-24T21:42:24+08:06</lastmod>
+<lastmod>2024-01-31T02:34:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./author/mdecycu.html</loc>
-<lastmod>2023-12-24T23:18:08+08:06</lastmod>
+<lastmod>2024-01-31T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
