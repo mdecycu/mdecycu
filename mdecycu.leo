@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
-<leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
+<!-- Created by Leo: https://leo-editor.github.io/leo-editor/leo_toc.html -->
+<leo_file xmlns:leo="https://leo-editor.github.io/leo-editor/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2"/>
 <globals/>
 <preferences/>
@@ -17,7 +17,7 @@
 <v t="leo.20230614114908.4"><vh>body</vh>
 <v t="leo.20230614114908.5"><vh>reveal div</vh>
 <v t="leo.20230614114908.6"><vh>slides div</vh>
-<v t="leo.20230614115035.1"><vh>2023 Fall Page</vh></v>
+<v t="leo.20230614115035.1"><vh>2024 Fall Page</vh></v>
 </v>
 </v>
 </v>
@@ -84,15 +84,17 @@ make = threading.Thread(target=domake)
 make.start()</t>
 <t tx="leo.20230614114908.1">@language xml
 @tabwidth -4
-@others</t>
+@others
+</t>
 <t tx="leo.20230614114908.2">&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 @others
-&lt;/html&gt;</t>
+&lt;/html&gt;
+</t>
 <t tx="leo.20230614114908.3">&lt;head&gt;
     &lt;meta charset="utf-8"&gt;
 
-    &lt;title&gt;reveal.js – The HTML Presentation Framework&lt;/title&gt;
+    &lt;title&gt;mde.tw&lt;/title&gt;
 
     &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
     &lt;meta name="author" content="Hakim El Hattab"&gt;
@@ -108,7 +110,8 @@ make.start()</t>
 
     &lt;!-- Theme used for syntax highlighting of code --&gt;
     &lt;link rel="stylesheet" href="reveal/plugin/highlight/monokai.css" id="highlight-theme"&gt;
-&lt;/head&gt;</t>
+&lt;/head&gt;
+</t>
 <t tx="leo.20230614114908.4">&lt;body&gt;
 @others
     &lt;script src="reveal/dist/reveal.js"&gt;&lt;/script&gt;
@@ -132,19 +135,22 @@ make.start()</t>
         });
 
     &lt;/script&gt;
-&lt;/body&gt;</t>
+&lt;/body&gt;
+</t>
 <t tx="leo.20230614114908.5">&lt;div class="reveal"&gt;
     @others
-&lt;/div&gt;</t>
+&lt;/div&gt;
+</t>
 <t tx="leo.20230614114908.6">&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
 &lt;div class="slides"&gt;
     @others
-&lt;/div&gt;</t>
+&lt;/div&gt;
+</t>
 <t tx="leo.20230614115035.1">        &lt;section data-markdown&gt;
             &lt;script type="text/template"&gt;
-        ## 2023 Fall
+        ## 2024 Fall
 
-        ### [cp2023](https://mde.tw/cp2023) | [cad2023](https://mde.tw/cad2023)
+        ### [cp2024](https://mde.tw/cp2024) | [cad2024](https://mde.tw/cad2024)
             &lt;/script&gt;
         &lt;/section&gt;
 </t>
